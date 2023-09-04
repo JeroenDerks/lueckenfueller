@@ -12,7 +12,7 @@ export const Hero = () => {
       display="flex"
       alignItems={["flex-start", "flex-start", "center"]}
     >
-      <Grid container>
+      <Grid container rowGap={2}>
         <Grid item xs={12} sm={12} md={7}>
           <Typography variant="h1" fontSize={[24, 32, 56]}>
             {t("hero.title")}
@@ -24,14 +24,14 @@ export const Hero = () => {
             {t("hero.buttonText")}
           </Button>
         </Grid>
-        <Grid item xs={12} sm={12} md={5}>
+        <Grid item xs={12} sm={12} md={5} flexGrow={1}>
           <Box
             width={1}
             display="flex"
             justifyContent="center"
             alignItems="center"
             sx={{ border: "1px solid grey" }}
-            height="100%"
+            flexGrow={1}
           >
             <p>some graphic</p>
           </Box>
