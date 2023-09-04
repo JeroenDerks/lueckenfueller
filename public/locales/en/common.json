@@ -1,3 +1,7 @@
 {
-  "hero": { "title": "We all miss something" }
+  "hero": {
+    "title": "We all miss something",
+    "description": "Here are 2 setences describing the essence of Lueckenfueller. The first one should entice, the latter should make people want to scroll further.",
+    "buttonText": "Get started"
+  }
 }

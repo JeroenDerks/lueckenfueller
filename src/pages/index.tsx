@@ -13,7 +13,6 @@ export default function Home() {
         <NavBar />
         <PageLayout>
           <Hero />
-          <Hero />
         </PageLayout>
       </main>
     </>
