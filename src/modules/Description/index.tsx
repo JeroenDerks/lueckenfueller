@@ -1,6 +1,6 @@
 import { useTranslation } from "next-i18next";
 import { PageLayout } from "../PageLayout";
-import { Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 export const Description = () => {
   const { t } = useTranslation();
@@ -21,10 +21,22 @@ export const Description = () => {
   ];
 
   return (
-    <>
-      <Typography variant="h4">{t("description.title")}</Typography>
-      <Typography variant="body1">{t("description.intro")}</Typography>
-      <Grid container>
+    <Box sx={{ backgroundColor: "#fafafa" }} py={[4, 6, 16]} width={1}>
+      <Typography
+        variant="h4"
+        textAlign={["left", "left", "center"]}
+        fontSize={[22, 28, 32]}
+      >
+        {t("description.title")}
+      </Typography>
+      <Typography
+        variant="body1"
+        fontSize={[16, 16, 18]}
+        textAlign={["left", "left", "center"]}
+      >
+        {t("description.intro")}
+      </Typography>
+      <Grid container mt={[2, 2, 4]}>
         {steps.map(({ title, body }) => (
           <Grid
             item
@@ -34,12 +46,17 @@ export const Description = () => {
             md={4}
             px={[0, 0, 1]}
             py={[1, 1, 0]}
+            my={1}
           >
-            <Typography variant="h5">{title}</Typography>
-            <Typography variant="body1">{body}</Typography>
+            <Typography variant="h5" fontSize={[18, 20, 24]}>
+              {title}
+            </Typography>
+            <Typography variant="body1" fontSize={16}>
+              {body}
+            </Typography>
           </Grid>
         ))}
       </Grid>
-    </>
+    </Box>
   );
 };

@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { LanguageSwitcher } from "../LanguageSwitcher";
+import { colors } from "@/styles/theme";
 
 export const NavBar = () => {
   return (
@@ -8,7 +9,7 @@ export const NavBar = () => {
         width={1}
         display="flex"
         justifyContent="center"
-        sx={{ background: "turquoise" }}
+        sx={{ background: colors.green }}
       >
         <Box
           maxWidth={1220}
@@ -18,7 +19,7 @@ export const NavBar = () => {
           py={1}
           px={2}
         >
-          <Typography>Lueckenfueller</Typography>
+          <Typography color="white">Lueckenfueller</Typography>
           <Box display="flex" gap={1}>
             <LanguageSwitcher />
           </Box>
