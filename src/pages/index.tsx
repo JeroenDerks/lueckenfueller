@@ -31,19 +31,7 @@ export const getStaticProps = async ({ locale }: { locale: any }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common"])),
-      // needs: needs.map((need) => {
-      //   return {
-      //     ...need,
-      //     createdAt: need.createdAt.toISOString(),
-      //     updatedAt: need.updatedAt.toISOString(),
-      //     likes: need.likes.map((like) => {
-      //       return {
-      //         ...like,
-      //         createdAt: like.createdAt.toISOString(),
-      //       };
-      //     }),
-      //   };
-      // }),
+      needs: JSON.stringify(needs),
     },
   };
 };
