@@ -3,6 +3,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { NavBar } from "@/modules/NavBar";
 import { Hero } from "@/modules/Hero";
 import { PageLayout } from "@/modules/PageLayout";
+import { Map } from "@/components/Map";
 import { Description } from "@/modules/Description";
 
 export default function Home() {
@@ -12,10 +13,9 @@ export default function Home() {
     <>
       <main>
         <NavBar />
-        <PageLayout>
-          <Hero />
-          <Description />
-        </PageLayout>
+        <Hero />
+        <Description />
+        <Map />
       </main>
     </>
   );

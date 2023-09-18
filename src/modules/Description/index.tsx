@@ -21,42 +21,44 @@ export const Description = () => {
   ];
 
   return (
-    <Box sx={{ backgroundColor: "#fafafa" }} py={[4, 6, 16]} width={1}>
-      <Typography
-        variant="h4"
-        textAlign={["left", "left", "center"]}
-        fontSize={[22, 28, 32]}
-      >
-        {t("description.title")}
-      </Typography>
-      <Typography
-        variant="body1"
-        fontSize={[16, 16, 18]}
-        textAlign={["left", "left", "center"]}
-      >
-        {t("description.intro")}
-      </Typography>
-      <Grid container mt={[2, 2, 4]}>
-        {steps.map(({ title, body }) => (
-          <Grid
-            item
-            key={title}
-            xs={12}
-            sm={12}
-            md={4}
-            px={[0, 0, 1]}
-            py={[1, 1, 0]}
-            my={1}
-          >
-            <Typography variant="h5" fontSize={[18, 20, 24]}>
-              {title}
-            </Typography>
-            <Typography variant="body1" fontSize={16}>
-              {body}
-            </Typography>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+    <PageLayout backgroundColor="#fafafa">
+      <Box py={[4, 6, 16]} width={1}>
+        <Typography
+          variant="h4"
+          textAlign={["left", "left", "center"]}
+          fontSize={[22, 28, 32]}
+        >
+          {t("description.title")}
+        </Typography>
+        <Typography
+          variant="body1"
+          fontSize={[16, 16, 18]}
+          textAlign={["left", "left", "center"]}
+        >
+          {t("description.intro")}
+        </Typography>
+        <Grid container mt={[2, 2, 4]}>
+          {steps.map(({ title, body }) => (
+            <Grid
+              item
+              key={title}
+              xs={12}
+              sm={12}
+              md={4}
+              px={[0, 0, 1]}
+              py={[1, 1, 0]}
+              my={1}
+            >
+              <Typography variant="h5" fontSize={[18, 20, 24]}>
+                {title}
+              </Typography>
+              <Typography variant="body1" fontSize={16}>
+                {body}
+              </Typography>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </PageLayout>
   );
 };
