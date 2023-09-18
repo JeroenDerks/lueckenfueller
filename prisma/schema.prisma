@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model Need {
+  id            String       @id @default(uuid())
+  category      String
+  email         String
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  likes         Like[]       @relation()
+  env           Env          @default(PROD)
+  location      Location?    @relation()
+}
+
+model Like {
+  id            String       @id @default(uuid())
+  createdAt     DateTime     @default(now())
+  need          Need         @relation(fields: [parentId], references: [id])
+  parentId      String       @unique
+}
+
+model Location {
+  id            String      @id @default(uuid())
+  lat           Float
+  long          Float
+  radius        Int
+  need          Need        @relation(fields: [needId], references: [id])
+  needId        String      @unique
+}
+
+enum Env {
+  DEV
+  PROD
+}
