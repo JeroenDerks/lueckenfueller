@@ -21,12 +21,12 @@ export default function Home({ needs }: { needs: Need[] }) {
 }
 
 export const getStaticProps = async ({ locale }: { locale: any }) => {
-  // const needs = await prisma.need.findMany({
-  //   include: {
-  //     likes: true,
-  //     location: true,
-  //   },
-  // });
+  const needs = await prisma.need.findMany({
+    include: {
+      likes: true,
+      location: true,
+    },
+  });
 
   return {
     props: {
