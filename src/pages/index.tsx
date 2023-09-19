@@ -3,8 +3,8 @@ import { NavBar } from "@/modules/NavBar";
 import { Hero } from "@/modules/Hero";
 import { Map } from "@/components/Map";
 import { Description } from "@/modules/Description";
+import prisma from "../../lib/prisma";
 import { Need } from "@/types";
-import { PrismaClient } from "@prisma/client";
 
 export default function Home({ needs }: { needs: Need[] }) {
   console.log(needs);
@@ -21,8 +21,6 @@ export default function Home({ needs }: { needs: Need[] }) {
 }
 
 export const getStaticProps = async ({ locale }: { locale: any }) => {
-  const prisma = new PrismaClient();
-
   const needs = await prisma.need.findMany({
     include: {
       likes: true,
