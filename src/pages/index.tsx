@@ -1,20 +1,19 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { NavBar } from "@/modules/NavBar";
 import { Hero } from "@/modules/Hero";
-import { Map } from "@/components/Map";
 import { Description } from "@/modules/Description";
 import prisma from "../../lib/prisma";
 import { Need } from "@/types";
+import { MapController } from "@/components/MapController";
 
 export default function Home({ needs }: { needs: Need[] }) {
-  console.log(needs);
   return (
     <>
       <main>
         <NavBar />
         <Hero />
         <Description />
-        <Map />
+        <MapController />
       </main>
     </>
   );

@@ -36,7 +36,7 @@ export const Hero = () => {
               display="flex"
               justifyContent="center"
               alignItems="center"
-              sx={{ border: "1px solid grey" }}
+              sx={{ border: "1px solid grey" , borderRadius: 4}}
               height="100%"
             >
               <p>Graphic</p>
