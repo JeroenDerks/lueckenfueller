@@ -26,10 +26,10 @@ export const MapStep2 = ({
 
   return (
     <>
-      <Typography variant="h5" textAlign="center" my={3}>
+      <Typography variant="h5" textAlign="center" mb={1} mt={[1, 1, 1]}>
         Where are you missing it?
       </Typography>
-      <Typography>
+      <Typography variant="body1" fontSize={[14, 16, 16]}>
         Move the marker and adjust the radius of the circle with the slider
       </Typography>
       <Slider
@@ -39,7 +39,12 @@ export const MapStep2 = ({
         max={10}
         step={0.1}
       />
-      <Box display="flex" justifyContent="space-between" width={1} mt={3}>
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        width={1}
+        mt={[1, 2, 3]}
+      >
         <Button onClick={onPrevStep}>Back</Button>
         <Button onClick={onNextStep} variant="contained">
           Next

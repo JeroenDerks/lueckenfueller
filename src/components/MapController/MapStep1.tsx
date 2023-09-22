@@ -6,8 +6,6 @@ import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "next-i18next";
-import { MapSelectorContainer, Overlay } from "./styled";
-import { MapComp } from "../Map";
 
 export const MapStep1 = ({
   handleStep1Change,
@@ -32,7 +30,7 @@ export const MapStep1 = ({
 
   return (
     <>
-      <Typography variant="h5" textAlign="center" mb={3}>
+      <Typography variant="h5" textAlign="center" mb={[2, 2, 3]} mt={[1, 1, 1]}>
         What are you missing?
       </Typography>
       <FormControl fullWidth>
@@ -46,6 +44,7 @@ export const MapStep1 = ({
           onChange={handleChange}
           value={step1Value}
           MenuProps={MenuProps}
+          size="small"
         >
           {options.map(({ label, value }) => (
             <MenuItem value={value} key={value}>
@@ -54,7 +53,7 @@ export const MapStep1 = ({
           ))}
         </Select>
       </FormControl>
-      <Box display="flex" justifyContent="flex-end" width={1} mt={3}>
+      <Box display="flex" justifyContent="flex-end" width={1} mt={[2, 2, 3]}>
         <Button
           onClick={onNextStep}
           variant="contained"

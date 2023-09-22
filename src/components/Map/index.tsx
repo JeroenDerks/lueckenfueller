@@ -65,7 +65,7 @@ export const MapComp = ({
               paint={{ "fill-color": "#088", "fill-opacity": 0.2 }}
             />
           </Source>
-          <NavigationControl />
+          <NavigationControl position="bottom-right" />
         </>
       )}
     </Map>

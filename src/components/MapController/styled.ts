@@ -24,13 +24,18 @@ export const Overlay = styled("div")({
   zIndex: "2",
 });
 
-export const MapSelectorContainer = styled("div")({
+export const MapSelectorContainer = styled("div")(({ theme }) => ({
   background: "#fff",
   borderRadius: 16,
   maxWidth: 400,
-  padding: 24,
+  padding: 8,
   position: "absolute",
-  top: 40,
+  top: 0,
   width: "100%",
   zIndex: 3,
-});
+
+  [theme.breakpoints.up("sm")]: {
+    top: 24,
+    padding: 16,
+  },
+}));
