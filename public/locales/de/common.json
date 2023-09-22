@@ -1,5 +1,28 @@
 {
   "hero": {
-    "title": "Wir alle vermissen etwas"
+    "title": "Wir alle vermissen etwas",
+    "description": "Here are 2 setences describing the essence of Lueckenfueller. The first one should entice, the latter should make people want to scroll further.",
+    "buttonText": "Get started"
+  },
+  "description": {
+    "title": "How to use",
+    "intro": "Some text explaining about how to use the application",
+    "step1": {
+      "title": "1. Tell us what youre missing",
+      "body": "Some larger description about how to select what people are missing. For example focussing on what services or needs are lacking"
+    },
+    "step2": {
+      "title": "2. Select your location",
+      "body": "Some larger description about how to select what people are missing. For example focussing on what services or needs are lacking"
+    },
+    "step3": {
+      "title": "3. Share with others",
+      "body": "Some larger description about how to select what people are missing. For example focussing on what services or needs are lacking"
+    }
+  },
+  "MapController": {
+    "mapStep1": {
+      "selectLabel": "Ich brauche"
+    }
   }
 }

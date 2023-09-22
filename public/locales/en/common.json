@@ -19,5 +19,10 @@
       "title": "3. Share with others",
       "body": "Some larger description about how to select what people are missing. For example focussing on what services or needs are lacking"
     }
+  },
+  "MapController": {
+    "mapStep1": {
+      "selectLabel": "In need of"
+    }
   }
 }

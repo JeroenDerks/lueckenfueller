@@ -20,3 +20,10 @@ export type Need = {
   env: "DEV" | "PROD";
   location: Location;
 };
+
+export type LatLng = {
+  lat: number;
+  lng: number;
+};
+
+export type Radius = { radius: number };
