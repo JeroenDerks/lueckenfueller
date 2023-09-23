@@ -7,7 +7,7 @@ export type Like = {
 export type Location = {
   id: string;
   lat: number;
-  long: number;
+  lng: number;
   radius: number;
   needId: string;
 };
