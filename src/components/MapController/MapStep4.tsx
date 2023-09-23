@@ -1,12 +1,11 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "next-i18next";
-import { useRouter } from "next/router";
 import { ClickToCopyButton } from "../ClickToCopyButton";
 
 export const MapStep4 = ({ step4Value }: { step4Value?: string }) => {
   const { t } = useTranslation();
-  const url = window.origin + "#map?id=" + step4Value;
+  const url = window.origin + "?id=" + step4Value;
 
   return (
     <Box width={1}>
@@ -17,7 +16,12 @@ export const MapStep4 = ({ step4Value }: { step4Value?: string }) => {
         Your need has been added. Promote it to your friends using the link
         below
       </Typography>
-      <Box display="flex">
+      <Box
+        display="flex"
+        width={1}
+        justifyContent="space-between"
+        alignItems="center"
+      >
         <Typography variant="caption">{url}</Typography>
         <ClickToCopyButton copyValue={url} />
       </Box>

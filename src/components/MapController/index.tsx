@@ -1,6 +1,6 @@
 import { PageLayout } from "@/modules/PageLayout";
 import { theme } from "@/styles/theme";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container, MapSelectorContainer, Overlay } from "./styled";
 import { MapStep1 } from "./MapStep1";
 import { MapStep2 } from "./MapStep2";
@@ -8,6 +8,7 @@ import { MapStep3 } from "./MapStep3";
 import { LatLng, Radius } from "@/types";
 import { MapComp } from "../Map";
 import { MapStep4 } from "./MapStep4";
+import { useRouter } from "next/router";
 
 const defaultLoc = { radius: 5, lat: 52.52, lng: 13.4 };
 
@@ -16,8 +17,22 @@ export const MapController = () => {
   const [step1Value, setStep1Value] = useState("");
   const [step2Value, setStep2Value] = useState<LatLng & Radius>(defaultLoc);
   const [step3Value, setStep3Value] = useState("");
-  const [step4Value, setStep4Value] = useState();
+  const [step4Value, setStep4Value] = useState<string>();
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const needId = router.query?.id;
+
+    if (needId) {
+      setStep4Value(needId as string);
+      setStep(4);
+
+      setTimeout(() => {
+        document.querySelector("#map")?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, [router]);
 
   const onNextStep = () => {
     setStep((s) => s + 1);
@@ -51,6 +66,7 @@ export const MapController = () => {
 
   return (
     <PageLayout backgroundColor={theme.palette.primary.main}>
+      <div id="map" />
       <Container>
         <MapComp
           showMarker={step !== 1}

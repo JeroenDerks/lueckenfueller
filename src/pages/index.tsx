@@ -5,6 +5,7 @@ import { Description } from "@/modules/Description";
 import prisma from "../../lib/prisma";
 import { Need } from "@/types";
 import { MapController } from "@/components/MapController";
+import { useEffect } from "react";
 
 export default function Home({ needs }: { needs: Need[] }) {
   return (
