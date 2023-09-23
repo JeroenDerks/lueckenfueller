@@ -7,6 +7,7 @@ import { MapStep2 } from "./MapStep2";
 import { MapStep3 } from "./MapStep3";
 import { LatLng, Radius } from "@/types";
 import { MapComp } from "../Map";
+import { MapStep4 } from "./MapStep4";
 
 const defaultLoc = { radius: 5, lat: 52.52, lng: 13.4 };
 
@@ -15,6 +16,8 @@ export const MapController = () => {
   const [step1Value, setStep1Value] = useState("");
   const [step2Value, setStep2Value] = useState<LatLng & Radius>(defaultLoc);
   const [step3Value, setStep3Value] = useState("");
+  const [step4Value, setStep4Value] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   const onNextStep = () => {
     setStep((s) => s + 1);
@@ -24,8 +27,26 @@ export const MapController = () => {
     setStep((s) => s - 1);
   };
 
-  const handleSubmit = () => {
-    console.log({ step1Value, step2Value, step3Value });
+  const handleSubmit = async () => {
+    setIsLoading(true);
+
+    const response = await fetch("/api/add-need", {
+      method: "POST",
+      body: JSON.stringify({
+        category: step1Value,
+        location: step2Value,
+        email: step3Value,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (data.needId) {
+      setStep4Value(data.needId);
+      onNextStep();
+    }
+
+    setIsLoading(false);
   };
 
   return (
@@ -56,10 +77,12 @@ export const MapController = () => {
 
           {step === 3 && (
             <MapStep3
-              {...{ step3Value, handleSubmit, onPrevStep }}
+              {...{ step3Value, handleSubmit, onPrevStep, isLoading }}
               handleStep3Change={(v) => setStep3Value(v)}
             />
           )}
+
+          {step === 4 && <MapStep4 {...{ step4Value }} />}
         </MapSelectorContainer>
       </Container>
     </PageLayout>

@@ -4,15 +4,18 @@ import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "next-i18next";
+import LoadingButton from "@mui/lab/LoadingButton";
 
 export const MapStep3 = ({
   handleStep3Change,
   handleSubmit,
+  isLoading,
   onPrevStep,
   step3Value,
 }: {
   handleStep3Change: (v: string) => void;
   handleSubmit: () => void;
+  isLoading: boolean;
   onPrevStep: () => void;
   step3Value: string;
 }) => {
@@ -44,9 +47,13 @@ export const MapStep3 = ({
         mt={[1, 2, 3]}
       >
         <Button onClick={onPrevStep}>Back</Button>
-        <Button onClick={handleSubmit} variant="contained">
+        <LoadingButton
+          onClick={handleSubmit}
+          loading={isLoading}
+          variant="contained"
+        >
           Submit
-        </Button>
+        </LoadingButton>
       </Box>
     </Box>
   );
