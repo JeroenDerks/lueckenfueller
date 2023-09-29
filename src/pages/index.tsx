@@ -2,9 +2,10 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { NavBar } from "@/modules/NavBar";
 import { Hero } from "@/modules/Hero";
 import { Description } from "@/modules/Description";
+import { Location } from "@/types";
 import { MapController } from "@/components/MapController";
 
-export default function Home() {
+export default function Home({ locations }: { locations: Location[] }) {
   return (
     <>
       <main>

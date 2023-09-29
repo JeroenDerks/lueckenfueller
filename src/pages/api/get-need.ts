@@ -16,7 +16,7 @@ export default async function handler(
   res: NextApiResponse<Need | Error | Message>
 ) {
   if (req.method !== "POST") res.status(405).end();
-  console.log(req);
+
   try {
     const env = process.env.NODE_ENV === "development" ? "DEV" : "PROD";
     const { needId } = JSON.parse(req.body);
@@ -27,8 +27,6 @@ export default async function handler(
         env,
       },
     });
-
-    console.log(need);
 
     if (need) {
       res.status(200).json(need);
