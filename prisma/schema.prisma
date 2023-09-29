@@ -14,37 +14,40 @@ datasource db {
 model Need {
   id              String       @id @default(uuid())
   category        String
-  user            User?        @relation()
   createdAt       DateTime     @default(now())
-  updatedAt       DateTime     @updatedAt
-  likes           Like[]       @relation()
   env             Env          @default(PROD)
+  likes           Like[]       @relation()
   location        Location?    @relation()
+  updatedAt       DateTime     @updatedAt
+  user            User?        @relation()
 }
 
 model Like {
   id              String       @id @default(uuid())
   createdAt       DateTime     @default(now())
+  env             Env          @default(PROD)
   need            Need         @relation(fields: [needLikeId], references: [id])
   needLikeId      String       
 }
 
 model Location {
   id              String       @id @default(uuid())
+  env             Env          @default(PROD)
   lat             Float
   lng             Float
-  radius          Float
   need            Need         @relation(fields: [needLocationId], references: [id])
   needLocationId  String       @unique
+  radius          Float
 }
 
 model User {
   id              String       @id @default(uuid())
   email           String
   emailConfirmed  Boolean      @default(false)
-  updatedAt       DateTime     @updatedAt
+  env             Env          @default(PROD)
   need            Need         @relation(fields: [needUserId], references: [id])
   needUserId      String       @unique
+  updatedAt       DateTime     @updatedAt
 }
 
 enum Env {

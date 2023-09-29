@@ -18,17 +18,18 @@ export default async function handler(
 
   try {
     const { category, location, email } = JSON.parse(req.body);
-    console.log(process.env.NODE_ENV);
+    const env = process.env.NODE_ENV === "development" ? "DEV" : "PROD";
 
     const need = await prisma.need.create({
       data: {
         category: String(category),
-        env: process.env.NODE_ENV === "development" ? "DEV" : "PROD",
+        env,
       },
     });
 
     await prisma.location.create({
       data: {
+        env,
         lat: location.lat,
         lng: location.lng,
         radius: location.radius,
@@ -39,6 +40,7 @@ export default async function handler(
     await prisma.user.create({
       data: {
         email,
+        env,
         need: { connect: { id: need.id } },
       },
     });

@@ -1,11 +1,13 @@
+import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "next-i18next";
 import { ClickToCopyButton } from "../ClickToCopyButton";
+import { Location, Need } from "@/types";
 
-export const MapStep4 = ({ step4Value }: { step4Value?: string }) => {
+export const MapStep4 = ({ step4Value }: { step4Value?: Need }) => {
   const { t } = useTranslation();
-  const url = window.origin + "?id=" + step4Value;
+  const url = window.origin + "?id=" + step4Value?.id;
 
   return (
     <Box width={1}>
