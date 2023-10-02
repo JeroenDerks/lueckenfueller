@@ -29,7 +29,7 @@ export type Need = {
   env: Env;
   id: string;
   likes?: Like[];
-  location?: Location;
+  location?: Location | null;
   updatedAt: Date;
 };
 

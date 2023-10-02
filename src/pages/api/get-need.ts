@@ -34,7 +34,7 @@ export default async function handler(
     });
     console.log(need);
 
-    if (need) {
+    if (need && need?.location !== null) {
       res.status(200).json(need);
     } else {
       res.status(404).end({ message: "Not found" });
