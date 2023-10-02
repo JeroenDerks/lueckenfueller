@@ -7,14 +7,12 @@ import { MapController } from "@/components/MapController";
 
 export default function Home({ locations }: { locations: Location[] }) {
   return (
-    <>
-      <main>
-        <NavBar />
-        <Hero />
-        <Description />
-        <MapController />
-      </main>
-    </>
+    <main>
+      <NavBar />
+      <Hero />
+      <Description />
+      <MapController />
+    </main>
   );
 }
 

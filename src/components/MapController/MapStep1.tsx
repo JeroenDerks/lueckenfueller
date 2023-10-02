@@ -20,11 +20,28 @@ export const MapStep1 = ({
   const handleChange = (event: SelectChangeEvent<any>) => {
     handleStep1Change(event.target.value);
   };
-
-  let options = new Array(19);
-  for (let i = 0; i < options.length; i++) {
-    options[i] = { label: `Option ${i}`, value: i };
-  }
+  let options = [
+    { label: "Food delivery service", value: "Food delivery service" },
+    { label: "Laundry service", value: "Laundry service" },
+    { label: "Cleaning service", value: "Cleaning service" },
+    { label: "Grocery delivery", value: "Grocery delivery" },
+    { label: "Transportation service", value: "Transportation service" },
+    { label: "Pet-sitting service", value: "Pet-sitting service" },
+    { label: "Tech support", value: "Tech support" },
+    { label: "Landscaping service", value: "Landscaping service" },
+    { label: "Personal trainer", value: "Personal trainer" },
+    { label: "Meal kit delivery", value: "Meal kit delivery" },
+    { label: "Massage service", value: "Massage service" },
+    { label: "Subscription box service", value: "Subscription box service" },
+    { label: "Car maintenance service", value: "Car maintenance service" },
+    { label: "Event planning service", value: "Event planning service" },
+    { label: "Virtual assistant service", value: "Virtual assistant service" },
+    { label: "Tutoring service", value: "Tutoring service" },
+    { label: "Home repair service", value: "Home repair service" },
+    { label: "Streaming service", value: "Streaming service" },
+    { label: "Fitness class", value: "Fitness class" },
+    { label: "Internet connection", value: "Internet connection" },
+  ];
 
   const MenuProps = { PaperProps: { style: { maxHeight: 400 } } };
 

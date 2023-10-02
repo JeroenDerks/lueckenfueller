@@ -21,12 +21,18 @@ export default async function handler(
     const env = process.env.NODE_ENV === "development" ? "DEV" : "PROD";
     const { needId } = JSON.parse(req.body);
 
+    console.log(needId);
+
     const need = await prisma.need.findUnique({
       where: {
         id: needId,
         env,
       },
+      include: {
+        location: true,
+      },
     });
+    console.log(need);
 
     if (need) {
       res.status(200).json(need);

@@ -1,6 +1,6 @@
 import { PageLayout } from "@/modules/PageLayout";
 import { theme } from "@/styles/theme";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Container, MapSelectorContainer, Overlay } from "./styled";
 import { MapStep1 } from "./MapStep1";
 import { MapStep2 } from "./MapStep2";
@@ -18,42 +18,8 @@ export const MapController = () => {
   const [step2Value, setStep2Value] = useState<LatLng & Radius>(defaultLoc);
   const [step3Value, setStep3Value] = useState("");
   const [step4Value, setStep4Value] = useState<Need>();
-  const [locations, setLocations] = useState<Location[]>();
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
-
-  useEffect(() => {
-    const needId = router.query?.id;
-
-    if (needId && typeof needId === "string") {
-      getNeed(needId);
-      setStep(4);
-
-      setTimeout(() => {
-        document.querySelector("#map")?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-    }
-    getLocations();
-  }, [router]);
-
-  const getLocations = async () => {
-    const response = await fetch("/api/get-locations", {
-      method: "GET",
-    });
-
-    const data = await response.json();
-    setLocations(data);
-  };
-
-  const getNeed = async (needId: string) => {
-    const response = await fetch("/api/get-need", {
-      method: "POST",
-      body: JSON.stringify({ needId }),
-    });
-
-    const data = await response.json();
-    setStep4Value(data);
-  };
 
   const onNextStep = () => {
     setStep((s) => s + 1);
@@ -78,11 +44,10 @@ export const MapController = () => {
     const data = await response.json();
 
     if (data.needId) {
-      setStep4Value(data.needId);
-      onNextStep();
+      router.push(data.needId);
+    } else {
+      setIsLoading(false);
     }
-
-    setIsLoading(false);
   };
 
   return (
