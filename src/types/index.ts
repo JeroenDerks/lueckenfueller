@@ -9,7 +9,6 @@ export type Like = {
   createdAt: Date;
   env: Env;
   id: string;
-  parentId: string;
   needLikeId: string;
 };
 
@@ -28,7 +27,7 @@ export type Need = {
   user?: User;
   env: Env;
   id: string;
-  likes?: Like[];
+  likes?: Like[] | null;
   location?: Location | null;
   updatedAt: Date;
 };

@@ -6,7 +6,6 @@ import { Container, MapSelectorContainer, Overlay } from "./styled";
 import { MapStep1 } from "./MapStep1";
 import { MapStep2 } from "./MapStep2";
 import { MapStep3 } from "./MapStep3";
-import { MapStep4 } from "./MapStep4";
 import { MapComp } from "../Map";
 import { LatLng, Need, Radius } from "@/types";
 
@@ -17,7 +16,6 @@ export const MapController = () => {
   const [step1Value, setStep1Value] = useState("");
   const [step2Value, setStep2Value] = useState<LatLng & Radius>(defaultLoc);
   const [step3Value, setStep3Value] = useState("");
-  const [step4Value, setStep4Value] = useState<Need>();
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
@@ -83,8 +81,6 @@ export const MapController = () => {
               handleStep3Change={(v) => setStep3Value(v)}
             />
           )}
-
-          {step === 4 && <MapStep4 {...{ step4Value }} />}
         </MapSelectorContainer>
       </Container>
     </PageLayout>
