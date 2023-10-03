@@ -13,7 +13,7 @@ function Pin({
   size = 20,
   color = "#f100dc",
 }: {
-  color: string;
+  color?: string;
   size: number;
 }) {
   return (
