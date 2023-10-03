@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "next-i18next";
+import { theme } from "@/styles/theme";
 
 export const MapStep2 = ({
   handleStep2Change,
@@ -26,8 +27,9 @@ export const MapStep2 = ({
 
   return (
     <>
-      <Typography variant="h5" textAlign="center" mb={1} mt={[1, 1, 1]}>
-        Where are you missing it?
+      <Typography variant="h5">
+        <span style={{ color: theme.palette.primary.main }}>2. </span>Where are
+        you missing it?
       </Typography>
       <Typography variant="body1" fontSize={[14, 16, 16]}>
         Move the marker and adjust the radius of the circle with the slider

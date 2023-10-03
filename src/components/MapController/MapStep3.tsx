@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "next-i18next";
 import LoadingButton from "@mui/lab/LoadingButton";
+import { theme } from "@/styles/theme";
 
 export const MapStep3 = ({
   handleStep3Change,
@@ -23,8 +24,9 @@ export const MapStep3 = ({
 
   return (
     <Box width={1}>
-      <Typography variant="h5" textAlign="center" mb={1} mt={[1, 1, 1]}>
-        Who are you?
+      <Typography variant="h5" mb={1} mt={[1, 1, 1]}>
+        <span style={{ color: theme.palette.primary.main }}>3. </span>Who are
+        you?
       </Typography>
       <Typography variant="body1" fontSize={[14, 16, 16]} mb={[1, 2, 3]}>
         We&apos;ll never share your email. It&apos;s only required for keeping
@@ -36,7 +38,6 @@ export const MapStep3 = ({
           type="email"
           fullWidth
           value={step3Value}
-          size="small"
           onChange={(e) => handleStep3Change(e.target.value)}
         />
       </FormControl>
