@@ -6,14 +6,15 @@ import Typography from "@mui/material/Typography";
 import { MapSelectorContainer } from "@/components/MapController/styled";
 import { ClickToCopyButton } from "@/components/ClickToCopyButton";
 import { useRouter } from "next/router";
+import { CircularProgress } from "@mui/material";
 
-export default function MapResult({ needId }: { needId: string | string[] }) {
+export default function MapResult({ needId }: { needId?: string }) {
   const [need, setNeed] = useState<Need>();
-  const { t } = useTranslation();
+  const { t, ready } = useTranslation();
   const router = useRouter();
 
   useEffect(() => {
-    if (typeof needId === "string") getNeed(needId);
+    if (needId) getNeed(needId);
   }, [needId]);
 
   const getNeed = async (needId: string) => {
@@ -26,34 +27,47 @@ export default function MapResult({ needId }: { needId: string | string[] }) {
     setNeed(data);
   };
 
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined") return null;
   const url = window?.origin + "/" + router.locale + "/" + need?.id || "";
 
   return (
     <MapSelectorContainer>
-      <Box width={1}>
-        <Typography variant="h5" textAlign="center" mb={1} mt={[1, 1, 1]}>
-          In need: {need?.category}
-        </Typography>
-        <Typography variant="body1" fontSize={[14, 16, 16]} mb={[1, 2, 3]}>
-          In a radius of {need?.location?.radius}Km at latitude:{" "}
-          {need?.location?.lat.toFixed(5)} and longitude:{" "}
-          {need?.location?.lng.toFixed(5)}, it would be great to have a{" "}
-          {need?.category}.
-        </Typography>
-        <Typography variant="body1" fontSize={[14, 16, 16]} mb={[1, 2, 3]}>
-          Please like and share to gather support
-        </Typography>
+      {(!ready || !need || !url) && (
         <Box
-          display="flex"
           width={1}
-          justifyContent="space-between"
+          height={300}
+          display="flex"
           alignItems="center"
+          justifyContent="center"
         >
-          {url && <Typography variant="caption">{url}</Typography>}
-          <ClickToCopyButton copyValue={url} />
+          <CircularProgress />
         </Box>
-      </Box>
+      )}
+      {ready && need && url && (
+        <Box width={1}>
+          <Typography variant="h5" textAlign="center" mb={1} mt={[1, 1, 1]}>
+            {t("MapController.mapStep1.selectLabel")}: {need?.category}
+          </Typography>
+          <Typography variant="body1" fontSize={[14, 16, 16]} mb={[1, 2, 3]}>
+            In a radius of {need?.location?.radius}Km at latitude:{" "}
+            {need?.location?.lat.toFixed(5)} and longitude:{" "}
+            {need?.location?.lng.toFixed(5)}, it would be great to have a{" "}
+            {need?.category}.
+          </Typography>
+          <Typography variant="body1" fontSize={[14, 16, 16]} mb={[1, 2, 3]}>
+            Please like and share to gather support
+          </Typography>
+          <Box
+            display="flex"
+            width={1}
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            {url && <Typography variant="caption">{url}</Typography>}
+            <ClickToCopyButton copyValue={url} />
+          </Box>
+        </Box>
+      )}
     </MapSelectorContainer>
   );
 }
