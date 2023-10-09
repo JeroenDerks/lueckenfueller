@@ -67,7 +67,10 @@ export const getStaticProps: GetStaticProps<NeedProps> = async ({
   return {
     props: {
       needId,
-      ...(await serverSideTranslations(locale!, ["common"])),
+      ...(await serverSideTranslations(locale!, ["common"], null, [
+        "de",
+        "en",
+      ])),
     },
   };
 };

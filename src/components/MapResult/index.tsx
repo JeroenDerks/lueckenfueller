@@ -61,7 +61,7 @@ export default function MapResult({ needId }: { needId?: string }) {
       {ready && need && url && (
         <Box width={1}>
           <Typography variant="h5" mb={1} mt={[1, 1, 1]}>
-            In need of: {need?.category}
+            {t("MapController.mapStep1.selectLabel")}: {need?.category}
           </Typography>
           <Typography variant="body1" fontSize={[14, 16, 16]} mb={[1, 2, 3]}>
             In a radius of {need?.location?.radius}Km at latitude:{" "}
