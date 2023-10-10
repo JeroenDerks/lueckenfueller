@@ -28,8 +28,8 @@ export const MapStep2 = ({
   return (
     <>
       <Typography variant="h5">
-        <span style={{ color: theme.palette.primary.main }}>2. </span>Where are
-        you missing it?
+        <span style={{ color: theme.palette.primary.main }}>2. </span>
+        {t("MapController.mapStep2.title")}
       </Typography>
       <Typography variant="body1" fontSize={[14, 16, 16]}>
         Move the marker and adjust the radius of the circle with the slider
@@ -47,9 +47,11 @@ export const MapStep2 = ({
         width={1}
         mt={[1, 2, 3]}
       >
-        <Button onClick={onPrevStep}>Back</Button>
+        <Button onClick={onPrevStep}>
+          {t("MapController.mapStep2.buttonTextBack")}
+        </Button>
         <Button onClick={onNextStep} variant="contained">
-          Next
+          {t("MapController.mapStep2.buttonTextNext")}
         </Button>
       </Box>
     </>

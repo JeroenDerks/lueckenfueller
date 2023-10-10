@@ -14,6 +14,11 @@
       "title": "What is missing in your Kiez?",
       "selectLabel": "Options",
       "buttonText": "Next"
+    },
+    "mapStep2": {
+      "title": "Where are you missing it?",
+      "buttonTextNext": "Next",
+      "buttonTextBack": "Back"
     }
   },
   "needOptions": {

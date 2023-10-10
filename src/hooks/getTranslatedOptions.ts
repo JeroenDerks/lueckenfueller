@@ -32,7 +32,6 @@ export default function useTranslatedOptions() {
 
   useEffect(() => {
     if (ready && router.locale) {
-      console.log("rerendering");
       const translatedOptions = options
         .map(({ value }) => {
           return { label: t(`needOptions.${value}`), value };

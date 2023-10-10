@@ -1,3 +1,4 @@
+import React from "react";
 import { useTranslation } from "next-i18next";
 import { PageLayout } from "../PageLayout";
 import { Box, Grid, Typography } from "@mui/material";
@@ -30,7 +31,7 @@ export const Description = () => {
         </Grid>
         <Grid item container xs={9} sm={9} md={8} rowGap={1}>
           {steps.map(({ title }, index) => (
-            <>
+            <React.Fragment key={title}>
               <Grid item xs={2} sm={1} md={1} gap={1}>
                 <Box
                   display="flex"
@@ -58,7 +59,7 @@ export const Description = () => {
                   {title}
                 </Typography>
               </Grid>
-            </>
+            </React.Fragment>
           ))}
         </Grid>
       </Grid>
