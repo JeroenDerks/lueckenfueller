@@ -16,11 +16,7 @@ export const Hero = () => {
       >
         <Grid container rowGap={2}>
           <Grid item xs={12} sm={12} md={7} p={[0, 0, 1]}>
-            <Typography
-              variant="h2"
-              component="h1"
-              // fontSize={[24, 32, 56]}
-            >
+            <Typography variant="h2" component="h1">
               {t("hero.title")}
             </Typography>
             <Typography variant="body2" fontSize={[16, 18, 22]} mt={2} mb={4}>
@@ -36,7 +32,7 @@ export const Hero = () => {
               display="flex"
               justifyContent="center"
               alignItems="center"
-              sx={{ border: "1px solid grey" , borderRadius: 4}}
+              sx={{ border: "1px solid grey", borderRadius: 4 }}
               height="100%"
             >
               <p>Graphic</p>

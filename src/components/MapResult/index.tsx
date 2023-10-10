@@ -26,7 +26,7 @@ export default function MapResult({ needId }: { needId: string | string[] }) {
     setNeed(data);
   };
 
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined" || !need) return;
   const url = window?.origin + "/" + router.locale + "/" + need?.id || "";
 
   return (

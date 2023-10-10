@@ -1,28 +1,37 @@
 {
   "hero": {
-    "title": "Wir alle vermissen etwas",
-    "description": "Here are 2 setences describing the essence of Lueckenfueller. The first one should entice, the latter should make people want to scroll further.",
-    "buttonText": "Get started"
+    "title": "Was fehlt in Deinem Kiez?",
+    "description": "Du vermisst eine Reinigung, einen Kindergarten, eine Haustierbetreuung oder etwas anderes in Deiner Nähe? Dann teile es uns mit uns und wir werden versuchen, diese Lücke so schnell wie möglich zu schließen, indem wir einen Anbieter dafür finden.",
+    "buttonText": "Start!"
   },
   "description": {
-    "title": "How to use",
-    "intro": "Some text explaining about how to use the application",
-    "step1": {
-      "title": "1. Tell us what youre missing",
-      "body": "Some larger description about how to select what people are missing. For example focussing on what services or needs are lacking"
-    },
-    "step2": {
-      "title": "2. Select your location",
-      "body": "Some larger description about how to select what people are missing. For example focussing on what services or needs are lacking"
-    },
-    "step3": {
-      "title": "3. Share with others",
-      "body": "Some larger description about how to select what people are missing. For example focussing on what services or needs are lacking"
-    }
+    "step1": "Zeig uns, was Du vermisst!",
+    "step2": "Wo vermisst du es?",
+    "step3": "Teil dein Anliegen mit anderen und vergrößere deine Reichweite!"
   },
   "MapController": {
     "mapStep1": {
-      "selectLabel": "Ich brauche"
+      "title": "Was fehlt in Deinem Kiez?",
+      "selectLabel": "Auswahl",
+      "buttonText": "Weiter"
     }
+  },
+  "needOptions": {
+    "Alteration tailoring": "Änderungsschneiderei",
+    "Doctor": "Arzt",
+    "Barista bar": "Barista-Bar",
+    "Cosmetic studio": "Kosmetikstudio",
+    "Driving school": "Fahrschule",
+    "Fitness studio": "Fitness-Studio",
+    "Hairdresser": "Friseur",
+    "Pet care": "Haustierbetreuung",
+    "Car repair shop": "Kfz-Werkstatt",
+    "Kindergarten": "Kindergarten",
+    "Massage": "Massage",
+    "Tutoring": "Nachhilfe",
+    "Public transport stop": "Öffi-Haltestelle",
+    "Cleaning": "Reinigung",
+    "Veterinarian": "Tierarzt",
+    "Other": "Sonstige"
   }
 }
