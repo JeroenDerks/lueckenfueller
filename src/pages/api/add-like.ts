@@ -7,21 +7,22 @@ type Error = {
   error: string;
 };
 
-type Message = {
-  message: string;
-};
-
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Need | Error | Message>
+  res: NextApiResponse<Need | Error>
 ) {
   if (req.method !== "POST") res.status(405).end();
 
   try {
-    const env = process.env.NODE_ENV === "development" ? "DEV" : "PROD";
     const { needId } = JSON.parse(req.body);
+    const env = process.env.NODE_ENV === "development" ? "DEV" : "PROD";
 
-    console.log(needId);
+    await prisma.like.create({
+      data: {
+        env,
+        need: { connect: { id: needId } },
+      },
+    });
 
     const need = await prisma.need.findUnique({
       where: {
@@ -29,15 +30,13 @@ export default async function handler(
         env,
       },
       include: {
-        location: true,
         likes: true,
+        location: true,
       },
     });
 
     if (need && need?.location !== null && need.likes !== null) {
       res.status(200).json(need);
-    } else {
-      res.status(404).end({ message: "Not found" });
     }
   } catch (err) {
     res.status(500).end({ error: err || "Oops something went wrong" });

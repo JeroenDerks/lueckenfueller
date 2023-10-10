@@ -1,5 +1,4 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
 import { Location } from "@/types";
 import { GetStaticProps } from "next";
 import { PageLayout } from "@/modules/PageLayout";
@@ -16,7 +15,11 @@ interface NeedProps {
 export default function NeedDetailPage(props: NeedProps) {
   const [needId, setNeedId] = useState(props.needId);
   const [locations, setLocations] = useState<Location[]>();
-  const { t } = useTranslation();
+  const [init, setInit] = useState(false);
+
+  useEffect(() => {
+    if (!init) setInit(true);
+  }, [init]);
 
   useEffect(() => {
     if (!locations) getLocations();
@@ -34,13 +37,15 @@ export default function NeedDetailPage(props: NeedProps) {
   return (
     <main>
       <PageLayout backgroundColor={theme.palette.primary.main}>
-        <Container>
-          <ViewMap
-            locations={locations}
-            onMarkerClick={(id) => setNeedId(id)}
-          />
-          <MapResult {...{ needId }} />
-        </Container>
+        {init && (
+          <Container>
+            <ViewMap
+              {...{ needId, locations }}
+              onMarkerClick={(id) => setNeedId(id)}
+            />
+            <MapResult {...{ needId }} />
+          </Container>
+        )}
       </PageLayout>
     </main>
   );
@@ -48,10 +53,7 @@ export default function NeedDetailPage(props: NeedProps) {
 
 export const getStaticPaths = async () => {
   return {
-    paths: [
-      { params: { type: "id", needId: "" }, locale: "de" },
-      { params: { type: "id", needId: "" }, locale: "en" },
-    ],
+    paths: [],
     fallback: true,
   };
 };
@@ -65,7 +67,10 @@ export const getStaticProps: GetStaticProps<NeedProps> = async ({
   return {
     props: {
       needId,
-      ...(await serverSideTranslations(locale!, ["common"])),
+      ...(await serverSideTranslations(locale!, ["common"], null, [
+        "de",
+        "en",
+      ])),
     },
   };
 };

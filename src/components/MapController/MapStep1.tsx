@@ -1,4 +1,5 @@
 import useTranslatedOptions from "@/hooks/getTranslatedOptions";
+import { TextField } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import FormControl from "@mui/material/FormControl";
@@ -7,6 +8,8 @@ import MenuItem from "@mui/material/MenuItem";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "next-i18next";
+import React from "react";
+import { theme } from "@/styles/theme";
 
 export const MapStep1 = ({
   handleStep1Change,
@@ -17,6 +20,7 @@ export const MapStep1 = ({
   onNextStep: () => void;
   step1Value: string;
 }) => {
+  const [otherValue, setOtherValue] = React.useState<string>();
   const { t } = useTranslation();
   const { translatedOptions } = useTranslatedOptions();
 
@@ -24,13 +28,22 @@ export const MapStep1 = ({
     handleStep1Change(event.target.value);
   };
 
+  const handleSubmit = () => {
+    if (step1Value === "Other" && otherValue) {
+      handleStep1Change(otherValue);
+    }
+    onNextStep();
+  };
+
   const MenuProps = { PaperProps: { style: { maxHeight: 400 } } };
 
   return (
     <>
-      <Typography variant="h5" textAlign="center" mb={[2, 2, 3]} mt={[1, 1, 1]}>
+      <Typography variant="h5" mb={[2, 2, 3]} mt={[1, 1, 1]}>
+        <span style={{ color: theme.palette.primary.main }}>1. </span>
         {t("MapController.mapStep1.title")}
       </Typography>
+
       <FormControl fullWidth>
         <InputLabel id="need-option-labellabel">
           {t("MapController.mapStep1.selectLabel")}
@@ -50,9 +63,18 @@ export const MapStep1 = ({
           ))}
         </Select>
       </FormControl>
+      {step1Value === "Other" && (
+        <Box mt={2}>
+          <TextField
+            label="What do you need?"
+            fullWidth
+            onChange={(e) => setOtherValue(e.target.value)}
+          ></TextField>
+        </Box>
+      )}
       <Box display="flex" justifyContent="flex-end" width={1} mt={[2, 2, 3]}>
         <Button
-          onClick={onNextStep}
+          onClick={handleSubmit}
           variant="contained"
           disabled={step1Value === ""}
         >

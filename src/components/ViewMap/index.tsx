@@ -8,9 +8,11 @@ import Pin from "../Map/Pin";
 
 export const ViewMap = ({
   locations,
+  needId,
   onMarkerClick,
 }: {
   locations?: Location[];
+  needId?: string;
   onMarkerClick: (id: string) => void;
 }) => {
   if (!process.env.NEXT_PUBLIC_MAPBOX_API_TOKEN) return null;
@@ -30,7 +32,10 @@ export const ViewMap = ({
             anchor="bottom"
             onClick={() => onMarkerClick(needLocationId)}
           >
-            <Pin size={20} />
+            <Pin
+              size={20}
+              color={needId === needLocationId ? "#f100dc" : "darkblue"}
+            />
           </Marker>
           <Source id={id} type="geojson" data={turf.circle([lng, lat], radius)}>
             <Layer
