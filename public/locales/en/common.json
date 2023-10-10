@@ -1,28 +1,42 @@
 {
   "hero": {
-    "title": "We all miss something",
-    "description": "Here are 2 setences describing the essence of Lueckenfueller. The first one should entice, the latter should make people want to scroll further.",
-    "buttonText": "Get started"
+    "title": "What is missing in your Kiez?",
+    "description": "Are you missing a dry cleaner, a kindergarten, a pet sitter or something else? Then tell us and we will try to fill this gap as soon as possible by finding a provider who offers these services.",
+    "buttonText": "Get started!"
   },
   "description": {
-    "title": "How to use",
-    "intro": "Some text explaining about how to use the application",
-    "step1": {
-      "title": "1. Tell us what youre missing",
-      "body": "Some larger description about how to select what people are missing. For example focussing on what services or needs are lacking"
-    },
-    "step2": {
-      "title": "2. Select your location",
-      "body": "Some larger description about how to select what people are missing. For example focussing on what services or needs are lacking"
-    },
-    "step3": {
-      "title": "3. Share with others",
-      "body": "Some larger description about how to select what people are missing. For example focussing on what services or needs are lacking"
-    }
+    "step1": "Show us what you are missing",
+    "step2": "Where are you missing it?",
+    "step3": "Share your matter with others and increase your reach!"
   },
   "MapController": {
     "mapStep1": {
-      "selectLabel": "In need of"
+      "title": "What is missing in your Kiez?",
+      "selectLabel": "Options",
+      "buttonText": "Next"
+    },
+    "mapStep2": {
+      "title": "Where are you missing it?",
+      "buttonTextNext": "Next",
+      "buttonTextBack": "Back"
     }
+  },
+  "needOptions": {
+    "Alteration tailoring": "Alteration tailoring",
+    "Doctor": "Doctor",
+    "Barista bar": "Barista bar",
+    "Cosmetic studio": "Cosmetic studio",
+    "Driving school": "Driving school",
+    "Fitness studio": "Fitness studio",
+    "Hairdresser": "Hairdresser",
+    "Pet care": "Pet care",
+    "Car repair shop": "Car repair shop",
+    "Kindergarten": "Kindergarten",
+    "Massage": "Massage",
+    "Tutoring": "Tutoring",
+    "Public transport stop": "Public transport stop",
+    "Cleaning": "Cleaning",
+    "Veterinarian": "Veterinarian",
+    "Other": "Other"
   }
 }

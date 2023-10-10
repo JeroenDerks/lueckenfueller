@@ -42,7 +42,7 @@ export default function MapResult({ needId }: { needId?: string }) {
     setLoading(false);
   };
 
-  if (typeof window === "undefined") return null;
+  if (typeof window === "undefined" || !need) return null;
   const url = window?.origin + "/" + router.locale + "/" + need?.id || "";
 
   return (
