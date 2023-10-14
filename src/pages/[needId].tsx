@@ -35,19 +35,17 @@ export default function NeedDetailPage(props: NeedProps) {
   };
 
   return (
-    <main>
-      <PageLayout backgroundColor={theme.palette.primary.main}>
-        {init && (
-          <Container>
-            <ViewMap
-              {...{ needId, locations }}
-              onMarkerClick={(id) => setNeedId(id)}
-            />
-            <MapResult {...{ needId }} />
-          </Container>
-        )}
-      </PageLayout>
-    </main>
+    <PageLayout backgroundColor={theme.palette.primary.main}>
+      {init && (
+        <Container>
+          <ViewMap
+            {...{ needId, locations }}
+            onMarkerClick={(id) => setNeedId(id)}
+          />
+          <MapResult {...{ needId }} />
+        </Container>
+      )}
+    </PageLayout>
   );
 }
 
