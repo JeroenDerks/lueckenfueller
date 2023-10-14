@@ -1,4 +1,10 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
+import { Montserrat } from "next/font/google";
+
+const montserratFont = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 export let theme = createTheme({
   palette: {
@@ -8,6 +14,9 @@ export let theme = createTheme({
     secondary: {
       main: "#edf2ff",
     },
+  },
+  typography: {
+    fontFamily: montserratFont.style.fontFamily,
   },
 });
 
