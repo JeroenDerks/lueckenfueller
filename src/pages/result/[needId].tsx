@@ -1,6 +1,6 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Location, Need } from "@/types";
-import { GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import { PageLayout } from "@/modules/PageLayout";
 import { theme } from "@/styles/theme";
 import { useEffect, useState } from "react";
@@ -67,20 +67,27 @@ export default function NeedDetailPage() {
   );
 }
 
-export const getStaticPaths = async () => {
-  return {
-    paths: [],
-    fallback: true,
-  };
-};
+// export const getStaticPaths = async () => {
+//   return {
+//     paths: [],
+//     fallback: true,
+//   };
+// };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale!, ["common"], null, [
-        "de",
-        "en",
-      ])),
-    },
-  };
-};
+// export const getStaticProps: GetStaticProps = async ({ locale }) => {
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(locale!, ["common"], null, [
+//         "de",
+//         "en",
+//       ])),
+//     },
+//   };
+// };
+
+//try cxt or context (or locale) variables
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale!, ["common"], null, ["de", "en"])),
+  },
+});
