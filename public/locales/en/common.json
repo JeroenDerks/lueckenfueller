@@ -28,6 +28,9 @@
       "buttonTextBack": "Back"
     }
   },
+  "MapResult": {
+    "titlePrefix": "In need of"
+  },
   "needOptions": {
     "Alteration tailoring": "Alteration tailoring",
     "Doctor": "Doctor",
