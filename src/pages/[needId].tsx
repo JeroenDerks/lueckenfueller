@@ -7,19 +7,22 @@ import { useEffect, useState } from "react";
 import { Container } from "@/components/MapController/styled";
 import { ViewMap } from "@/components/ViewMap";
 import MapResult from "@/components/MapResult";
+import { useRouter } from "next/router";
 
-interface NeedProps {
-  needId: string;
-}
-
-export default function NeedDetailPage(props: NeedProps) {
-  const [needId, setNeedId] = useState(props.needId);
+export default function NeedDetailPage() {
+  const [needId, setNeedId] = useState<string>();
   const [locations, setLocations] = useState<Location[]>();
   const [init, setInit] = useState(false);
+  const router = useRouter()
 
-  useEffect(() => {
-    if (!init) setInit(true);
-  }, [init]);
+useEffect(()=> {
+  if (!init) {
+    setInit(true);
+    if(router.query.needId && typeof router.query.needId === 'string'){
+      setNeedId(router.query.needId)
+    }
+  }
+},[router, init])
 
   useEffect(() => {
     if (!locations) getLocations();
@@ -30,8 +33,11 @@ export default function NeedDetailPage(props: NeedProps) {
       method: "GET",
     });
 
-    const data = await response.json();
-    setLocations(data);
+    if(response.ok){
+      const data = await response.json();
+      console.log(data)
+      setLocations(data);
+    }
   };
 
   return (
@@ -56,15 +62,11 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<NeedProps> = async ({
-  params,
+export const getStaticProps: GetStaticProps = async ({
   locale,
 }) => {
-  const needId = typeof params?.needId === "string" ? params.needId : "";
-
   return {
     props: {
-      needId,
       ...(await serverSideTranslations(locale!, ["common"], null, [
         "de",
         "en",
