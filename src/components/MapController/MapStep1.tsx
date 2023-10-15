@@ -1,15 +1,12 @@
-import useTranslatedOptions from "@/hooks/getTranslatedOptions";
 import { TextField } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { SelectChangeEvent } from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "next-i18next";
 import React from "react";
 import { theme } from "@/styles/theme";
+import { NeedSelector } from "../NeedSelector";
 
 export const MapStep1 = ({
   handleStep1Change,
@@ -22,7 +19,6 @@ export const MapStep1 = ({
 }) => {
   const [otherValue, setOtherValue] = React.useState<string>();
   const { t } = useTranslation();
-  const { translatedOptions } = useTranslatedOptions();
 
   const handleChange = (event: SelectChangeEvent<any>) => {
     handleStep1Change(event.target.value);
@@ -35,8 +31,6 @@ export const MapStep1 = ({
     onNextStep();
   };
 
-  const MenuProps = { PaperProps: { style: { maxHeight: 400 } } };
-
   return (
     <>
       <Typography variant="h5" mb={[2, 2, 3]} mt={[1, 1, 1]}>
@@ -44,25 +38,7 @@ export const MapStep1 = ({
         {t("MapController.mapStep1.title")}
       </Typography>
 
-      <FormControl fullWidth>
-        <InputLabel id="need-option-labellabel">
-          {t("MapController.mapStep1.selectLabel")}
-        </InputLabel>
-        <Select
-          labelId="need-option-labellabel"
-          id="need-options"
-          label={t("MapController.mapStep1.selectLabel")}
-          onChange={handleChange}
-          value={step1Value}
-          MenuProps={MenuProps}
-        >
-          {translatedOptions?.map(({ label, value }) => (
-            <MenuItem value={value} key={value}>
-              {label}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+      <NeedSelector value={step1Value} handleChange={handleChange} />
       {step1Value === "Other" && (
         <Box mt={2}>
           <TextField

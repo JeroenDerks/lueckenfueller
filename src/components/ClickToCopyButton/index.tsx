@@ -1,4 +1,4 @@
-import { Button, Snackbar } from "@mui/material";
+import { Alert, Button, Snackbar } from "@mui/material";
 import { useState } from "react";
 
 export const ClickToCopyButton = ({ copyValue }: { copyValue: string }) => {
@@ -18,8 +18,12 @@ export const ClickToCopyButton = ({ copyValue }: { copyValue: string }) => {
         open={open}
         onClose={() => setOpen(false)}
         autoHideDuration={2000}
-        message="Copied to clipboard"
-      />
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      >
+        <Alert onClose={() => setOpen(false)} severity="success">
+          URL copied
+        </Alert>
+      </Snackbar>
     </>
   );
 };

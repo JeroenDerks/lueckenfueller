@@ -3,23 +3,27 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import Map, { Layer, Marker, Source } from "react-map-gl";
 
 import * as turf from "@turf/turf";
-import { Location } from "@/types";
+import { Location, Need } from "@/types";
 import Pin from "../Map/Pin";
 
 export const ViewMap = ({
   locations,
-  needId,
+  need,
   onMarkerClick,
 }: {
   locations?: Location[];
-  needId?: string;
+  need?: Need;
   onMarkerClick: (id: string) => void;
 }) => {
   if (!process.env.NEXT_PUBLIC_MAPBOX_API_TOKEN) return null;
 
   return (
     <Map
-      initialViewState={{ latitude: 52.52, longitude: 13.4, zoom: 10 }}
+      initialViewState={{
+        latitude: need?.location?.lat,
+        longitude: need?.location?.lng,
+        zoom: 13,
+      }}
       style={{ width: "100%", height: "100%" }}
       mapStyle="mapbox://styles/mapbox/light-v11"
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_TOKEN}
@@ -34,7 +38,7 @@ export const ViewMap = ({
           >
             <Pin
               size={20}
-              color={needId === needLocationId ? "#f100dc" : "darkblue"}
+              color={need?.id === needLocationId ? "#f100dc" : "darkblue"}
             />
           </Marker>
           <Source id={id} type="geojson" data={turf.circle([lng, lat], radius)}>

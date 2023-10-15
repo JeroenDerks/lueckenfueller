@@ -1,5 +1,5 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Location } from "@/types";
+import { Location, Need } from "@/types";
 import { GetStaticProps } from "next";
 import { PageLayout } from "@/modules/PageLayout";
 import { theme } from "@/styles/theme";
@@ -10,7 +10,7 @@ import MapResult from "@/components/MapResult";
 import { useRouter } from "next/router";
 
 export default function NeedDetailPage() {
-  const [needId, setNeedId] = useState<string>();
+  const [need, setNeed] = useState<Need>();
   const [locations, setLocations] = useState<Location[]>();
   const [init, setInit] = useState(false);
   const router = useRouter();
@@ -18,15 +18,26 @@ export default function NeedDetailPage() {
   useEffect(() => {
     if (!init) {
       setInit(true);
+      getLocations();
       if (router.query.needId && typeof router.query.needId === "string") {
-        setNeedId(router.query.needId);
+        getNeed(router.query.needId);
       }
     }
   }, [router, init]);
 
-  useEffect(() => {
-    if (!locations) getLocations();
-  }, [needId, locations]);
+  const getNeed = async (needId: string) => {
+    const response = await fetch("/api/get-need", {
+      method: "POST",
+      body: JSON.stringify({ needId }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      if (data.id) {
+        setNeed(data);
+      }
+    }
+  };
 
   const getLocations = async () => {
     const response = await fetch("/api/get-locations", {
@@ -41,13 +52,13 @@ export default function NeedDetailPage() {
 
   return (
     <PageLayout backgroundColor={theme.palette.primary.main}>
-      {init && (
+      {init && need && (
         <>
-          <MapResult {...{ needId }} />
+          <MapResult {...{ need }} />
           <Container>
             <ViewMap
-              {...{ needId, locations }}
-              onMarkerClick={(id) => setNeedId(id)}
+              {...{ need, locations }}
+              onMarkerClick={(id) => getNeed(id)}
             />
           </Container>
         </>

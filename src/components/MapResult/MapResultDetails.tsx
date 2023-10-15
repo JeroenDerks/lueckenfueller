@@ -21,27 +21,25 @@ export default function MapResultDetails({ need }: { need?: Need }) {
 
   return (
     <Container>
-      <Grid container>
-        <Grid item container xs={12} sm={12} md={6}>
-          {details.map(({ title, value }) => (
-            <React.Fragment key={title}>
-              <Grid item xs={6}>
-                <Typography
-                  variant="body1"
-                  fontSize={[14, 16, 16]}
-                  fontWeight={700}
-                >
-                  {title}
-                </Typography>
-              </Grid>
-              <Grid item xs={6}>
-                <Typography variant="body1" fontSize={[14, 16, 16]}>
-                  {value}
-                </Typography>
-              </Grid>
-            </React.Fragment>
-          ))}
-        </Grid>
+      <Grid container xs={12}>
+        {details.map(({ title, value }) => (
+          <React.Fragment key={title}>
+            <Grid item xs={6}>
+              <Typography
+                variant="body1"
+                fontSize={[14, 16, 16]}
+                fontWeight={700}
+              >
+                {title}
+              </Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Typography variant="body1" fontSize={[14, 16, 16]}>
+                {value}
+              </Typography>
+            </Grid>
+          </React.Fragment>
+        ))}
       </Grid>
     </Container>
   );

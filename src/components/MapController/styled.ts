@@ -6,7 +6,7 @@ export const Container = styled("div")({
   borderRadius: 32,
   display: "flex",
   flexDirection: "column",
-  height: "80vh",
+  height: "70vh",
   overflow: "hidden",
   position: "relative",
   width: "100%",
