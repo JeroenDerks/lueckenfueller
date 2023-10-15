@@ -17,9 +17,19 @@
     },
     "mapStep2": {
       "title": "Wo vermisst du es?",
+      "description": "Bewege den Marker und stelle den Radius des Kreises mit dem Schieberegler ein",
       "buttonTextNext": "Weiter",
       "buttonTextBack": "Zurück"
+    },
+    "mapStep3": {
+      "title": "Wer bist du?",
+      "description": "Wir werden deine E-Mail niemals weitergeben. Sie wird nur benötigt, um dich auf dem Laufenden zu halten",
+      "buttonTextSubmit": "Speichern",
+      "buttonTextBack": "Zurück"
     }
+  },
+  "MapResult": {
+    "titlePrefix": "Lücke im Kiez"
   },
   "needOptions": {
     "Alteration tailoring": "Änderungsschneiderei",

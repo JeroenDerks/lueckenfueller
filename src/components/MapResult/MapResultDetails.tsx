@@ -21,7 +21,7 @@ export default function MapResultDetails({ need }: { need?: Need }) {
 
   return (
     <Container>
-      <Grid container xs={12}>
+      <Grid container>
         {details.map(({ title, value }) => (
           <React.Fragment key={title}>
             <Grid item xs={6}>

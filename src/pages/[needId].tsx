@@ -69,7 +69,10 @@ export default function NeedDetailPage() {
 
 export const getStaticPaths = async () => {
   return {
-    paths: [],
+    paths: [
+      { params: { needId: "", locale: "en" } },
+      { params: { needId: "", locale: "de" } },
+    ],
     fallback: true,
   };
 };

@@ -32,7 +32,7 @@ export const MapStep2 = ({
         {t("MapController.mapStep2.title")}
       </Typography>
       <Typography variant="body1" fontSize={[14, 16, 16]}>
-        Move the marker and adjust the radius of the circle with the slider
+        {t("MapController.mapStep2.description")}
       </Typography>
       <Slider
         value={step2Value.radius}

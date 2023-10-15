@@ -6,10 +6,12 @@ import { Grid } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import { Container } from "./styled";
+import { useTranslation } from "next-i18next";
 
 export default function MapResultHeader({ need }: { need?: Need }) {
   const [currNeed, setCurrNeed] = useState<Need | undefined>(need);
   const [loading, setLoading] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (need?.id !== currNeed?.id) {
@@ -35,7 +37,9 @@ export default function MapResultHeader({ need }: { need?: Need }) {
     <Container>
       <Grid container justifyContent="space-between" alignItems="center">
         <Grid item xs={12} sm={12} md={10}>
-          <Typography variant="h5">Needed: {currNeed?.category}</Typography>
+          <Typography variant="h5">
+            {t("MapResult.titlePrefix")}: {currNeed?.category}
+          </Typography>
         </Grid>
         <Grid item xs={12} sm={12} md={2}>
           <Box

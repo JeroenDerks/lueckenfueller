@@ -25,12 +25,11 @@ export const MapStep3 = ({
   return (
     <Box width={1}>
       <Typography variant="h5" mb={1} mt={[1, 1, 1]}>
-        <span style={{ color: theme.palette.primary.main }}>3. </span>Who are
-        you?
+        <span style={{ color: theme.palette.primary.main }}>3. </span>
+        {t("MapController.mapStep3.title")}
       </Typography>
       <Typography variant="body1" fontSize={[14, 16, 16]} mb={[1, 2, 3]}>
-        We&apos;ll never share your email. It&apos;s only required for keeping
-        you up to date.
+        {t("MapController.mapStep3.description")}
       </Typography>
       <FormControl sx={{ width: "100%" }}>
         <TextField
@@ -47,13 +46,15 @@ export const MapStep3 = ({
         width={1}
         mt={[1, 2, 3]}
       >
-        <Button onClick={onPrevStep}>Back</Button>
+        <Button onClick={onPrevStep}>
+          {t("MapController.mapStep3.buttonTextBack")}
+        </Button>
         <LoadingButton
           onClick={handleSubmit}
           loading={isLoading}
           variant="contained"
         >
-          Submit
+          {t("MapController.mapStep3.buttonTextSubmit")}
         </LoadingButton>
       </Box>
     </Box>
