@@ -13,16 +13,16 @@ export default function NeedDetailPage() {
   const [needId, setNeedId] = useState<string>();
   const [locations, setLocations] = useState<Location[]>();
   const [init, setInit] = useState(false);
-  const router = useRouter()
+  const router = useRouter();
 
-useEffect(()=> {
-  if (!init) {
-    setInit(true);
-    if(router.query.needId && typeof router.query.needId === 'string'){
-      setNeedId(router.query.needId)
+  useEffect(() => {
+    if (!init) {
+      setInit(true);
+      if (router.query.needId && typeof router.query.needId === "string") {
+        setNeedId(router.query.needId);
+      }
     }
-  }
-},[router, init])
+  }, [router, init]);
 
   useEffect(() => {
     if (!locations) getLocations();
@@ -33,7 +33,7 @@ useEffect(()=> {
       method: "GET",
     });
 
-    if(response.ok){
+    if (response.ok) {
       const data = await response.json();
       setLocations(data);
     }
@@ -42,13 +42,15 @@ useEffect(()=> {
   return (
     <PageLayout backgroundColor={theme.palette.primary.main}>
       {init && (
-        <Container>
-          <ViewMap
-            {...{ needId, locations }}
-            onMarkerClick={(id) => setNeedId(id)}
-          />
+        <>
           <MapResult {...{ needId }} />
-        </Container>
+          <Container>
+            <ViewMap
+              {...{ needId, locations }}
+              onMarkerClick={(id) => setNeedId(id)}
+            />
+          </Container>
+        </>
       )}
     </PageLayout>
   );
@@ -61,9 +63,7 @@ export const getStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({
-  locale,
-}) => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale!, ["common"], null, [
