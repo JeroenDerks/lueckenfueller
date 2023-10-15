@@ -69,12 +69,7 @@ export default function NeedDetailPage() {
 
 export const getStaticPaths = async () => {
   return {
-    paths: [
-      // if no `locale` is provided only the defaultLocale will be generated
-      { params: { needId: "1" }, locale: "en" },
-      { params: { needId: "2" }, locale: "de" },
-      { params: { needId: "3" } },
-    ],
+    paths: [],
     fallback: true,
   };
 };
