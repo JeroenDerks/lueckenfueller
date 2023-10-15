@@ -13,6 +13,7 @@
     "mapStep1": {
       "title": "Was fehlt in Deinem Kiez?",
       "selectLabel": "Auswahl",
+      "inputPlaceholder": "Was fehlt?",
       "buttonText": "Weiter"
     },
     "mapStep2": {
@@ -29,7 +30,10 @@
     }
   },
   "MapResult": {
-    "titlePrefix": "Lücke im Kiez"
+    "titlePrefix": "Lücke im Kiez",
+    "MapResultSocials": {
+      "body": "Teile deine Lücke mit anderen und sammle Unterstützung!"
+    }
   },
   "needOptions": {
     "Alteration tailoring": "Änderungsschneiderei",

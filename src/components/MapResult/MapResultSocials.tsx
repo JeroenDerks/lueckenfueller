@@ -4,11 +4,12 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { ClickToCopyButton } from "@/components/ClickToCopyButton";
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 import { Container } from "./styled";
 
 export default function MapResultSocials({ need }: { need?: Need }) {
   const router = useRouter();
-
+  const { t } = useTranslation();
   if (typeof window === "undefined" || !need) return null;
   const url = window?.origin + "/" + router.locale + "/" + need?.id || "";
 
@@ -19,8 +20,7 @@ export default function MapResultSocials({ need }: { need?: Need }) {
           Like and share
         </Typography>
         <Typography variant="body1" fontSize={[14, 16, 16]}>
-          Using the link below, you can like and share this need with your
-          friends and relatives.
+          {t("MapResult.MapResultSocials.body")}
         </Typography>
       </Box>
       <Box

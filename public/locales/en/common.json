@@ -12,8 +12,8 @@
   "MapController": {
     "mapStep1": {
       "title": "What is missing in your Kiez?",
-      "description": "Move the marker and adjust the radius of the circle with the slider",
       "selectLabel": "Options",
+      "inputPlaceholder": "What do you need?",
       "buttonText": "Next"
     },
     "mapStep2": {
@@ -30,7 +30,10 @@
     }
   },
   "MapResult": {
-    "titlePrefix": "In need of"
+    "titlePrefix": "In need of",
+    "MapResultSocials": {
+      "body": "Share your need with others to gather support!"
+    }
   },
   "needOptions": {
     "Alteration tailoring": "Alteration tailoring",
