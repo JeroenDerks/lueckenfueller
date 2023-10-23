@@ -17,7 +17,7 @@ export default function MapResultSocials({ need }: { need?: Need }) {
     <Container>
       <Box mb={[1, 2, 3]} alignItems="center" justifyContent="space-between">
         <Typography variant="body1" fontWeight={700} fontSize={[14, 16, 16]}>
-          Like and share
+          Like & share
         </Typography>
         <Typography variant="body1" fontSize={[14, 16, 16]}>
           {t("MapResult.MapResultSocials.body")}

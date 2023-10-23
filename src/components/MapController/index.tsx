@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+
 import { PageLayout } from "@/modules/PageLayout";
 import { theme } from "@/styles/theme";
-import { Container, MapSelectorContainer, Overlay } from "./styled";
+import { LatLng, Radius } from "@/types";
+
 import { MapStep1 } from "./MapStep1";
 import { MapStep2 } from "./MapStep2";
 import { MapStep3 } from "./MapStep3";
 import { MapComp } from "../Map";
-import { LatLng, Need, Radius } from "@/types";
+import { Container, MapSelectorContainer, Overlay } from "./styled";
+import { DraggableAreaMarker } from "../MapMarkers/DraggableAreaMarker";
 
 const defaultLoc = { radius: 5, lat: 52.52, lng: 13.4 };
 
@@ -52,36 +55,39 @@ export const MapController = () => {
     <PageLayout backgroundColor={theme.palette.primary.main}>
       <div id="map" />
       <Container>
-        <MapComp
-          showMarker={step !== 1}
-          lat={step2Value.lat}
-          lng={step2Value.lng}
-          radius={step2Value.radius}
-          updateMarkerLocation={(v) => setStep2Value(v)}
-        />
-        {step === 1 && <Overlay />}
-        <MapSelectorContainer>
-          {step === 1 && (
-            <MapStep1
-              {...{ step1Value, onNextStep }}
-              handleStep1Change={(v) => setStep1Value(v)}
+        <MapComp>
+          {step === 1 && <Overlay />}
+          {step !== 1 && (
+            <DraggableAreaMarker
+              lat={step2Value.lat}
+              lng={step2Value.lng}
+              radius={step2Value.radius}
+              updateMarkerLocation={(v) => setStep2Value(v)}
             />
           )}
+          <MapSelectorContainer>
+            {step === 1 && (
+              <MapStep1
+                {...{ step1Value, onNextStep }}
+                handleStep1Change={(v) => setStep1Value(v)}
+              />
+            )}
 
-          {step === 2 && (
-            <MapStep2
-              {...{ step2Value, onNextStep, onPrevStep }}
-              handleStep2Change={(v) => setStep2Value(v)}
-            />
-          )}
+            {step === 2 && (
+              <MapStep2
+                {...{ step2Value, onNextStep, onPrevStep }}
+                handleStep2Change={(v) => setStep2Value(v)}
+              />
+            )}
 
-          {step === 3 && (
-            <MapStep3
-              {...{ step3Value, handleSubmit, onPrevStep, isLoading }}
-              handleStep3Change={(v) => setStep3Value(v)}
-            />
-          )}
-        </MapSelectorContainer>
+            {step === 3 && (
+              <MapStep3
+                {...{ step3Value, handleSubmit, onPrevStep, isLoading }}
+                handleStep3Change={(v) => setStep3Value(v)}
+              />
+            )}
+          </MapSelectorContainer>
+        </MapComp>
       </Container>
     </PageLayout>
   );
