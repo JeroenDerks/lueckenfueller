@@ -4,7 +4,7 @@ import * as turf from "@turf/turf";
 
 import { LatLng, Radius } from "@/types";
 
-import Pin from "../Map/Pin";
+import Pin from "./Pin";
 
 export const DraggableAreaMarker = ({
   updateMarkerLocation,

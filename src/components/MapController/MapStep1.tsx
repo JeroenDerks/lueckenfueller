@@ -1,33 +1,39 @@
+import React, { useState } from "react";
+import { useTranslation } from "next-i18next";
 import { TextField } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { SelectChangeEvent } from "@mui/material/Select";
 import Typography from "@mui/material/Typography";
-import { useTranslation } from "next-i18next";
-import React from "react";
 import { theme } from "@/styles/theme";
+
 import { NeedSelector } from "../NeedSelector";
+
+export type Step1Value = {
+  category: string;
+  title: string;
+};
 
 export const MapStep1 = ({
   handleStep1Change,
   onNextStep,
-  step1Value,
 }: {
-  handleStep1Change: (v: string) => void;
+  handleStep1Change: (v: Step1Value) => void;
   onNextStep: () => void;
-  step1Value: string;
 }) => {
-  const [otherValue, setOtherValue] = React.useState<string>();
+  const [category, setCategory] = useState<string>("");
+  const [title, setTitle] = useState<string>();
   const { t } = useTranslation();
 
   const handleChange = (event: SelectChangeEvent<any>) => {
-    handleStep1Change(event.target.value);
+    setCategory(event.target.value);
   };
 
   const handleSubmit = () => {
-    if (step1Value === "Other" && otherValue) {
-      handleStep1Change(otherValue);
-    }
+    if (!category) return;
+
+    const _title = category === "Other" && title ? title : category;
+    handleStep1Change({ category, title: _title });
     onNextStep();
   };
 
@@ -38,13 +44,13 @@ export const MapStep1 = ({
         {t("MapController.mapStep1.title")}
       </Typography>
 
-      <NeedSelector value={step1Value} handleChange={handleChange} />
-      {step1Value === "Other" && (
+      <NeedSelector value={category} handleChange={handleChange} />
+      {category === "Other" && (
         <Box mt={2}>
           <TextField
             label="What do you need?"
             fullWidth
-            onChange={(e) => setOtherValue(e.target.value)}
+            onChange={(e) => setTitle(e.target.value)}
           ></TextField>
         </Box>
       )}
@@ -52,7 +58,7 @@ export const MapStep1 = ({
         <Button
           onClick={handleSubmit}
           variant="contained"
-          disabled={step1Value === ""}
+          disabled={category === ""}
         >
           {t("MapController.mapStep1.buttonText")}
         </Button>

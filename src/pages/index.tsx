@@ -2,7 +2,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { NavBar } from "@/modules/NavBar";
 import { Hero } from "@/modules/Hero";
 import { Description } from "@/modules/Description";
-import { MapController } from "@/components/MapController";
+import { OverviewMap } from "@/components/OveriewMap";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       <NavBar />
       <Hero />
       <Description />
-      <MapController />
+      <OverviewMap />
     </>
   );
 }

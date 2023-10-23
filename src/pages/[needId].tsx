@@ -4,8 +4,6 @@ import { GetStaticProps } from "next";
 import { PageLayout } from "@/modules/PageLayout";
 import { theme } from "@/styles/theme";
 import { useEffect, useState } from "react";
-import { Container } from "@/components/MapController/styled";
-import { ViewMap } from "@/components/ViewMap";
 import MapResult from "@/components/MapResult";
 import { useRouter } from "next/router";
 
@@ -52,17 +50,7 @@ export default function NeedDetailPage() {
 
   return (
     <PageLayout backgroundColor={theme.palette.primary.main}>
-      {init && need && (
-        <>
-          <MapResult {...{ need }} />
-          <Container>
-            <ViewMap
-              {...{ need, locations }}
-              onMarkerClick={(id) => getNeed(id)}
-            />
-          </Container>
-        </>
-      )}
+      {init && need && <MapResult {...{ need }} />}
     </PageLayout>
   );
 }

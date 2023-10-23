@@ -1,28 +1,16 @@
 import { styled } from "@mui/material";
 
-export const Container = styled("div")({
-  alignItems: "center",
-  border: "4px solid white",
-  borderRadius: 32,
-  display: "flex",
-  flexDirection: "column",
-  height: "70vh",
-  overflow: "hidden",
-  position: "relative",
-  width: "100%",
-});
-
-export const Overlay = styled("div")({
+export const Overlay = styled("div")(({ theme }) => ({
   backdropFilter: "blur(5px)",
-  background: "#2b2b2b",
+  background: theme.palette.primary.main,
   height: "100%",
   position: "absolute",
-  opacity: 0.5,
+  opacity: 0.6,
   top: 0,
   transition: "opactiy .5s",
   width: "100%",
   zIndex: "2",
-});
+}));
 
 export const MapSelectorContainer = styled("div")(({ theme }) => ({
   background: "#fff",
@@ -33,6 +21,8 @@ export const MapSelectorContainer = styled("div")(({ theme }) => ({
   top: 0,
   width: "100%",
   zIndex: 3,
+  left: 0,
+  right: 0,
 
   [theme.breakpoints.up("sm")]: {
     top: 24,

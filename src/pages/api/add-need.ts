@@ -17,17 +17,20 @@ export default async function handler(
   if (req.method !== "POST") res.status(405).end();
 
   try {
-    const { category, location, email } = JSON.parse(req.body);
+    const { category, email, location, title } = JSON.parse(req.body);
     const env = process.env.NODE_ENV === "development" ? "DEV" : "PROD";
 
     const need = await prisma.need.create({
       data: {
         category: String(category),
+        title: String(title),
         env,
       },
     });
 
-    await prisma.location.create({
+    if (!need) throw new Error("Cant create need");
+
+    const needLocation = await prisma.location.create({
       data: {
         env,
         lat: location.lat,
@@ -37,13 +40,17 @@ export default async function handler(
       },
     });
 
-    await prisma.user.create({
+    if (!needLocation) throw new Error("Cant create need location");
+
+    const needUser = await prisma.user.create({
       data: {
         email,
         env,
         need: { connect: { id: need.id } },
       },
     });
+
+    if (!needUser) throw new Error("Cant create need user");
 
     res.status(200).json({ needId: need.id });
   } catch (err) {

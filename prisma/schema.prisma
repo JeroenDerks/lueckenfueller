@@ -18,6 +18,7 @@ model Need {
   env             Env          @default(PROD)
   likes           Like[]       @relation()
   location        Location?    @relation()
+  title           String
   updatedAt       DateTime     @updatedAt
   user            User?        @relation()
 }
