@@ -29,6 +29,7 @@ export type Need = {
   id: string;
   likes?: Like[] | null;
   location?: Location | null;
+  title: string;
   updatedAt: Date;
 };
 

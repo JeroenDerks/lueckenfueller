@@ -22,7 +22,7 @@ export const Hero = () => {
             <Typography variant="body2" fontSize={[16, 18, 22]} mt={2} mb={4}>
               {t("hero.description")}
             </Typography>
-            <Button component={Link} href="#map" variant="contained">
+            <Button component={Link} href="/add" variant="contained">
               {t("hero.buttonText")}
             </Button>
           </Grid>

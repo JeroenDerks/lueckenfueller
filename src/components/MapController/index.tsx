@@ -42,7 +42,6 @@ export const MapController = () => {
     });
 
     const data = await response.json();
-    console.log(data);
 
     if (data.needId) {
       router.push({ pathname: data.needId });

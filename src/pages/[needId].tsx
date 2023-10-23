@@ -6,6 +6,8 @@ import { theme } from "@/styles/theme";
 import { useEffect, useState } from "react";
 import MapResult from "@/components/MapResult";
 import { useRouter } from "next/router";
+import { MapComp } from "@/components/MapComp";
+import { RegularMarker } from "@/components/MapMarkers/RegularMarker";
 
 export default function NeedDetailPage() {
   const [need, setNeed] = useState<Need>();
@@ -24,6 +26,7 @@ export default function NeedDetailPage() {
   }, [router, init]);
 
   const getNeed = async (needId: string) => {
+    console.log(needId);
     const response = await fetch("/api/get-need", {
       method: "POST",
       body: JSON.stringify({ needId }),
@@ -51,6 +54,27 @@ export default function NeedDetailPage() {
   return (
     <PageLayout backgroundColor={theme.palette.primary.main}>
       {init && need && <MapResult {...{ need }} />}
+      <MapComp
+        initialViewState={
+          need && {
+            latitude: need.location?.lat!,
+            longitude: need.location?.lng!,
+            zoom: 15,
+          }
+        }
+      >
+        {locations?.map(({ id, lat, lng, radius, needLocationId }) => (
+          <RegularMarker
+            key={id}
+            id={id}
+            isActive={needLocationId === need?.id}
+            latitude={lat!}
+            longitude={lng!}
+            onClick={() => getNeed(needLocationId)}
+            radius={radius!}
+          />
+        ))}
+      </MapComp>
     </PageLayout>
   );
 }
