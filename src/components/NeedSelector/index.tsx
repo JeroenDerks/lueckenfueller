@@ -10,7 +10,7 @@ export const NeedSelector = ({
   handleChange,
   value,
 }: {
-  handleChange: (event: SelectChangeEvent<any>) => void;
+  handleChange: (v: string) => void;
   value?: string;
 }) => {
   const { t } = useTranslation();
@@ -27,7 +27,7 @@ export const NeedSelector = ({
         labelId="need-option-labellabel"
         id="need-options"
         label={t("MapController.mapStep1.selectLabel")}
-        onChange={handleChange}
+        onChange={(e: SelectChangeEvent<any>) => handleChange(e.target.value)}
         value={value}
         MenuProps={MenuProps}
       >
