@@ -1,6 +1,6 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-import { PageLayout } from "@/modules/PageLayout";
+import { PageLayout } from "@/components/PageLayout";
 import { theme } from "@/styles/theme";
 import { MapComp } from "@/components/MapComp";
 import { MapController } from "@/components/MapController";

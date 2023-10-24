@@ -1,7 +1,7 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { Location, Need } from "@/types";
 import { GetStaticProps } from "next";
-import { PageLayout } from "@/modules/PageLayout";
+import { PageLayout } from "@/components/PageLayout";
 import { theme } from "@/styles/theme";
 import { useEffect, useState } from "react";
 import MapResult from "@/components/MapResult";

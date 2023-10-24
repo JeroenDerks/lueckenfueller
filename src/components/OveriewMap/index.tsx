@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { PageLayout } from "@/modules/PageLayout";
+import { PageLayout } from "@/components/PageLayout";
 import { theme } from "@/styles/theme";
 import { Need } from "@/types";
 
