@@ -8,9 +8,11 @@ import React from "react";
 
 export const NeedSelector = ({
   handleChange,
+  labelText,
   value,
 }: {
   handleChange: (v: string) => void;
+  labelText?: string;
   value?: string;
 }) => {
   const { t } = useTranslation();
@@ -21,12 +23,12 @@ export const NeedSelector = ({
   return (
     <FormControl fullWidth>
       <InputLabel id="need-option-labellabel">
-        {t("MapController.mapStep1.selectLabel")}
+        {labelText || t("MapController.mapStep1.selectLabel")}
       </InputLabel>
       <Select
         labelId="need-option-labellabel"
         id="need-options"
-        label={t("MapController.mapStep1.selectLabel")}
+        label={labelText || t("MapController.mapStep1.selectLabel")}
         onChange={(e: SelectChangeEvent<any>) => handleChange(e.target.value)}
         value={value}
         MenuProps={MenuProps}

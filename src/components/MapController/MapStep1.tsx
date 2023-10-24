@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useTranslation } from "next-i18next";
 import { TextField } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { SelectChangeEvent } from "@mui/material/Select";
-import Typography from "@mui/material/Typography";
+
 import { theme } from "@/styles/theme";
 
 import { NeedSelector } from "../NeedSelector";
@@ -25,10 +25,6 @@ export const MapStep1 = ({
   const [title, setTitle] = useState<string>();
   const { t } = useTranslation();
 
-  const handleChange = (event: SelectChangeEvent<any>) => {
-    setCategory(event.target.value);
-  };
-
   const handleSubmit = () => {
     if (!category) return;
 
@@ -44,7 +40,7 @@ export const MapStep1 = ({
         {t("MapController.mapStep1.title")}
       </Typography>
 
-      <NeedSelector value={category} handleChange={handleChange} />
+      <NeedSelector value={category} handleChange={setCategory} />
       {category === "Other" && (
         <Box mt={2}>
           <TextField

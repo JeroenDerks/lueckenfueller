@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
+import Link from "next/link";
+import AddIcon from "@mui/icons-material/Add";
 
 import { PageLayout } from "@/components/PageLayout";
 import { theme } from "@/styles/theme";
@@ -10,6 +12,9 @@ import { RegularMarker } from "../MapMarkers/RegularMarker";
 import { useRouter } from "next/router";
 import { NeedSelector } from "../NeedSelector";
 import { MapSelectorContainer } from "../MapController/styled";
+import Button from "@mui/material/Button";
+import { MapControlContainer } from "./styled";
+import { IconButton, Tooltip } from "@mui/material";
 
 export const OverviewMap = () => {
   const [needs, setNeeds] = useState<Need[]>();
@@ -37,9 +42,17 @@ export const OverviewMap = () => {
   return (
     <PageLayout backgroundColor={theme.palette.primary.main}>
       <Box position="relative" width={1} display="flex" justifyContent="center">
-        <MapSelectorContainer>
-          <NeedSelector handleChange={(v: string) => setCategory(v)} />
-        </MapSelectorContainer>
+        <MapControlContainer>
+          <NeedSelector
+            handleChange={(v: string) => setCategory(v)}
+            labelText="Filter map"
+          />
+          <Tooltip title="Add your need">
+            <Button component={Link} href="/add">
+              <AddIcon />
+            </Button>
+          </Tooltip>
+        </MapControlContainer>
       </Box>
       <MapComp>
         {needs?.map(({ location, id }) => (
