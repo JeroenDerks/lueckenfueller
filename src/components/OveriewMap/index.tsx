@@ -41,6 +41,7 @@ export const OverviewMap = () => {
         <MapControlContainer>
           <NeedSelector
             handleChange={(v: string) => setCategory(v)}
+            value={category}
             labelText="Filter map"
           />
           <Tooltip title="Add your need">

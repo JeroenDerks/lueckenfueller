@@ -40,7 +40,7 @@ export const OverviewMapMap = ({ needs }: { needs?: Need[] }) => {
           longitude={selectedNeed.location?.lng!}
           latitude={selectedNeed.location?.lat!}
           anchor="bottom"
-          style={{ zIndex: 10 }}
+          style={{ zIndex: 4 }}
           onClose={() => setSelectedNeed(false)}
         >
           <Box minWidth={220}>
