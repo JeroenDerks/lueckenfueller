@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import { useTranslation } from "next-i18next";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { theme } from "@/styles/theme";
+import { useState } from "react";
 
 export const MapStep3 = ({
   handleStep3Change,
@@ -20,7 +21,16 @@ export const MapStep3 = ({
   onPrevStep: () => void;
   step3Value: string;
 }) => {
+  const [isValidEmail, setIsValidEmail] = useState<boolean>();
   const { t } = useTranslation();
+
+  const onSubmit = () => {
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(step3Value);
+
+    if (isValid) {
+      handleSubmit();
+    } else setIsValidEmail(false);
+  };
 
   return (
     <Box width={1}>
@@ -34,10 +44,14 @@ export const MapStep3 = ({
       <FormControl sx={{ width: "100%" }}>
         <TextField
           label="Email"
-          type="email"
+          error={isValidEmail === false}
+          helperText={isValidEmail === false && "Not valid"}
           fullWidth
           value={step3Value}
-          onChange={(e) => handleStep3Change(e.target.value)}
+          onChange={(e) => {
+            setIsValidEmail(true);
+            handleStep3Change(e.target.value);
+          }}
         />
       </FormControl>
       <Box
@@ -50,9 +64,9 @@ export const MapStep3 = ({
           {t("MapController.mapStep3.buttonTextBack")}
         </Button>
         <LoadingButton
-          onClick={handleSubmit}
           loading={isLoading}
           variant="contained"
+          onClick={onSubmit}
         >
           {t("MapController.mapStep3.buttonTextSubmit")}
         </LoadingButton>
