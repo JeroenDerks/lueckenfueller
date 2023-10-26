@@ -66,7 +66,7 @@ export const MapController = () => {
         <MapSelectorContainer>
           {step === 1 && (
             <MapStep1
-              {...{ onNextStep }}
+              {...{ onNextStep, step1Value }}
               handleStep1Change={(v) => setStep1Value(v)}
             />
           )}

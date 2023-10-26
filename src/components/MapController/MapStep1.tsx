@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "next-i18next";
-import { TextField } from "@mui/material";
+import { FormControl, TextField } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -17,12 +17,14 @@ export type Step1Value = {
 export const MapStep1 = ({
   handleStep1Change,
   onNextStep,
+  step1Value,
 }: {
   handleStep1Change: (v: Step1Value) => void;
   onNextStep: () => void;
+  step1Value?: Step1Value;
 }) => {
-  const [category, setCategory] = useState<string>("");
-  const [title, setTitle] = useState<string>();
+  const [category, setCategory] = useState<string>(step1Value?.category || "");
+  const [title, setTitle] = useState<string>(step1Value?.title || "");
   const { t } = useTranslation();
 
   const handleSubmit = () => {
@@ -33,8 +35,10 @@ export const MapStep1 = ({
     onNextStep();
   };
 
+  const missingTitle = category === "Other" && (!title || title?.length < 3);
+
   return (
-    <>
+    <FormControl>
       <Typography variant="h5" mb={[2, 2, 3]} mt={[1, 1, 1]}>
         <span style={{ color: theme.palette.primary.main }}>1. </span>
         {t("MapController.mapStep1.title")}
@@ -44,9 +48,12 @@ export const MapStep1 = ({
       {category === "Other" && (
         <Box mt={2}>
           <TextField
-            label="What do you need?"
+            error={Boolean(title && title?.length < 3)}
             fullWidth
+            helperText={title && title?.length < 3 && "Required"}
+            label="What do you need?"
             onChange={(e) => setTitle(e.target.value)}
+            value={title}
           ></TextField>
         </Box>
       )}
@@ -54,11 +61,11 @@ export const MapStep1 = ({
         <Button
           onClick={handleSubmit}
           variant="contained"
-          disabled={category === ""}
+          disabled={category === "" || missingTitle}
         >
           {t("MapController.mapStep1.buttonText")}
         </Button>
       </Box>
-    </>
+    </FormControl>
   );
 };
