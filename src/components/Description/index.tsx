@@ -15,54 +15,50 @@ export const Description = () => {
 
   return (
     <PageLayout backgroundColor="#fafafa">
-      <Grid container mt={[2, 2, 4]} py={[6, 6, 16]} alignItems="center">
-        <Grid item xs={3} sm={3} md={4}>
-          <Typography
-            variant="h5"
-            fontSize={[400, 400, 620]}
-            fontWeight={900}
-            lineHeight={0.5}
-            color="primary"
-            textAlign="center"
-            sx={{ opacity: 0.25 }}
-          >
-            3
-          </Typography>
-        </Grid>
-        <Grid item container xs={9} sm={9} md={8} rowGap={1}>
+      <Box py={[6, 6, 16]} width={1}>
+        <Typography variant="h4" mb={[2, 2, 4]} textAlign="center">
+          Three easy steps
+        </Typography>
+        <Grid container spacing={2}>
           {steps.map(({ title }, index) => (
             <React.Fragment key={title}>
-              <Grid item xs={2} sm={1} md={1} gap={1}>
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  sx={{
-                    background: theme.palette.primary.main,
-                    width: 32,
-                    height: 32,
-                    borderRadius: "50%",
-                  }}
-                >
-                  <Typography
-                    variant="h5"
-                    color="white"
-                    textAlign="center"
-                    fontSize={[18, 20, 24]}
+              <Grid item xs={12} sm={12} md={4} gap={1}>
+                <Box width={1} display="flex" justifyContent="center" mb={2}>
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    width={1}
+                    sx={{
+                      background: theme.palette.primary.main,
+                      width: 48,
+                      height: 48,
+                      borderRadius: "50%",
+                    }}
                   >
-                    {index + 1}
-                  </Typography>
+                    <Typography
+                      variant="h5"
+                      color="white"
+                      textAlign="center"
+                      fontSize={[18, 20, 24]}
+                    >
+                      {index + 1}
+                    </Typography>
+                  </Box>
                 </Box>
-              </Grid>
-              <Grid item xs={10} sm={11} md={11}>
-                <Typography variant="h5" fontSize={[18, 20, 24]}>
+
+                <Typography
+                  variant="h5"
+                  fontSize={[18, 20, 24]}
+                  textAlign="center"
+                >
                   {title}
                 </Typography>
               </Grid>
             </React.Fragment>
           ))}
         </Grid>
-      </Grid>
+      </Box>
     </PageLayout>
   );
 };
