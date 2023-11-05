@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { LanguageSwitcher } from "../LanguageSwitcher";
 import { colors } from "@/styles/theme";
 import Image from "next/image";
+import Link from "next/link";
 
 export const NavBar = () => {
   const imageSize = { w: 623, h: 134 };
@@ -25,12 +26,14 @@ export const NavBar = () => {
           py={1}
           px={2}
         >
-          <Image
-            src="/lueckenfueller_logo.jpg"
-            width={imageSize.w * scale}
-            height={imageSize.h * scale}
-            alt="logo"
-          />
+          <Link href="/">
+            <Image
+              src="/lueckenfueller_logo.jpg"
+              width={imageSize.w * scale}
+              height={imageSize.h * scale}
+              alt="logo"
+            />
+          </Link>
           <Box display="flex" gap={1}>
             <LanguageSwitcher />
           </Box>
