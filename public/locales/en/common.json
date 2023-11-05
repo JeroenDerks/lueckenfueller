@@ -15,6 +15,7 @@
       "title": "What is missing in your Kiez?",
       "selectLabel": "Options",
       "inputPlaceholder": "What do you need?",
+      "required": "Required",
       "buttonText": "Next"
     },
     "mapStep2": {
@@ -42,6 +43,13 @@
       "description": "Please enter your e-mail address and stay informed about this need.",
       "legalPrefix": "By liking this need you accept the",
       "privacyStatement": "privacy statement"
+    }
+  },
+  "OverviewMap": {
+    "addNeedButtonText": "Add need",
+    "filterMapText": "Filter map",
+    "OverviewMapMap": {
+      "moreInfo": "More info"
     }
   },
   "needOptions": {

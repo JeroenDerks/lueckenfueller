@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Box from "@mui/material/Box";
+import { useTranslation } from "next-i18next";
 
 import { PageLayout } from "@/components/PageLayout";
 import { theme } from "@/styles/theme";
@@ -14,6 +15,7 @@ import { OverviewMapMap } from "./OverviewMapMap";
 export const OverviewMap = () => {
   const [needs, setNeeds] = useState<Need[]>();
   const [category, setCategory] = useState<string>();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const listNeeds = async () => {
@@ -51,12 +53,12 @@ export const OverviewMap = () => {
             <NeedSelector
               handleChange={(v: string) => setCategory(v)}
               value={category}
-              labelText="Filter map"
+              labelText={t("OverviewMap.filterMapText") || "Filter map"}
             />
           </FilterContainer>
           <Container>
             <Button component={Link} href="/add" variant="contained" fullWidth>
-              Add Need
+              {t("OverviewMap.addNeedButtonText")}
             </Button>
           </Container>
         </Box>

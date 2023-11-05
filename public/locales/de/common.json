@@ -5,6 +5,7 @@
     "buttonText": "Start!"
   },
   "description": {
+    "title": "Drei einfache Schritte",
     "step1": "Zeig uns, was Du vermisst!",
     "step2": "Wo vermisst du es?",
     "step3": "Teil dein Anliegen mit anderen und vergrößere deine Reichweite!"
@@ -14,6 +15,7 @@
       "title": "Was fehlt in Deinem Kiez?",
       "selectLabel": "Auswahl",
       "inputPlaceholder": "Was fehlt?",
+      "required": "Erforderlich",
       "buttonText": "Weiter"
     },
     "mapStep2": {
@@ -41,6 +43,13 @@
       "description": "Bitte geben Sie Ihre E-Mail-Adresse ein, um über diesen Lücke informiert zu werden.",
       "legalPrefix": "Wenn Sie dieses Lücke likes, akzeptieren Sie die",
       "privacyStatement": "Datenschutzerklärung"
+    }
+  },
+  "OverviewMap": {
+    "addNeedButtonText": "Lücke hinzufügen",
+    "filterMapText": "Karte filtern",
+    "OverviewMapMap": {
+      "moreInfo": "Mehr Infos"
     }
   },
   "needOptions": {
