@@ -11,7 +11,7 @@ const pinStyle = {
 
 function Pin({
   size = 20,
-  color = "#f100dc",
+  color = "#bd317a",
 }: {
   color?: string;
   size: number;

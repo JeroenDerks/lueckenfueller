@@ -21,6 +21,7 @@ export const MapSelectorContainer = styled("div")(({ theme }) => ({
   top: 0,
   width: "100%",
   zIndex: 3,
+  overflow: "hidden",
 
   [theme.breakpoints.up("sm")]: {
     top: 24,

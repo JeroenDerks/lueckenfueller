@@ -7,7 +7,7 @@ import { MapComp } from "../MapComp";
 import { RegularMarker } from "../MapMarkers/RegularMarker";
 import { useRouter } from "next/router";
 import { Box, Typography } from "@mui/material";
-import Link from "next/link";
+import { Link } from "../Link";
 
 export const OverviewMapMap = ({ needs }: { needs?: Need[] }) => {
   const [selectedNeed, setSelectedNeed] = useState<Need | false>(false);
@@ -51,7 +51,9 @@ export const OverviewMapMap = ({ needs }: { needs?: Need[] }) => {
               <Typography variant="body2">
                 {selectedNeed.likes?.length} Likes
               </Typography>
-              <Link href={`/${selectedNeed.id}`}>More info</Link>
+              <Link href={`/${selectedNeed.id}`} target="blank">
+                More info
+              </Link>
             </Box>
           </Box>
         </Popup>

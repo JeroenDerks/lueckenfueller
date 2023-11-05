@@ -38,7 +38,7 @@ export const MapStep1 = ({
   const missingTitle = category === "Other" && (!title || title?.length < 3);
 
   return (
-    <FormControl>
+    <FormControl fullWidth>
       <Typography variant="h5" mb={[2, 2, 3]} mt={[1, 1, 1]}>
         <span style={{ color: theme.palette.primary.main }}>1. </span>
         {t("MapController.mapStep1.title")}
