@@ -29,6 +29,7 @@ model Like {
   env             Env          @default(PROD)
   need            Need         @relation(fields: [needLikeId], references: [id])
   needLikeId      String       
+  email           String       @default("")
 }
 
 model Location {

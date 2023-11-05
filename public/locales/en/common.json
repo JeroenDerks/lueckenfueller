@@ -5,6 +5,7 @@
     "buttonText": "Get started!"
   },
   "description": {
+    "title": "Three easy steps",
     "step1": "Show us what you are missing",
     "step2": "Where are you missing it?",
     "step3": "Share your matter with others and increase your reach!"
@@ -14,6 +15,7 @@
       "title": "What is missing in your Kiez?",
       "selectLabel": "Options",
       "inputPlaceholder": "What do you need?",
+      "required": "Required",
       "buttonText": "Next"
     },
     "mapStep2": {
@@ -26,13 +28,28 @@
       "title": "Who are you?",
       "description": "We'll never share your email. It is only needed to keep you up to date.",
       "buttonTextSubmit": "Submit",
-      "buttonTextBack": "Back"
+      "buttonTextBack": "Back",
+      "validEmailError": "Please provide a valid email address",
+      "legalPrefix": "By submitting your need you accept the",
+      "privacyStatement": "privacy statement"
     }
   },
   "MapResult": {
     "titlePrefix": "In need of",
     "MapResultSocials": {
       "body": "Share your need with others to gather support!"
+    },
+    "MapResultModal": {
+      "description": "Please enter your e-mail address and stay informed about this need.",
+      "legalPrefix": "By liking this need you accept the",
+      "privacyStatement": "privacy statement"
+    }
+  },
+  "OverviewMap": {
+    "addNeedButtonText": "Add need",
+    "filterMapText": "Filter map",
+    "OverviewMapMap": {
+      "moreInfo": "More info"
     }
   },
   "needOptions": {

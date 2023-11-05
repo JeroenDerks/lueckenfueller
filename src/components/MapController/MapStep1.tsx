@@ -50,8 +50,10 @@ export const MapStep1 = ({
           <TextField
             error={Boolean(title && title?.length < 3)}
             fullWidth
-            helperText={title && title?.length < 3 && "Required"}
-            label="What do you need?"
+            helperText={
+              title && title?.length < 3 && t("MapController.mapStep1.required")
+            }
+            label={t("MapController.mapStep1.inputPlaceholder")}
             onChange={(e) => setTitle(e.target.value)}
             value={title}
           ></TextField>

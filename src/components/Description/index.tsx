@@ -17,7 +17,7 @@ export const Description = () => {
     <PageLayout backgroundColor="#fafafa">
       <Box py={[6, 6, 16]} width={1}>
         <Typography variant="h4" mb={[2, 2, 4]} textAlign="center">
-          Three easy steps
+          {t("description.title")}
         </Typography>
         <Grid container spacing={2}>
           {steps.map(({ title }, index) => (

@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { MapComp } from "@/components/MapComp";
 import { RegularMarker } from "@/components/MapMarkers/RegularMarker";
 import { NavBar } from "@/components/NavBar";
+import { Footer } from "@/components/Footer";
 
 export default function NeedDetailPage() {
   const [need, setNeed] = useState<Need>();
@@ -53,7 +54,7 @@ export default function NeedDetailPage() {
 
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> TODO: Fix switching locale on need id route */}
       <PageLayout backgroundColor={theme.palette.primary.main}>
         {init && need && (
           <>
@@ -80,6 +81,7 @@ export default function NeedDetailPage() {
           </>
         )}
       </PageLayout>
+      <Footer />
     </>
   );
 }

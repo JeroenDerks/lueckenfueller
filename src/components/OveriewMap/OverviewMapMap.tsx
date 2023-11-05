@@ -1,17 +1,17 @@
 import React, { useMemo, useState } from "react";
 import { Popup } from "react-map-gl";
+import { useTranslation } from "next-i18next";
 
 import { Need } from "@/types";
 
 import { MapComp } from "../MapComp";
 import { RegularMarker } from "../MapMarkers/RegularMarker";
-import { useRouter } from "next/router";
 import { Box, Typography } from "@mui/material";
 import { Link } from "../Link";
 
 export const OverviewMapMap = ({ needs }: { needs?: Need[] }) => {
   const [selectedNeed, setSelectedNeed] = useState<Need | false>(false);
-  const router = useRouter();
+  const { t } = useTranslation();
 
   const markers = useMemo(
     () =>
@@ -52,7 +52,7 @@ export const OverviewMapMap = ({ needs }: { needs?: Need[] }) => {
                 {selectedNeed.likes?.length} Likes
               </Typography>
               <Link href={`/${selectedNeed.id}`} target="blank">
-                More info
+                {t("OverviewMap.OverviewMapMap.moreInfo")}
               </Link>
             </Box>
           </Box>

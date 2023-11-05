@@ -5,6 +5,7 @@
     "buttonText": "Start!"
   },
   "description": {
+    "title": "Drei einfache Schritte",
     "step1": "Zeig uns, was Du vermisst!",
     "step2": "Wo vermisst du es?",
     "step3": "Teil dein Anliegen mit anderen und vergrößere deine Reichweite!"
@@ -14,6 +15,7 @@
       "title": "Was fehlt in Deinem Kiez?",
       "selectLabel": "Auswahl",
       "inputPlaceholder": "Was fehlt?",
+      "required": "Erforderlich",
       "buttonText": "Weiter"
     },
     "mapStep2": {
@@ -26,13 +28,28 @@
       "title": "Wer bist du?",
       "description": "Wir werden deine E-Mail niemals weitergeben. Sie wird nur benötigt, um dich auf dem Laufenden zu halten",
       "buttonTextSubmit": "Speichern",
-      "buttonTextBack": "Zurück"
+      "buttonTextBack": "Zurück",
+      "validEmailError": "Bitte geben Sie eine gültige E-Mail Adresse an",
+      "legalPrefix": "Mit der Übermittlung Ihres Lücke akzeptieren Sie die",
+      "privacyStatement": "Datenschutzerklärung"
     }
   },
   "MapResult": {
     "titlePrefix": "Lücke im Kiez",
     "MapResultSocials": {
       "body": "Teile deine Lücke mit anderen und sammle Unterstützung!"
+    },
+    "MapResultModal": {
+      "description": "Bitte geben Sie Ihre E-Mail-Adresse ein, um über diesen Lücke informiert zu werden.",
+      "legalPrefix": "Wenn Sie dieses Lücke likes, akzeptieren Sie die",
+      "privacyStatement": "Datenschutzerklärung"
+    }
+  },
+  "OverviewMap": {
+    "addNeedButtonText": "Lücke hinzufügen",
+    "filterMapText": "Karte filtern",
+    "OverviewMapMap": {
+      "moreInfo": "Mehr Infos"
     }
   },
   "needOptions": {
