@@ -14,13 +14,14 @@ export default async function handler(
   if (req.method !== "POST") res.status(405).end();
 
   try {
-    const { needId } = JSON.parse(req.body);
+    const { needId, email } = JSON.parse(req.body);
     const env = process.env.NODE_ENV === "development" ? "DEV" : "PROD";
 
     await prisma.like.create({
       data: {
         env,
         need: { connect: { id: needId } },
+        email,
       },
     });
 
@@ -35,6 +36,7 @@ export default async function handler(
       },
     });
 
+    console.log(need);
     if (need && need?.location !== null && need.likes !== null) {
       res.status(200).json(need);
     }
