@@ -22,7 +22,7 @@ export const RegularMarker = ({
   return (
     <>
       <Marker {...{ latitude, longitude, onClick }} anchor="bottom">
-        <Pin size={20} color={isActive ? "#f100dc" : "darkblue"} />
+        <Pin size={20} color={isActive ? "#bd317a" : "darkblue"} />
       </Marker>
       <Source
         id={id}
