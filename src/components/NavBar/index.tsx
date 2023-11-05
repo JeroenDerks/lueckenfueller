@@ -27,7 +27,7 @@ export const NavBar = () => {
           py={1}
           px={2}
         >
-          <Link href="/">
+          <Link href="/" style={{ marginLeft: "-10px" }}>
             <Image
               src="/lueckenfueller_logo.jpg"
               width={imageSize.w * scale}
