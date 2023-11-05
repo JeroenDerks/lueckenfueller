@@ -6,19 +6,23 @@ import { MapComp } from "@/components/MapComp";
 import { MapController } from "@/components/MapController";
 import Box from "@mui/material/Box";
 import { NavBar } from "@/components/NavBar";
+import { Footer } from "@/components/Footer";
 
 export default function AddNeedPage() {
   return (
-    <Box minHeight="100svh" sx={{ background: theme.palette.primary.main }}>
-      <NavBar />
-      <PageLayout backgroundColor={theme.palette.primary.main}>
-        <Box mt={[0, 0, 4]}>
-          <MapComp>
-            <MapController />
-          </MapComp>
-        </Box>
-      </PageLayout>
-    </Box>
+    <>
+      <Box minHeight="100svh" sx={{ background: theme.palette.primary.main }}>
+        <NavBar />
+        <PageLayout backgroundColor={theme.palette.primary.main}>
+          <Box mt={[0, 0, 4]}>
+            <MapComp>
+              <MapController />
+            </MapComp>
+          </Box>
+        </PageLayout>
+      </Box>
+      <Footer />
+    </>
   );
 }
 
