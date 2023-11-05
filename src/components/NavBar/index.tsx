@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { LanguageSwitcher } from "../LanguageSwitcher";
 import { colors } from "@/styles/theme";
 import Image from "next/image";

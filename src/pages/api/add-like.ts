@@ -36,7 +36,6 @@ export default async function handler(
       },
     });
 
-    console.log(need);
     if (need && need?.location !== null && need.likes !== null) {
       res.status(200).json(need);
     }
