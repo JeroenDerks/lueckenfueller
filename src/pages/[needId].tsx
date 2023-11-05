@@ -53,7 +53,7 @@ export default function NeedDetailPage() {
 
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> TODO: Fix switching locale on need id route */}
       <PageLayout backgroundColor={theme.palette.primary.main}>
         {init && need && (
           <>

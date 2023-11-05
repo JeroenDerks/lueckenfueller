@@ -39,14 +39,17 @@ export const MapStep3 = ({
         <span style={{ color: theme.palette.primary.main }}>3. </span>
         {t("MapController.mapStep3.title")}
       </Typography>
-      <Typography variant="body1" fontSize={[14, 16, 16]} mb={[1, 2, 3]}>
+      <Typography variant="body1" fontSize={[14, 16, 16]} mb={[2, 2, 3]}>
         {t("MapController.mapStep3.description")}
       </Typography>
       <FormControl sx={{ width: "100%" }}>
         <TextField
           label="Email"
           error={isValidEmail === false}
-          helperText={isValidEmail === false && "Not valid"}
+          helperText={
+            isValidEmail === false &&
+            t("MapController.mapStep3.validEmailError")
+          }
           fullWidth
           value={step3Value}
           onChange={(e) => {
@@ -56,9 +59,9 @@ export const MapStep3 = ({
         />
       </FormControl>
       <Typography variant="body1" fontSize={[10, 12, 12]} my={[2, 2, 3]}>
-        By submitting your need, you except the{" "}
+        {t("MapController.mapStep3.legalPrefix")}{" "}
         <Link href="/privacy" target="blank">
-          privacy statement
+          {t("MapController.mapStep3.privacyStatement")}
         </Link>
         .
       </Typography>
