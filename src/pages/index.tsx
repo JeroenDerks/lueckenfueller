@@ -3,6 +3,7 @@ import { NavBar } from "@/components/NavBar";
 import { Hero } from "@/components/Hero";
 import { Description } from "@/components/Description";
 import { OverviewMap } from "@/components/OveriewMap";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <Description />
       <OverviewMap />
+      <Footer />
     </>
   );
 }
