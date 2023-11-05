@@ -4,14 +4,21 @@ import { PageLayout } from "@/components/PageLayout";
 import { theme } from "@/styles/theme";
 import { MapComp } from "@/components/MapComp";
 import { MapController } from "@/components/MapController";
+import Box from "@mui/material/Box";
+import { NavBar } from "@/components/NavBar";
 
 export default function AddNeedPage() {
   return (
-    <PageLayout backgroundColor={theme.palette.primary.main}>
-      <MapComp>
-        <MapController />
-      </MapComp>
-    </PageLayout>
+    <Box minHeight="100svh" sx={{ background: theme.palette.primary.main }}>
+      <NavBar />
+      <PageLayout backgroundColor={theme.palette.primary.main}>
+        <Box mt={[0, 0, 4]}>
+          <MapComp>
+            <MapController />
+          </MapComp>
+        </Box>
+      </PageLayout>
+    </Box>
   );
 }
 

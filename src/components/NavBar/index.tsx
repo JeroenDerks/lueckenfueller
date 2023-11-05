@@ -15,6 +15,7 @@ export const NavBar = () => {
         justifyContent="center"
         sx={{
           borderBottom: `1px solid ${colors.green}`,
+          background: "#fff",
         }}
       >
         <Box

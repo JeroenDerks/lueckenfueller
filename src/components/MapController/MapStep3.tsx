@@ -7,6 +7,7 @@ import { useTranslation } from "next-i18next";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { theme } from "@/styles/theme";
 import { useState } from "react";
+import { Link } from "../Link";
 
 export const MapStep3 = ({
   handleStep3Change,
@@ -54,6 +55,13 @@ export const MapStep3 = ({
           }}
         />
       </FormControl>
+      <Typography variant="body1" fontSize={[10, 12, 12]} my={[2, 2, 3]}>
+        By submitting your need, you except the{" "}
+        <Link href="/privacy" target="blank">
+          privacy statement
+        </Link>
+        .
+      </Typography>
       <Box
         display="flex"
         justifyContent="space-between"
