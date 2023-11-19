@@ -14,7 +14,7 @@ export const Description = () => {
   ];
 
   return (
-    <PageLayout backgroundColor="#fafafa">
+    <PageLayout backgroundColor="#fbf1f7">
       <Box py={[6, 6, 16]} width={1}>
         <Typography variant="h4" mb={[2, 2, 4]} textAlign="center">
           {t("description.title")}

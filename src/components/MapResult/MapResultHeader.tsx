@@ -33,7 +33,8 @@ export default function MapResultHeader({ need }: { need?: Need }) {
         <Grid container justifyContent="space-between" alignItems="center">
           <Grid item xs={12} sm={12} md={10}>
             <Typography variant="h5">
-              {t("MapResult.titlePrefix")}: {translatedNeed?.label}
+              {t("MapResult.titlePrefix")}:{" "}
+              {translatedNeed?.label || currNeed?.title}
             </Typography>
             <Typography variant="body2" mr={1}>
               {t("MapResult.likeCountSuffix", {

@@ -12,7 +12,7 @@ export let theme = createTheme({
       main: "#4EAC99",
     },
     secondary: {
-      main: "#edf2ff",
+      main: "#c43472",
     },
   },
   typography: {
@@ -21,7 +21,3 @@ export let theme = createTheme({
 });
 
 theme = responsiveFontSizes(theme);
-
-export const colors = {
-  green: "#4EAC99",
-};

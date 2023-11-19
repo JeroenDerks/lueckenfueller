@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
 
 export const LanguageOption = styled("span")(({ theme }) => ({
-  color: theme.palette.primary.main,
+  color: theme.palette.secondary.main,
   fontSize: 10,
   cursor: "pointer",
 }));

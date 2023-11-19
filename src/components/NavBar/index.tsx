@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import { LanguageSwitcher } from "../LanguageSwitcher";
-import { colors } from "@/styles/theme";
 import Image from "next/image";
 import Link from "next/link";
+import { theme } from "@/styles/theme";
 
 export const NavBar = () => {
   const imageSize = { w: 623, h: 134 };
@@ -15,7 +15,7 @@ export const NavBar = () => {
         display="flex"
         justifyContent="center"
         sx={{
-          borderBottom: `1px solid ${colors.green}`,
+          borderBottom: `1px solid ${theme.palette.primary.main}`,
           background: "#fff",
         }}
       >

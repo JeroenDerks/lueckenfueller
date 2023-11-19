@@ -9,15 +9,13 @@ const pinStyle = {
   stroke: "none",
 };
 
-function Pin({
-  size = 20,
-  color = "#bd317a",
-}: {
-  color?: string;
-  size: number;
-}) {
+function Pin({ size, color }: { color?: string; size: number }) {
   return (
-    <svg height={size} viewBox="0 0 24 24" style={{ ...pinStyle, fill: color }}>
+    <svg
+      height={size}
+      viewBox="0 0 24 24"
+      style={{ ...pinStyle, fill: "#c43472" }}
+    >
       <path d={ICON} />
     </svg>
   );
