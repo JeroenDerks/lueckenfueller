@@ -1,16 +1,20 @@
 import { useRouter } from "next/router";
-import { BoldText, StyledLink } from "./styled";
+import { BoldText, LanguageOption } from "./styled";
 
 export const LanguageSwitcher = () => {
-  const router = useRouter();
+  const { asPath, locale, pathname, push, query } = useRouter();
 
-  return router.locale === "en" ? (
-    <StyledLink href={router.pathname} locale="de">
+  const changeLocale = (locale: "en" | "de") => {
+    push({ pathname, query }, asPath, { locale });
+  };
+
+  return locale === "en" ? (
+    <LanguageOption onClick={() => changeLocale("de")}>
       DE / <BoldText>EN</BoldText>
-    </StyledLink>
+    </LanguageOption>
   ) : (
-    <StyledLink href={router.pathname} locale="en">
+    <LanguageOption onClick={() => changeLocale("en")}>
       <BoldText>DE</BoldText> / EN
-    </StyledLink>
+    </LanguageOption>
   );
 };

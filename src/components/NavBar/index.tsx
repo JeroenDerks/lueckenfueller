@@ -7,6 +7,7 @@ import Link from "next/link";
 export const NavBar = () => {
   const imageSize = { w: 623, h: 134 };
   const scale = 0.4;
+
   return (
     <>
       <Box

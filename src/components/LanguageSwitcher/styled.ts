@@ -1,9 +1,9 @@
 import { styled } from "@mui/material";
-import Link from "next/link";
 
-export const StyledLink = styled(Link)(({ theme }) => ({
+export const LanguageOption = styled("span")(({ theme }) => ({
   color: theme.palette.primary.main,
   fontSize: 10,
+  cursor: "pointer",
 }));
 
 export const BoldText = styled("span")({
