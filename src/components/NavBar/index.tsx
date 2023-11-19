@@ -15,7 +15,7 @@ export const NavBar = () => {
         display="flex"
         justifyContent="center"
         sx={{
-          borderBottom: `1px solid ${theme.palette.primary.main}`,
+          borderBottom: `1px solid ${theme.palette.secondary.main}`,
           background: "#fff",
         }}
       >
