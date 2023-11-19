@@ -1,14 +1,14 @@
 {
   "hero": {
     "title": "Was fehlt in Deinem Kiez?",
-    "description": "Du vermisst eine Reinigung, einen Kindergarten, eine Haustierbetreuung oder etwas anderes in Deiner Nähe? Dann teile es uns mit uns und wir werden versuchen, diese Lücke so schnell wie möglich zu schließen, indem wir einen Anbieter dafür finden.",
+    "description": "Du vermisst eine Reinigung, einen Kindergarten, eine Haustierbetreuung oder etwas anderes in Deiner Nähe? Teile es mit uns und wir versuchen diese Lücke so schnell wie möglich zu schließen!",
     "buttonText": "Start!"
   },
   "description": {
-    "title": "Drei einfache Schritte",
-    "step1": "Zeig uns, was Du vermisst!",
-    "step2": "Wo vermisst du es?",
-    "step3": "Teil dein Anliegen mit anderen und vergrößere deine Reichweite!"
+    "title": "Melde deine Lücke in drei einfachen Schritten",
+    "step1": "Was vermisst du im Kiez?",
+    "step2": "Wo ist die Lücke?",
+    "step3": "Teil dein Anliegen mit Freunden! (Und vergrößere deine Reichweite)"
   },
   "MapController": {
     "mapStep1": {
@@ -30,12 +30,14 @@
       "buttonTextSubmit": "Speichern",
       "buttonTextBack": "Zurück",
       "validEmailError": "Bitte geben Sie eine gültige E-Mail Adresse an",
-      "legalPrefix": "Mit der Übermittlung Ihres Lücke akzeptieren Sie die",
+      "legalPrefix": "Mit der Übermittlung deiner Lücke akzeptierst du die",
       "privacyStatement": "Datenschutzerklärung"
     }
   },
   "MapResult": {
-    "titlePrefix": "Lücke im Kiez",
+    "titlePrefix": "In diesem Kiez fehlt",
+    "likeCountSuffix": "{{count}} Personen denken, dass hier eine Lücke ist.",
+    "likePrefix": "Ich stimme zu",
     "MapResultSocials": {
       "body": "Teile deine Lücke mit anderen und sammle Unterstützung!"
     },

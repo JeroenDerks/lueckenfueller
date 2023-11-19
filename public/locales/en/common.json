@@ -36,6 +36,8 @@
   },
   "MapResult": {
     "titlePrefix": "In need of",
+    "likeCountSuffix": "{{count}} people agree that this is missing.",
+    "likePrefix": "I agree",
     "MapResultSocials": {
       "body": "Share your need with others to gather support!"
     },
