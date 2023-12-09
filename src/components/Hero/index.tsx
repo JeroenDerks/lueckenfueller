@@ -15,7 +15,7 @@ export const Hero = () => {
         alignItems={["flex-start", "flex-start", "center"]}
       >
         <Grid container rowGap={2}>
-          <Grid item xs={12} sm={12} md={7} p={[0, 0, 1]}>
+          <Grid item xs={12} sm={12} md={6} p={[0, 0, 1]}>
             <Typography variant="h2" component="h1" fontWeight={"500"}>
               {t("hero.title")}
             </Typography>
@@ -26,16 +26,32 @@ export const Hero = () => {
               {t("hero.buttonText")}
             </Button>
           </Grid>
-          <Grid item xs={12} sm={12} md={5} p={[0, 0, 1]}>
+          <Grid item xs={12} sm={12} md={6} p={[0, 0, 1]}>
             <Box
               width={1}
               display="flex"
               justifyContent="center"
               alignItems="center"
-              sx={{ border: "1px solid grey", borderRadius: 4 }}
               height="100%"
             >
-              <p>Graphic</p>
+              <Box width={1} position="relative" pb="56.25%" height={0}>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/NTZyLigZDyE?si=K75CyA0ENLfeCecQ"
+                  title="Lueckenfueller promo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;  web-share"
+                  allowFullScreen
+                  frameBorder={0}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                  }}
+                ></iframe>
+              </Box>
             </Box>
           </Grid>
         </Grid>
