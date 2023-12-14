@@ -8,9 +8,11 @@ import { MapComp } from "../MapComp";
 import { RegularMarker } from "../MapMarkers/RegularMarker";
 import { Box, Typography } from "@mui/material";
 import { Link } from "../Link";
+import useTranslatedOptions from "@/hooks/getTranslatedOptions";
 
 export const OverviewMapMap = ({ needs }: { needs?: Need[] }) => {
   const [selectedNeed, setSelectedNeed] = useState<Need | false>(false);
+  const { translatedOptions } = useTranslatedOptions();
   const { t } = useTranslation();
 
   const markers = useMemo(
@@ -32,6 +34,14 @@ export const OverviewMapMap = ({ needs }: { needs?: Need[] }) => {
     [needs]
   );
 
+  const matchTitle = (title?: string) => {
+    const translatedNeed = translatedOptions?.find(
+      ({ value }) => value === title
+    );
+
+    return translatedNeed?.label || title;
+  };
+
   return (
     <MapComp>
       {markers}
@@ -45,7 +55,7 @@ export const OverviewMapMap = ({ needs }: { needs?: Need[] }) => {
         >
           <Box minWidth={220}>
             <Typography variant="body1" fontWeight="700">
-              {selectedNeed.title}
+              {matchTitle(selectedNeed.title)}
             </Typography>
             <Box display="flex" width={1} justifyContent="space-between">
               <Typography variant="body2">
