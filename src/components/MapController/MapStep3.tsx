@@ -60,7 +60,7 @@ export const MapStep3 = ({
       </FormControl>
       <Typography variant="body1" fontSize={[10, 12, 12]} my={[2, 2, 3]}>
         {t("MapController.mapStep3.legalPrefix")}{" "}
-        <Link href="/privacy" target="blank">
+        <Link href="/datenschutzerklarung" target="blank">
           {t("MapController.mapStep3.privacyStatement")}
         </Link>
         .

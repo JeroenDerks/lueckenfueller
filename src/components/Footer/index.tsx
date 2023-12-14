@@ -11,7 +11,9 @@ export const Footer = () => {
           <Logo scale={0.2} />
         </Grid>
         <Grid item xs={6} sm={3} md={3}>
-          <Link href="/privacy">Datenschutz&shy;erkl&auml;rung</Link>
+          <Link href="/datenschutzerklarung">
+            Datenschutz&shy;erkl&auml;rung
+          </Link>
         </Grid>
         <Grid item xs={6} sm={3} md={3}>
           <Link href="/imprint">Impressum</Link>

@@ -87,7 +87,7 @@ export default function MapResultLikeModal({
         </FormControl>
         <Typography variant="body1" fontSize={[10, 12, 12]} my={[2, 2, 3]}>
           {t("MapResult.MapResultModal.legalPrefix")}{" "}
-          <Link href="/privacy" target="blank">
+          <Link href="/datenschutzerklarung" target="blank">
             {t("MapResult.MapResultModal.privacyStatement")}
           </Link>
           .
