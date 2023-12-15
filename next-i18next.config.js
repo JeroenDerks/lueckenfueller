@@ -2,7 +2,7 @@ const path = require("path");
 
 /** @type import("next").I18NConfig */
 const i18n = {
-  defaultLocale: "en",
+  defaultLocale: "de",
   locales: ["en", "de"],
   localeDetection: false, // disable automatic redirection on the user's preferred locale
 };

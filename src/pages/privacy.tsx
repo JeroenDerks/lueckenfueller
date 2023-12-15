@@ -2,514 +2,519 @@ import { NavBar } from "@/components/NavBar";
 import { PageLayout } from "@/components/PageLayout";
 import { theme } from "@/styles/theme";
 import { Box } from "@mui/material";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
-export default function PrivacyGerman() {
+// This is the English privacy statement page. There is also a German version at datenschutzerklarung.tsx
+export default function PrivacyEnglish() {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.locale === "de") router.push("/datenschutzerklarung");
+  }, [router.locale]);
+
   return (
     <>
       <NavBar />
       <PageLayout backgroundColor={theme.palette.primary.main}>
         <Box p={2} sx={{ background: "#fafafa", borderRadius: 4 }}>
-          <h1>Datenschutzerklärung</h1>
-          <h2>1. Datenschutz auf einen Blick</h2>
-          <h3>Allgemeine Hinweise</h3>
+          <h1>Privacy policy</h1>
+          <h2>1. Data protection at a glance</h2>
+          <h3>General information</h3>
           <p>
-            Die folgenden Hinweise geben einen einfachen Überblick darüber, was
-            mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website
-            besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie
-            persönlich identifiziert werden können. Ausführliche Informationen
-            zum Thema Datenschutz entnehmen Sie unserer unter diesem Text
-            aufgeführten Datenschutzerklärung.
+            The following information provides a simple overview of what is done
+            with your personal data. happens when you visit this website.
+            Personal data is any data that you use to personally identifiable.
+            Detailed information on the topic of data protection can be found
+            Privacy Policy listed below this text.
           </p>
-          <h3>Datenerfassung auf dieser Website</h3>
+          <h3>Data collection on this website</h3>
           <h4>
-            Wer ist verantwortlich für die Datenerfassung auf dieser Website?
+            Who is responsible for the collection of data on this website?
           </h4>
           <p>
-            Die Datenverarbeitung auf dieser Website erfolgt durch den
-            Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt
-            „Hinweis zur Verantwortlichen Stelle“ in dieser Datenschutzerklärung
-            entnehmen.
+            The data processing on this website is carried out by the website
+            operator. Their contact details can be found in the section "Note on
+            the Data Controller" in this Privacy Policy.
           </p>
-          <h4>Wie erfassen wir Ihre Daten?</h4>
+          <h4>How do we collect your data?</h4>
           <p>
-            Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese
-            mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in
-            ein Kontaktformular eingeben.
+            On the one hand, your data is collected when you provide it to us.
+            This can be, for example, data that you enter into a contact form.
           </p>
           <p>
-            Andere Daten werden automatisch oder nach Ihrer Einwilligung beim
-            Besuch der Website durch unsere ITSysteme erfasst. Das sind vor
-            allem technische Daten (z. B. Internetbrowser, Betriebssystem oder
-            Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt
-            automatisch, sobald Sie diese Website betreten.
-          </p>
-          <h4>Wofür nutzen wir Ihre Daten?</h4>
-          <p>
-            Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung
-            der Website zu gewährleisten. Andere Daten können zur Analyse Ihres
-            Nutzerverhaltens verwendet werden.
-          </p>
-          <h4>Welche Rechte haben Sie bezüglich Ihrer Daten?</h4>
-          <p>
-            Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft,
-            Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu
-            erhalten. Sie haben außerdem ein Recht, die Berichtigung oder
-            Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur
-            Datenverarbeitung erteilt haben, können Sie diese Einwilligung
-            jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht,
-            unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer
-            personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein
-            Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Hierzu
-            sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich
-            jederzeit an uns wenden. Analyse-Tools und Tools von Drittanbietern
+            Other data will be processed automatically or with your consent when
+            you visit the website by our IT systems. on target. This is mainly
+            technical data (e.g. internet browser, operating system or time) of
+            the page view). This data is collected automatically as soon as you
+            enter this website. What do we use your data for?
           </p>
           <p>
-            Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch
-            ausgewertet werden. Das geschieht vor allem mit sogenannten
-            Analyseprogrammen.
+            Part of the data is collected to ensure the error-free provision of
+            the website. Other Data can be used to analyze your user behavior.
+          </p>
+          <h4>What rights do you have regarding your data?</h4>
+          <p>
+            You have the right at any time to obtain information free of charge
+            about the origin, recipient and purpose of your personal data
+            stored. You also have the right to request the correction or request
+            deletion of this data. If you have given your consent to data
+            processing, you can revoke this consent at any time for the future.
+            In addition, you have the right to request the restriction of the
+            processing of your personal data in certain circumstances.
+            Furthermore, you have the right to lodge a complaint with the
+            competent supervisory authority. You can contact us at any time for
+            this or any other questions you may have about data protection.
+          </p>
+          <h4>Analytics and third-party tools</h4>
+          <p>
+            When you visit this website, your surfing behaviour can be
+            statistically evaluated. This happens before especially with
+            so-called analysis programs.
           </p>
           <p>
-            Detaillierte Informationen zu diesen Analyseprogrammen finden Sie in
-            der folgenden Datenschutzerklärung.
+            Detailed information on these analysis programs can be found in the
+            following Privacy policy.
           </p>
           <h2>2. Hosting</h2>
-          <h4>
-            Wir hosten die Inhalte unserer Website bei folgenden Anbietern:
-          </h4>
+          <p>
+            We host the content of our website with the following providers:
+          </p>
           <p>
             <b>IONOS</b>
           </p>
           <p>
-            Anbieter ist die IONOS SE, Elgendorfer Str. 57, 56410 Montabaur
-            (nachfolgend IONOS). Wenn Sie unsere Website besuchen, erfasst IONOS
-            verschiedene Logfiles inklusive Ihrer IP-Adressen. Details entnehmen
-            Sie der Datenschutzerklärung von IONOS:
-          </p>
-          <a href="https://www.ionos.de/terms-gtc/terms-privacy">
-            https://www.ionos.de/terms-gtc/terms-privacy
-          </a>
-          .
-          <p>
-            Die Verwendung von IONOS erfolgt auf Grundlage von Art. 6 Abs. 1
-            lit. f DSGVO. Wir haben ein berechtigtes Interesse an einer
-            möglichst zuverlässigen Darstellung unserer Website. Sofern eine
-            entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung
-            ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25
-            Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies
-            oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B.
-            Device-Fingerprinting) im Sinne des TTDSG umfasst. Die Einwilligung
-            ist jederzeit widerrufbar.
-          </p>
-          <h4>Auftragsverarbeitung</h4>
-          <p>
-            Wir haben einen Vertrag über Auftragsverarbeitung (AVV) zur Nutzung
-            des oben genannten Dienstes geschlossen. Hierbei handelt es sich um
-            einen datenschutzrechtlich vorgeschriebenen Vertrag, der
-            gewährleistet, dass dieser die personenbezogenen Daten unserer
-            Websitebesucher nur nach unseren Weisungen und unter Einhaltung der
-            DSGVO verarbeitet.
-          </p>
-          <h4>Externes Hosting</h4>
-          <p>
-            Diese Website wird extern gehostet. Die personenbezogenen Daten, die
-            auf dieser Website erfasst werden, werden auf den Servern des
-            Hosters / der Hoster gespeichert. Hierbei kann es sich v. a. um
-            IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten,
-            Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige
-            Daten, die über eine Website generiert werden, handeln.
+            The provider is IONOS SE, Elgendorfer Str. 57, 56410 Montabaur
+            (hereinafter referred to as IONOS). If you want to use our When you
+            visit your website, IONOS collects various log files, including your
+            IP addresses. Details can be found here. IONOS' Privacy Policy:{" "}
+            <a href="https://www.ionos.de/terms-gtc/terms-privacy">
+              https://www.ionos.de/terms-gtc/terms-privacy
+            </a>
+            .
           </p>
           <p>
-            Das externe Hosting erfolgt zum Zwecke der Vertragserfüllung
-            gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1
-            lit. b DSGVO) und im Interesse einer sicheren, schnellen und
-            effizienten Bereitstellung unseres Online-Angebots durch einen
-            professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO). Sofern eine
-            entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung
-            ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25
-            Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies
-            oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B.
-            Device-Fingerprinting) im Sinne des TTDSG umfasst. Die Einwilligung
-            ist jederzeit widerrufbar.
+            The use of IONOS is based on Art. 6 (1) (f) GDPR. We have a
+            legitimate interest in providing the most reliable presentation of
+            our website. To the extent that a consent has been requested, the
+            processing is carried out exclusively on the basis of Art. 6 para. 1
+            lit. a GDPR and § 25 para. 1 TTDSG, insofar as the consent requires
+            the storage of cookies or the Access to information in the user's
+            end device (e.g. device fingerprinting) within the meaning of the
+            TTDSG comprises. Consent can be revoked at any time.
+          </p>
+          <h4>Order processing</h4>
+          <p>
+            We have a data processing agreement (DPA) for the use of the
+            above-mentioned service closed. This is a contract required by data
+            protection law, which ensures that the personal data of our website
+            visitors is only processed in accordance with our instructions and
+            in compliance with the GDPR.
+          </p>
+          <h4>External Hosting</h4>
+          <p>
+            This website is hosted externally. The personal data collected on
+            this website are stored on the servers of the hoster(s). This may
+            include, but is not limited to, IP addresses, Contact requests, meta
+            and communication data, contract data, contact data, names, website
+            accesses and other data generated through a website.
           </p>
           <p>
-            Unser(e) Hoster wird bzw. werden Ihre Daten nur insoweit
-            verarbeiten, wie dies zur Erfüllung seiner Leistungspflichten
-            erforderlich ist und unsere Weisungen in Bezug auf diese Daten
-            befolgen. Wir setzen folgende(n) Hoster ein:
+            The external hosting is carried out for the purpose of fulfilling
+            the contract vis-à-vis our potential and existing customers (Art. 6
+            (1) (b) GDPR) and in the interest of a secure, fast and efficient
+            Provision of our online services by a professional provider (Art. 6
+            para. 1 lit. f GDPR). If a corresponding consent has been requested,
+            the processing will take place exclusively on basis of Art. 6 (1)
+            (a) GDPR and § 25 (1) TTDSG, insofar as consent requires the storage
+            of of cookies or access to information in the user's terminal device
+            (e.g. device fingerprinting) in the within the meaning of the TTDSG.
+            Consent can be revoked at any time.
           </p>
+          <p>
+            Our host(s) will or will process your data only to the extent
+            necessary to fulfil its and comply with our instructions in relation
+            to this data.
+          </p>
+          <p>We use the following hoster(s):</p>
           <p>
             <b>Vercel Inc.</b>
-            440 N Barranca Ave #4133 Covina, CA 91723
           </p>
-          <h2>3. Allgemeine Hinweise und Pflichtinformationen</h2>
-          <h3>Datenschutz</h3>
+          <p></p>
+          <p>440 N Barranca Ave #4133</p>
+          <p>Covina, CA 91723</p>
+          <h2>3. General information and mandatory information</h2>
+          <h3>Privacy</h3>
           <p>
-            Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen
-            Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten
-            vertraulich und entsprechend den gesetzlichen
-            Datenschutzvorschriften sowie dieser Datenschutzerklärung.
-          </p>
-          <p>
-            Wenn Sie diese Website benutzen, werden verschiedene
-            personenbezogene Daten erhoben. Personenbezogene Daten sind Daten,
-            mit denen Sie persönlich identifiziert werden können. Die
-            vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben
-            und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem
-            Zweck das geschieht.
+            The operators of these sites take the protection of your personal
+            data very seriously. We treat your personal data confidentially and
+            in accordance with the statutory data protection regulations, as
+            well as of this Privacy Policy.
           </p>
           <p>
-            Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B.
-            bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann.
-            Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist
-            nicht möglich.
+            When you use this website, various personal data is collected.
+            Personal data is data that can be used to identify you personally.
+            The present Privacy Policy explains what data we collect and what we
+            use it for. It also explains how and for what purpose this is done.
           </p>
-          <h3>Hinweis zur verantwortlichen Stelle</h3>
           <p>
-            Die verantwortliche Stelle für die Datenverarbeitung auf dieser
-            Website ist:
+            We would like to point out that data transmission on the Internet
+            (e.g. when communicating by e-mail) security vulnerabilities. A
+            complete protection of the data against access by third parties is
+            not possible.
           </p>
+          <h4>Note on the responsible body</h4>
+          <p>The person responsible for data processing on this website is:</p>
           <p>
             <b>Jeroen Derks & Chris Steinmayer</b>
-            Dolziger Straße 4 10247 Berlin E-Mail: cs@lueckenfueller.me
           </p>
+          <p>Dolziger Straße 4</p>
+          <p>10247 Berlin</p>
+          <p>E-Mail: cs@lueckenfueller.me</p>
           <p>
-            Verantwortliche Stelle ist die natürliche oder juristische Person,
-            die allein oder gemeinsam mit anderen über die Zwecke und Mittel der
-            Verarbeitung von personenbezogenen Daten (z. B. Namen,
-            E-Mail-Adressen o. Ä.) entscheidet.
+            The responsible body is the natural or legal person who, alone or
+            jointly with others, has the purposes and means of the processing of
+            personal data (e.g. names, e-mail addresses, etc.) Decides.
           </p>
-          <h3>Speicherdauer</h3>
+          <h4>Storage period</h4>
           <p>
-            Soweit innerhalb dieser Datenschutzerklärung keine speziellere
-            Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten
-            bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie
-            ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung
-            zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern
-            wir keine anderen rechtlich zulässigen Gründe für die Speicherung
-            Ihrer personenbezogenen Daten haben (z. B. steuer- oder
-            handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall
-            erfolgt die Löschung nach Fortfall dieser Gründe.
+            Insofar as no more specific storage period has been specified in
+            this data protection declaration, Your personal data with us until
+            the purpose for which the data processing ceases to apply. If you
+            have a assert a legitimate request for deletion or revoke consent to
+            data processing, your data will be deleted, unless we have other
+            legally permissible reasons for storing your data. personal data
+            (e.g. retention periods under tax or commercial law); in In the
+            latter case, the deletion takes place after these reasons have
+            ceased to exist. General information on the legal bases of data
+            processing on this website.
           </p>
-          <h3>
-            Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung
-            auf dieser
-          </h3>
           <h4>Website</h4>
           <p>
-            Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten
-            wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1
-            lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, sofern besondere
-            Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden. Im
-            Falle einer ausdrücklichen Einwilligung in die Übertragung
-            personenbezogener Daten in Drittstaaten erfolgt die
-            Datenverarbeitung außerdem auf Grundlage von Art. 49 Abs. 1 lit. a
-            DSGVO. Sofern Sie in die Speicherung von Cookies oder in den Zugriff
-            auf Informationen in Ihr Endgerät (z. B. via Device-Fingerprinting)
-            eingewilligt haben, erfolgt die Datenverarbeitung zusätzlich auf
-            Grundlage von § 25 Abs. 1 TTDSG. Die Einwilligung ist jederzeit
-            widerrufbar. Sind Ihre Daten zur Vertragserfüllung oder zur
-            Durchführung vorvertraglicher Maßnahmen erforderlich, verarbeiten
-            wir Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des
-            Weiteren verarbeiten wir Ihre Daten, sofern diese zur Erfüllung
-            einer rechtlichen Verpflichtung erforderlich sind auf Grundlage von
-            Art. 6 Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann ferner auf
-            Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f
-            DSGVO erfolgen. Über die jeweils im Einzelfall einschlägigen
-            Rechtsgrundlagen wird in den folgenden Absätzen dieser
-            Datenschutzerklärung informiert.
+            If you have consented to the processing of your personal data, we
+            will process your personal data in the following ways: basis of Art.
+            6 (1) (a) GDPR or Art. 9 (2) (a) GDPR, insofar as special categories
+            of data pursuant to Art. 9 (1) GDPR. In the case of explicit consent
+            to the transfer personal data in third countries, data processing is
+            also carried out on the basis of Art. 49 (1) (a) GDPR. If you are
+            involved in the storage of cookies or in the access to information
+            in your device (e.g. via device fingerprinting), data processing is
+            also carried out on the basis of § 25 para. 1 TTDSG. Consent can be
+            revoked at any time. Are your data necessary for the fulfilment of a
+            contract or for the implementation of pre-contractual measures, we
+            process your Data on the basis of Art. 6 (1) (b) GDPR. Furthermore,
+            we process your data insofar as it are necessary for the fulfilment
+            of a legal obligation on the basis of Art. 6 (1) (c) GDPR. Data
+            processing may also be carried out on the basis of our legitimate
+            interest pursuant to Art. 6 (1) (f) GDPR. The legal bases relevant
+            in each individual case are described in the following paragraphs of
+            this Privacy Policy.
           </p>
-          <h4>Empfänger von personenbezogenen Daten</h4>
+          <h4>Recipients of personal data</h4>
           <p>
-            Im Rahmen unserer Geschäftstätigkeit arbeiten wir mit verschiedenen
-            externen Stellen zusammen. Dabei ist teilweise auch eine
-            Übermittlung von personenbezogenen Daten an diese externen Stellen
-            erforderlich. Wir geben personenbezogene Daten nur dann an externe
-            Stellen weiter, wenn dies im Rahmen einer Vertragserfüllung
-            erforderlich ist, wenn wir gesetzlich hierzu verpflichtet sind (z.
-            B. Weitergabe von Daten an Steuerbehörden), wenn wir ein
-            berechtigtes Interesse nach Art. 6 Abs. 1 lit. f DSGVO an der
-            Weitergabe haben oder wenn eine sonstige Rechtsgrundlage die
-            Datenweitergabe erlaubt. Beim Einsatz von Auftragsverarbeitern geben
-            wir personenbezogene Daten unserer Kunden nur auf Grundlage eines
-            gültigen Vertrags über Auftragsverarbeitung weiter. Im Falle einer
-            gemeinsamen Verarbeitung wird ein Vertrag über gemeinsame
-            Verarbeitung geschlossen.
+            As part of our business activities, we work together with various
+            external bodies. Thereby In some cases, it is also necessary to
+            transfer personal data to these external bodies. We only pass on
+            personal data to external bodies if this is necessary in the context
+            of a performance of a contract is necessary if we are legally
+            obliged to do so (e.g. disclosure of data to tax authorities) if we
+            have a legitimate interest in the disclosure pursuant to Art. 6 (1)
+            (f) GDPR or if there is another legal basis for the transfer of
+            data. When using We only share our customers' personal data with
+            processors on the basis of a valid Data Processing Agreement. In the
+            case of joint processing, a contract for joint processing.
           </p>
-          <h4>Widerruf Ihrer Einwilligung zur Datenverarbeitung</h4>
+          <h4>Withdrawal of your consent to data processing</h4>
           <p>
-            Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen
-            Einwilligung möglich. Sie können eine bereits erteilte Einwilligung
-            jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf
-            erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
+            Many data processing operations are only possible with your explicit
+            consent. You can use a revoke consent already given at any time. The
+            lawfulness of the actions carried out prior to the revocation Data
+            processing remains unaffected by the revocation.
+          </p>
+          <p>
+            Right to object to the collection of data in special cases, as well
+            as to Direct marketing (Art. 21 GDPR) IF THE DATA PROCESSING IS
+            CARRIED OUT ON THE BASIS OF ART. 6 PARA. 1 LIT. E OR F GDPR YOU HAVE
+            THE RIGHT AT ANY TIME, FOR REASONS ARISING FROM YOUR PARTICULAR TO
+            OBJECT TO THE PROCESSING OF YOUR PERSONAL DATA TO LODGE AN
+            OPPOSITION; THIS SHALL ALSO APPLY TO AN UNDERTAKING BASED ON THESE
+            PROVISIONS. PROFILING. THE LEGAL BASIS ON WHICH THE PROCESSING IS
+            BASED, PLEASE REFER TO THIS PRIVACY POLICY. IF YOU LODGE AN
+            OBJECTION, IF WE WILL NO LONGER PROCESS YOUR PERSONAL DATA
+            CONCERNED, IT WILL BE UNLESS WE CAN DEMONSTRATE COMPELLING
+            LEGITIMATE GROUNDS FOR THE PROCESSING EVIDENCE WHICH OVERRIDES THEIR
+            INTERESTS, RIGHTS AND FREEDOMS, OR WHICH PROCESSING SERVES THE
+            ESTABLISHMENT, EXERCISE OR DEFENCE OF LEGAL CLAIMS (OBJECTION
+            PURSUANT TO ART. 21 PARA. 1 GDPR). YOUR PERSONAL DATA IS PROCESSED
+            FOR THE PURPOSE OF DIRECT MARKETING, SO YOU HAVE THE RIGHT TO OBJECT
+            AT ANY TIME TO THE PROCESSING YOU PERSONAL DATA FOR THE PURPOSE OF
+            SUCH ADVERTISING TO LODGE; THIS ALSO APPLIES TO PROFILING INSOFAR AS
+            IT IS RELATED TO SUCH DIRECT MARKETING IN CONNECTION. IF YOU OBJECT,
+            YOUR PERSONAL DATA WILL BE SUBSEQUENTLY NO LONGER USED FOR THE
+            PURPOSE OF DIRECT MARKETING (OBJECTION ACCORDING TO ART. 21 PARA. 2
+            GDPR).
           </p>
           <h4>
-            Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen sowie
-            gegen Direktwerbung (Art. 21 DSGVO)
+            Right to lodge a complaint with the competent supervisory authority
           </h4>
           <p>
-            WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E
-            ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GRÜNDEN,
-            DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE
-            VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN;
-            DIES GILT AUCH FÜR EIN AUF DIESE BESTIMMUNGEN GESTÜTZTES PROFILING.
-            DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG BERUHT,
-            ENTNEHMEN SIE DIESER DATENSCHUTZERKLÄRUNG. WENN SIE WIDERSPRUCH
-            EINLEGEN, WERDEN WIR IHRE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT
-            MEHR VERARBEITEN, ES SEI DENN, WIR KÖNNEN ZWINGENDE SCHUTZWÜRDIGE
-            GRÜNDE FÜR DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, RECHTE
-            UND FREIHEITEN ÜBERWIEGEN ODER DIE VERARBEITUNG DIENT DER
-            GELTENDMACHUNG, AUSÜBUNG ODER VERTEIDIGUNG VON RECHTSANSPRÜCHEN
-            (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).
+            In the event of violations of the GDPR, data subjects have the right
+            to lodge a complaint with a supervisory authority, in particular in
+            the Member State of their habitual residence, their place of work or
+            the place of the alleged infringement. The right to lodge a
+            complaint is without prejudice to any other administrative or
+            judicial remedies.
           </p>
+          <h4>Right to data portability</h4>
           <p>
-            WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU
-            BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE
-            VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENER DATEN ZUM ZWECKE
-            DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH FÜR DAS PROFILING,
-            SOWEIT ES MIT SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT. WENN SIE
-            WIDERSPRECHEN, WERDEN IHRE PERSONENBEZOGENEN DATEN ANSCHLIESSEND
-            NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH
-            ART. 21 ABS. 2 DSGVO).
+            You have the right to request data that we collect on the basis of
+            your consent or in performance of a contract. process automatically,
+            on its own or to a third party in a common, machine-readable format
+            to be handed over. If you wish to request the direct transfer of the
+            data to another controller, this will only be done to the extent
+            that it is technically feasible.
           </p>
-          <h4>Beschwerderecht bei der zuständigen Aufsichtsbehörde</h4>
+          <h4>Information, correction and deletion</h4>
           <p>
-            Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein
-            Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem
-            Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes
-            oder des Orts des mutmaßlichen Verstoßes zu. Das Beschwerderecht
-            besteht unbeschadet anderweitiger verwaltungsrechtlicher oder
-            gerichtlicher Rechtsbehelfe.
+            Within the framework of the applicable legal provisions, you have
+            the right to free of charge at any time. Information about your
+            stored personal data, its origin and recipients and the Purpose of
+            the data processing and, if applicable, a right to rectification or
+            deletion of this data. To this end, as well as If you have any
+            further questions about personal data, you can contact us at any
+            time.
           </p>
-          <h4>Recht auf Datenübertragbarkeit</h4>
+          <h4>Right to restriction of processing</h4>
           <p>
-            Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung
-            oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich
-            oder an einen Dritten in einem gängigen, maschinenlesbaren Format
-            aushändigen zu lassen. Sofern Sie die direkte Übertragung der Daten
-            an einen anderen Verantwortlichen verlangen, erfolgt dies nur,
-            soweit es technisch machbar ist.
+            You have the right to request the restriction of the processing of
+            your personal data. You can contact us at any time. The right to
+            restriction of processing exists in in the following cases:
           </p>
-          <h4>Auskunft, Berichtigung und Löschung</h4>
+          <ul>
+            <li>
+              <p>
+                If you contest the accuracy of your personal data held by us, we
+                need usually time to check this. For the duration of the
+                examination, you have the right to Request restriction of
+                processing of your personal data.
+              </p>
+            </li>
+            <li>
+              <p>
+                If the processing of your personal data has been/is unlawful,
+                you may request the restriction of data processing instead of
+                deletion.
+              </p>
+            </li>
+            <li>
+              <p>
+                If we no longer need your personal data, but you need it to
+                exercise, defence or assertion of legal claims, you have the
+                right to take action in lieu of the request the restriction of
+                the processing of your personal data.
+              </p>
+            </li>
+            <li>
+              <p>
+                If you have lodged an objection pursuant to Art. 21 (1) GDPR, a
+                balance must be struck between your interests and ours. As long
+                as it has not yet been determined whose interests you have the
+                right to request the restriction of the processing of your
+                personal data to demand.
+              </p>
+            </li>
+            <li>
+              <p>
+                If you have restricted the processing of your personal data,
+                this data may not be processed by their storage – only with your
+                consent or for the purpose of asserting, exercising or defence
+                of legal claims or for the protection of the rights of another
+                natural or legal person or for reasons of important public
+                interest of the European Union, or of a Member State.
+              </p>
+            </li>
+          </ul>
+
+          <h4>SSL or TLS encryption</h4>
           <p>
-            Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen
-            jederzeit das Recht auf unentgeltliche Auskunft über Ihre
-            gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger
-            und den Zweck der Datenverarbeitung und ggf. ein Recht auf
-            Berichtigung oder Löschung dieser Daten. Hierzu sowie zu weiteren
-            Fragen zum Thema personenbezogene Daten können Sie sich jederzeit an
-            uns wenden.
+            For security reasons and to protect the transmission of confidential
+            content, such as For example, orders or inquiries that you send to
+            us as the site operator, SSL or TLS encryption. You can recognize an
+            encrypted connection by the fact that the address bar of the browser
+            is "http://" changes to "https://" and click on the lock icon in
+            your browser line. If SSL or TLS encryption is enabled, the data you
+            transmit to us cannot be read by third parties.
           </p>
-          <h4>Recht auf Einschränkung der Verarbeitung</h4>
+          <h4>Opting Out of Promotional Emails</h4>
           <p>
-            Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer
-            personenbezogenen Daten zu verlangen. Hierzu können Sie sich
-            jederzeit an uns wenden. Das Recht auf Einschränkung der
-            Verarbeitung besteht in folgenden Fällen:
+            The use of contact data published as part of the imprint obligation
+            for the purpose of sending Advertising and information materials
+            that have not been expressly requested are hereby objected to. The
+            Operators of the pages expressly reserve the right to take legal
+            action in the event of the unsolicited sending of promotional
+            information, such as spam emails.
           </p>
-          <p>
-            Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten
-            personenbezogenen Daten bestreiten, benötigen wir in der Regel Zeit,
-            um dies zu überprüfen. Für die Dauer der Prüfung haben Sie das
-            Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen
-            Daten zu verlangen.
-          </p>
-          <p>
-            Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtmäßig
-            geschah/geschieht, können Sie statt der Löschung die Einschränkung
-            der Datenverarbeitung verlangen.
-          </p>
-          <p>
-            Wenn wir Ihre personenbezogenen Daten nicht mehr benötigen, Sie sie
-            jedoch zur Ausübung, Verteidigung oder Geltendmachung von
-            Rechtsansprüchen benötigen, haben Sie das Recht, statt der Löschung
-            die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu
-            verlangen.
-          </p>
-          <p>
-            Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt
-            haben, muss eine Abwägung zwischen Ihren und unseren Interessen
-            vorgenommen werden. Solange noch nicht feststeht, wessen Interessen
-            überwiegen, haben Sie das Recht, die Einschränkung der Verarbeitung
-            Ihrer personenbezogenen Daten zu verlangen.
-          </p>
-          <p>
-            Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten
-            eingeschränkt haben, dürfen diese Daten – von ihrer Speicherung
-            abgesehen – nur mit Ihrer Einwilligung oder zur Geltendmachung,
-            Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der
-            Rechte einer anderen natürlichen oder juristischen Person oder aus
-            Gründen eines wichtigen öffentlichen Interesses der Europäischen
-            Union oder eines Mitgliedstaats verarbeitet werden.
-          </p>
-          <h4>SSL- bzw. TLS-Verschlüsselung</h4>
-          <p>
-            Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der
-            Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen
-            oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL-
-            bzw. TLSVerschlüsselung. Eine verschlüsselte Verbindung erkennen Sie
-            daran, dass die Adresszeile des Browsers von „http://“ auf
-            „https://“ wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
-            Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die
-            Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen
-            werden.
-          </p>
-          <h4>Widerspruch gegen Werbe-E-Mails</h4>
-          <p>
-            Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten
-            Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter
-            Werbung und Informationsmaterialien wird hiermit widersprochen. Die
-            Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte
-            im Falle der unverlangten Zusendung von Werbeinformationen, etwa
-            durch Spam-E-Mails, vor.
-          </p>
-          <h2>4. Datenerfassung auf dieser Website</h2>
+          <h2>4. Data collection on this website</h2>
           <h4>Cookies</h4>
           <p>
-            Unsere Internetseiten verwenden so genannte „Cookies“. Cookies sind
-            kleine Datenpakete und richten auf Ihrem Endgerät keinen Schaden an.
-            Sie werden entweder vorübergehend für die Dauer einer Sitzung
-            (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem
-            Endgerät gespeichert. Session-Cookies werden nach Ende Ihres Besuchs
-            automatisch gelöscht. Permanente Cookies bleiben auf Ihrem Endgerät
-            gespeichert, bis Sie diese selbst löschen oder eine automatische
-            Löschung durch Ihren Webbrowser erfolgt. Cookies können von uns
-            (First-Party-Cookies) oder von Drittunternehmen stammen (sog.
-            Third-Party- Cookies). Third-Party-Cookies ermöglichen die
-            Einbindung bestimmter Dienstleistungen von Drittunternehmen
-            innerhalb von Webseiten (z. B. Cookies zur Abwicklung von
-            Zahlungsdienstleistungen). Cookies haben verschiedene Funktionen.
-            Zahlreiche Cookies sind technisch notwendig, da bestimmte
-            Webseitenfunktionen ohne diese nicht funktionieren würden (z. B. die
-            Warenkorbfunktion oder die Anzeige von Videos). Andere Cookies
-            können zur Auswertung des Nutzerverhaltens oder zu Werbezwecken
-            verwendet werden.
+            Our website uses so-called "cookies". Cookies are small packets of
+            data and focus on does not cause any damage to your device. They
+            will either be temporarily suspended for the duration of a session.
+            (session cookies) or permanently (persistent cookies) on your
+            device. Session cookies will be automatically deleted at the end of
+            your visit. Persistent cookies remain on your device until you
+            delete them yourself or until they are automatically deleted by your
+            web browser.
           </p>
           <p>
-            Cookies, die zur Durchführung des elektronischen
-            Kommunikationsvorgangs, zur Bereitstellung bestimmter, von Ihnen
-            erwünschter Funktionen (z. B. für die Warenkorbfunktion) oder zur
-            Optimierung der Website (z. B. Cookies zur Messung des Webpublikums)
-            erforderlich sind (notwendige Cookies), werden auf Grundlage von
-            Art. 6 Abs. 1 lit. f DSGVO gespeichert, sofern keine andere
-            Rechtsgrundlage angegeben wird. Der Websitebetreiber hat ein
-            berechtigtes Interesse an der Speicherung von notwendigen Cookies
-            zur technisch fehlerfreien und optimierten Bereitstellung seiner
-            Dienste. Sofern eine Einwilligung zur Speicherung von Cookies und
-            vergleichbaren Wiedererkennungstechnologien abgefragt wurde, erfolgt
-            die Verarbeitung ausschließlich auf Grundlage dieser Einwilligung
-            (Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG); die Einwilligung
-            ist jederzeit widerrufbar.
+            Cookies can come from us (first-party cookies) or from third-party
+            companies (so-called third-party cookies). cookies). Third-party
+            cookies enable the integration of certain services provided by
+            Third-party companies within websites (e.g. cookies to process
+            payment services). Cookies have various functions. Many cookies are
+            technically necessary, as certain cookies website functions would
+            not work without them (e.g. the shopping cart function or the
+            display videos). Other cookies may be used to evaluate user
+            behaviour or for advertising purposes. be used.
           </p>
           <p>
-            Sie können Ihren Browser so einstellen, dass Sie über das Setzen von
-            Cookies informiert werden und Cookies nur im Einzelfall erlauben,
-            die Annahme von Cookies für bestimmte Fälle oder generell
-            ausschließen sowie das automatische Löschen der Cookies beim
-            Schließen des Browsers aktivieren. Bei der Deaktivierung von Cookies
-            kann die Funktionalität dieser Website eingeschränkt sein. Welche
-            Cookies und Dienste auf dieser Website eingesetzt werden, können Sie
-            dieser Datenschutzerklärung entnehmen.
+            Cookies used to carry out the electronic communication process, to
+            provide certain functions requested by you (e.g. for the shopping
+            cart function) or to optimize the website (e.g. web audience
+            measurement cookies) (necessary cookies), are stored on the basis of
+            Art. 6 (1) (f) GDPR, unless another legal basis is specified. The
+            website operator has a legitimate interest in storing necessary
+            cookies for the technically error-free and optimized provision of
+            its services. If consent to the storage of cookies and comparable
+            recognition technologies, the Processing exclusively on the basis of
+            this consent (Art. 6 para. 1 lit. a GDPR and § 25 para. 1 TTDSG);
+            the consent can be revoked at any time.
           </p>
-          <h2>5. Plugins und Tools</h2>
+          <p>
+            You can set your browser so that you are informed about the setting
+            of cookies and Allow cookies only in individual cases, exclude the
+            acceptance of cookies in certain cases or generally as well as the
+            automatic deletion of cookies when the browser is closed. In the
+            case of the Disabling cookies may limit the functionality of this
+            website.
+          </p>
+          <p>
+            You can find out which cookies and services are used on this
+            website. Privacy Policy.
+          </p>
+          <h2>5. Plugins and Tools</h2>
           <h4>YouTube</h4>
           <p>
-            Diese Website bindet Videos der Website YouTube ein. Betreiber der
-            Website ist die Google Ireland Limited („Google“), Gordon House,
-            Barrow Street, Dublin 4, Irland.
+            This website embeds videos from the YouTube website. The website is
+            operated by Google Ireland Limited ("Google"), Gordon House, Barrow
+            Street, Dublin 4, Ireland.
           </p>
           <p>
-            Wenn Sie eine unserer Webseiten besuchen, auf denen YouTube
-            eingebunden ist, wird eine Verbindung zu den Servern von YouTube
-            hergestellt. Dabei wird dem YouTube-Server mitgeteilt, welche
-            unserer Seiten Sie besucht haben.
+            If you visit one of our websites on which YouTube is integrated, a
+            connection to YouTube's servers. In doing so, the YouTube server is
+            informed which of our pages you have visited.
           </p>
           <p>
-            Des Weiteren kann YouTube verschiedene Cookies auf Ihrem Endgerät
-            speichern oder vergleichbare Technologien zur Wiedererkennung
-            verwenden (z. B. Device-Fingerprinting). Auf diese Weise kann
-            YouTube Informationen über Besucher dieser Website erhalten. Diese
-            Informationen werden u. a. verwendet, um Videostatistiken zu
-            erfassen, die Anwenderfreundlichkeit zu verbessern und
-            Betrugsversuchen vorzubeugen.
+            Furthermore, YouTube may store various cookies on your device or use
+            comparable cookies. Use recognition technologies (e.g., device
+            fingerprinting). In this way, YouTube receive information about
+            visitors to this website. This information is used, among other
+            things: used to collect video statistics, improve the user
+            experience, and Prevent fraud.
           </p>
           <p>
-            Wenn Sie in Ihrem YouTube-Account eingeloggt sind, ermöglichen Sie
-            YouTube, Ihr Surfverhalten direkt Ihrem persönlichen Profil
-            zuzuordnen. Dies können Sie verhindern, indem Sie sich aus Ihrem
-            YouTube- Account ausloggen.
+            If you are logged in to your YouTube account, you allow YouTube to
+            track your surfing behavior directly. Assign to your personal
+            profile. You can prevent this by logging out of your YouTube Log out
+            of account.
           </p>
           <p>
-            Die Nutzung von YouTube erfolgt im Interesse einer ansprechenden
-            Darstellung unserer Online-Angebote. Dies stellt ein berechtigtes
-            Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Sofern eine
-            entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung
-            ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25
-            Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies
-            oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B.
-            Device-Fingerprinting) im Sinne des TTDSG umfasst. Die Einwilligung
-            ist jederzeit widerrufbar.
+            The use of YouTube is in the interest of an appealing presentation
+            of our online offerings. This constitutes a legitimate interest
+            within the meaning of Art. 6 (1) (f) GDPR. Provided that a
+            corresponding consent has been requested, the processing is carried
+            out exclusively on the basis of Art. 6 (1) (a) GDPR and § 25 para. 1
+            TTDSG, insofar as consent requires the storage of cookies or access
+            to information in the user's end device (e.g. device fingerprinting)
+            within the meaning of the TTDSG. The Consent can be revoked at any
+            time.
           </p>
           <p>
-            Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der
-            Datenschutzerklärung von YouTube unter:
+            For more information on how user data is handled, please refer to
+            YouTube's privacy policy under:{" "}
+            <a href="https://policies.google.com/privacy?hl=de">
+              https://policies.google.com/privacy?hl=de
+            </a>
+            .
           </p>
-          <a href="https://policies.google.com/privacy?hl=de">
-            https://policies.google.com/privacy?hl=de
-          </a>
-          .
           <p>
-            Das Unternehmen verfügt über eine Zertifizierung nach dem „EU-US
-            Data Privacy Framework“ (DPF). Der DPF ist ein Übereinkommen
-            zwischen der Europäischen Union und den USA, der die Einhaltung
-            europäischer Datenschutzstandards bei Datenverarbeitungen in den USA
-            gewährleisten soll. Jedes nach dem DPF zertifizierte Unternehmen
-            verpflichtet sich, diese Datenschutzstandards einzuhalten. Weitere
-            Informationen hierzu erhalten Sie vom Anbieter unter folgendem Link:
+            The company is certified according to the "EU-US Data Privacy
+            Framework" (DPF). The DPF is an agreement between the European Union
+            and the United States that provides for compliance with European
+            data protection standards for data processing in the USA. Each
+            according to The company certified by the DPF is committed to
+            complying with these data protection standards. More Information on
+            this can be obtained from the provider at the following link:{" "}
+            <a
+              href="https://www.dataprivacyframework.gov/s/participant-search/participantdetail?
+contact=true&id=a2zt000000001L5AAI&status=Active "
+            >
+              https://www.dataprivacyframework.gov/s/participant-search/participantdetail?
+              contact=true&id=a2zt000000001L5AAI&status=Active
+            </a>
           </p>
-          <a
-            href="https://www.dataprivacyframework.gov/s/participant-search/participantdetail?
+          <h4>Google Fonts</h4>
+          <p>
+            This site uses so-called Google Fonts for the uniform display of
+            fonts, which are used by Google be provided. When you open a page,
+            your browser loads the required fonts into your browser cache, to
+            display text and fonts correctly.
+          </p>
+          <p>
+            For this purpose, the browser you are using must connect to Google's
+            servers. record. As a result, Google becomes aware that this website
+            can be accessed via your IP address. has been invoked. The use of
+            Google Fonts is based on Art. 6 (1) (f) GDPR. The Website operator
+            has a legitimate interest in the uniform display of the typeface on
+            its website. Website. If a corresponding consent has been requested,
+            the processing is carried out exclusively on the basis of Art. 6 (1)
+            (a) GDPR and § 25 (1) TTDSG, insofar as the consent requires the
+            storage of of cookies or access to information in the user's
+            terminal device (e.g. device fingerprinting) in the within the
+            meaning of the TTDSG. Consent can be revoked at any time.
+          </p>
+          <p>
+            If your browser does not support Google Fonts, a default font from
+            your computer will be used. For more information about Google Fonts,
+            see
+            <a href="https://developers.google.com/fonts/faq">
+              https://developers.google.com/fonts/faq
+            </a>{" "}
+            and in Google's privacy policy:
+            <a href="https://policies.google.com/privacy?hl=de">
+              https://policies.google.com/privacy?hl=de
+            </a>
+            .{" "}
+          </p>
+          <p>
+            The company is certified according to the "EU-US Data Privacy
+            Framework" (DPF). The DPF is an agreement between the European Union
+            and the United States that provides for compliance with European
+            data protection standards for data processing in the USA. Each
+            according to The company certified by the DPF is committed to
+            complying with these data protection standards. More Information on
+            this can be obtained from the provider at the following link:
+            <a
+              href="https://www.dataprivacyframework.gov/s/participant-search/participantdetail?
 contact=true&id=a2zt000000001L5AAI&status=Active"
-          >
-            https://www.dataprivacyframework.gov/s/participant-search/participantdetail?
-            contact=true&id=a2zt000000001L5AAI&status=Active
-          </a>
-          <p>
-            Google Fonts Diese Seite nutzt zur einheitlichen Darstellung von
-            Schriftarten so genannte Google Fonts, die von Google bereitgestellt
-            werden. Beim Aufruf einer Seite lädt Ihr Browser die benötigten
-            Fonts in ihren Browsercache, um Texte und Schriftarten korrekt
-            anzuzeigen. Zu diesem Zweck muss der von Ihnen verwendete Browser
-            Verbindung zu den Servern von Google aufnehmen. Hierdurch erlangt
-            Google Kenntnis darüber, dass über Ihre IP-Adresse diese Website
-            aufgerufen wurde. Die Nutzung von Google Fonts erfolgt auf Grundlage
-            von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein
-            berechtigtes Interesse an der einheitlichen Darstellung des
-            Schriftbildes auf seiner Website. Sofern eine entsprechende
-            Einwilligung abgefragt wurde, erfolgt die Verarbeitung
-            ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25
-            Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies
-            oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B.
-            Device-Fingerprinting) im Sinne des TTDSG umfasst. Die Einwilligung
-            ist jederzeit widerrufbar. Wenn Ihr Browser Google Fonts nicht
-            unterstützt, wird eine Standardschrift von Ihrem Computer genutzt.
-            Weitere Informationen zu Google Fonts finden Sie unter
-            https://developers.google.com/fonts/faq und in der
-            Datenschutzerklärung von Google:
+            >
+              https://www.dataprivacyframework.gov/s/participant-search/participantdetail?
+              contact=true&id=a2zt000000001L5AAI&status=Active
+            </a>
           </p>
           <p>
-            https://policies.google.com/privacy?hl=de. Das Unternehmen verfügt
-            über eine Zertifizierung nach dem „EU-US Data Privacy Framework“
-            (DPF). Der DPF ist ein Übereinkommen zwischen der Europäischen Union
-            und den USA, der die Einhaltung europäischer Datenschutzstandards
-            bei Datenverarbeitungen in den USA gewährleisten soll. Jedes nach
-            dem DPF zertifizierte Unternehmen verpflichtet sich, diese
-            Datenschutzstandards einzuhalten. Weitere Informationen hierzu
-            erhalten Sie vom Anbieter unter folgendem Link:
-          </p>
-          <p>
-            https://www.dataprivacyframework.gov/s/participant-search/participantdetail?
-            contact=true&id=a2zt000000001L5AAI&status=Active Quelle:
-            https://www.e-recht24.de
+            Source:{" "}
+            <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
           </p>
         </Box>
       </PageLayout>

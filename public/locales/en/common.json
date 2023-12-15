@@ -10,6 +10,10 @@
     "step2": "Where are you missing it?",
     "step3": "Share your matter with others and increase your reach!"
   },
+  "footer": {
+    "privacyLink": "Privacy policy",
+    "imprintLink": "Imprint"
+  },
   "MapController": {
     "mapStep1": {
       "title": "What is missing in your Kiez?",

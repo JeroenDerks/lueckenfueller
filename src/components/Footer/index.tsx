@@ -2,8 +2,13 @@ import { Grid } from "@mui/material";
 import { PageLayout } from "../PageLayout";
 import { Link } from "../Link";
 import { Logo } from "../Logo";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 
 export const Footer = () => {
+  const { locale } = useRouter();
+  const { t } = useTranslation();
+
   return (
     <PageLayout>
       <Grid container>
@@ -11,12 +16,12 @@ export const Footer = () => {
           <Logo scale={0.2} />
         </Grid>
         <Grid item xs={6} sm={3} md={3}>
-          <Link href="/datenschutzerklarung">
-            Datenschutz&shy;erkl&auml;rung
+          <Link href={locale === "de" ? "/datenschutzerklarung" : "/privacy"}>
+            {t("footer.privacyLink")}
           </Link>
         </Grid>
         <Grid item xs={6} sm={3} md={3}>
-          <Link href="/imprint">Impressum</Link>
+          <Link href="/imprint">{t("footer.imprintLink")}</Link>
         </Grid>
       </Grid>
     </PageLayout>

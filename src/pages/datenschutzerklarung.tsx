@@ -2,8 +2,17 @@ import { NavBar } from "@/components/NavBar";
 import { PageLayout } from "@/components/PageLayout";
 import { theme } from "@/styles/theme";
 import { Box } from "@mui/material";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
+// This is the German privacy statement page. There is also a German version at privacy.tsx
 export default function PrivacyGerman() {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.locale === "en") router.push("/privacy");
+  }, [router.locale]);
+
   return (
     <>
       <NavBar />
@@ -493,23 +502,27 @@ contact=true&id=a2zt000000001L5AAI&status=Active"
             ist jederzeit widerrufbar. Wenn Ihr Browser Google Fonts nicht
             unterstützt, wird eine Standardschrift von Ihrem Computer genutzt.
             Weitere Informationen zu Google Fonts finden Sie unter
-            https://developers.google.com/fonts/faq und in der
-            Datenschutzerklärung von Google:
+            <a href="https://developers.google.com/fonts/faq">
+              https://developers.google.com/fonts/faq
+            </a>{" "}
+            und in der Datenschutzerklärung von Google:
+            <a href="https://policies.google.com/privacy?hl=de">
+              https://policies.google.com/privacy?hl=de
+            </a>
+            .{" "}
           </p>
           <p>
-            https://policies.google.com/privacy?hl=de. Das Unternehmen verfügt
-            über eine Zertifizierung nach dem „EU-US Data Privacy Framework“
-            (DPF). Der DPF ist ein Übereinkommen zwischen der Europäischen Union
-            und den USA, der die Einhaltung europäischer Datenschutzstandards
-            bei Datenverarbeitungen in den USA gewährleisten soll. Jedes nach
-            dem DPF zertifizierte Unternehmen verpflichtet sich, diese
-            Datenschutzstandards einzuhalten. Weitere Informationen hierzu
-            erhalten Sie vom Anbieter unter folgendem Link:
+            Das Unternehmen verfügt über eine Zertifizierung nach dem „EU-US
+            Data Privacy Framework“ (DPF). Der DPF ist ein Übereinkommen
+            zwischen der Europäischen Union und den USA, der die Einhaltung
+            europäischer Datenschutzstandards bei Datenverarbeitungen in den USA
+            gewährleisten soll. Jedes nach dem DPF zertifizierte Unternehmen
+            verpflichtet sich, diese Datenschutzstandards einzuhalten. Weitere
+            Informationen hierzu erhalten Sie vom Anbieter unter folgendem Link:
           </p>
           <p>
-            https://www.dataprivacyframework.gov/s/participant-search/participantdetail?
-            contact=true&id=a2zt000000001L5AAI&status=Active Quelle:
-            https://www.e-recht24.de
+            Source:{" "}
+            <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
           </p>
         </Box>
       </PageLayout>
