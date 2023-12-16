@@ -2,17 +2,9 @@ import { NavBar } from "@/components/NavBar";
 import { PageLayout } from "@/components/PageLayout";
 import { theme } from "@/styles/theme";
 import { Box } from "@mui/material";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
 
 // This is the English privacy statement page. There is also a German version at datenschutzerklarung.tsx
 export default function PrivacyEnglish() {
-  const router = useRouter();
-
-  useEffect(() => {
-    if (router.locale === "de") router.push("/datenschutzerklarung");
-  }, [router]);
-
   return (
     <>
       <NavBar />
