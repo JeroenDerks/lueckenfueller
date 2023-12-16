@@ -11,7 +11,7 @@ export default function PrivacyEnglish() {
 
   useEffect(() => {
     if (router.locale === "de") router.push("/datenschutzerklarung");
-  }, [router.locale]);
+  }, [router]);
 
   return (
     <>
@@ -34,8 +34,8 @@ export default function PrivacyEnglish() {
           </h4>
           <p>
             The data processing on this website is carried out by the website
-            operator. Their contact details can be found in the section "Note on
-            the Data Controller" in this Privacy Policy.
+            operator. Their contact details can be found in the section
+            &quot;Note on the Data Controller&quot; in this Privacy Policy.
           </p>
           <h4>How do we collect your data?</h4>
           <p>
@@ -87,7 +87,7 @@ export default function PrivacyEnglish() {
             The provider is IONOS SE, Elgendorfer Str. 57, 56410 Montabaur
             (hereinafter referred to as IONOS). If you want to use our When you
             visit your website, IONOS collects various log files, including your
-            IP addresses. Details can be found here. IONOS' Privacy Policy:{" "}
+            IP addresses. Details can be found here. IONOS&apos; Privacy Policy:{" "}
             <a href="https://www.ionos.de/terms-gtc/terms-privacy">
               https://www.ionos.de/terms-gtc/terms-privacy
             </a>
@@ -99,9 +99,9 @@ export default function PrivacyEnglish() {
             our website. To the extent that a consent has been requested, the
             processing is carried out exclusively on the basis of Art. 6 para. 1
             lit. a GDPR and § 25 para. 1 TTDSG, insofar as the consent requires
-            the storage of cookies or the Access to information in the user's
-            end device (e.g. device fingerprinting) within the meaning of the
-            TTDSG comprises. Consent can be revoked at any time.
+            the storage of cookies or the Access to information in the
+            user&apos;s end device (e.g. device fingerprinting) within the
+            meaning of the TTDSG comprises. Consent can be revoked at any time.
           </p>
           <h4>Order processing</h4>
           <p>
@@ -127,9 +127,9 @@ export default function PrivacyEnglish() {
             para. 1 lit. f GDPR). If a corresponding consent has been requested,
             the processing will take place exclusively on basis of Art. 6 (1)
             (a) GDPR and § 25 (1) TTDSG, insofar as consent requires the storage
-            of of cookies or access to information in the user's terminal device
-            (e.g. device fingerprinting) in the within the meaning of the TTDSG.
-            Consent can be revoked at any time.
+            of of cookies or access to information in the user&apos;s terminal
+            device (e.g. device fingerprinting) in the within the meaning of the
+            TTDSG. Consent can be revoked at any time.
           </p>
           <p>
             Our host(s) will or will process your data only to the extent
@@ -220,9 +220,9 @@ export default function PrivacyEnglish() {
             obliged to do so (e.g. disclosure of data to tax authorities) if we
             have a legitimate interest in the disclosure pursuant to Art. 6 (1)
             (f) GDPR or if there is another legal basis for the transfer of
-            data. When using We only share our customers' personal data with
-            processors on the basis of a valid Data Processing Agreement. In the
-            case of joint processing, a contract for joint processing.
+            data. When using We only share our customers&apos; personal data
+            with processors on the basis of a valid Data Processing Agreement.
+            In the case of joint processing, a contract for joint processing.
           </p>
           <h4>Withdrawal of your consent to data processing</h4>
           <p>
@@ -341,9 +341,10 @@ export default function PrivacyEnglish() {
             content, such as For example, orders or inquiries that you send to
             us as the site operator, SSL or TLS encryption. You can recognize an
             encrypted connection by the fact that the address bar of the browser
-            is "http://" changes to "https://" and click on the lock icon in
-            your browser line. If SSL or TLS encryption is enabled, the data you
-            transmit to us cannot be read by third parties.
+            is &quot;http://&quot; changes to &quot;https://&quot; and click on
+            the lock icon in your browser line. If SSL or TLS encryption is
+            enabled, the data you transmit to us cannot be read by third
+            parties.
           </p>
           <h4>Opting Out of Promotional Emails</h4>
           <p>
@@ -357,14 +358,14 @@ export default function PrivacyEnglish() {
           <h2>4. Data collection on this website</h2>
           <h4>Cookies</h4>
           <p>
-            Our website uses so-called "cookies". Cookies are small packets of
-            data and focus on does not cause any damage to your device. They
-            will either be temporarily suspended for the duration of a session.
-            (session cookies) or permanently (persistent cookies) on your
-            device. Session cookies will be automatically deleted at the end of
-            your visit. Persistent cookies remain on your device until you
-            delete them yourself or until they are automatically deleted by your
-            web browser.
+            Our website uses so-called &quot;cookies&quot;. Cookies are small
+            packets of data and focus on does not cause any damage to your
+            device. They will either be temporarily suspended for the duration
+            of a session. (session cookies) or permanently (persistent cookies)
+            on your device. Session cookies will be automatically deleted at the
+            end of your visit. Persistent cookies remain on your device until
+            you delete them yourself or until they are automatically deleted by
+            your web browser.
           </p>
           <p>
             Cookies can come from us (first-party cookies) or from third-party
@@ -406,13 +407,13 @@ export default function PrivacyEnglish() {
           <h4>YouTube</h4>
           <p>
             This website embeds videos from the YouTube website. The website is
-            operated by Google Ireland Limited ("Google"), Gordon House, Barrow
-            Street, Dublin 4, Ireland.
+            operated by Google Ireland Limited (&quot;Google&quot;), Gordon
+            House, Barrow Street, Dublin 4, Ireland.
           </p>
           <p>
             If you visit one of our websites on which YouTube is integrated, a
-            connection to YouTube's servers. In doing so, the YouTube server is
-            informed which of our pages you have visited.
+            connection to YouTube&apos;s servers. In doing so, the YouTube
+            server is informed which of our pages you have visited.
           </p>
           <p>
             Furthermore, YouTube may store various cookies on your device or use
@@ -435,24 +436,24 @@ export default function PrivacyEnglish() {
             corresponding consent has been requested, the processing is carried
             out exclusively on the basis of Art. 6 (1) (a) GDPR and § 25 para. 1
             TTDSG, insofar as consent requires the storage of cookies or access
-            to information in the user's end device (e.g. device fingerprinting)
-            within the meaning of the TTDSG. The Consent can be revoked at any
-            time.
+            to information in the user&apos;s end device (e.g. device
+            fingerprinting) within the meaning of the TTDSG. The Consent can be
+            revoked at any time.
           </p>
           <p>
             For more information on how user data is handled, please refer to
-            YouTube's privacy policy under:{" "}
+            YouTube&apos;s privacy policy under:{" "}
             <a href="https://policies.google.com/privacy?hl=de">
               https://policies.google.com/privacy?hl=de
             </a>
             .
           </p>
           <p>
-            The company is certified according to the "EU-US Data Privacy
-            Framework" (DPF). The DPF is an agreement between the European Union
-            and the United States that provides for compliance with European
-            data protection standards for data processing in the USA. Each
-            according to The company certified by the DPF is committed to
+            The company is certified according to the &quot;EU-US Data Privacy
+            Framework&quot; (DPF). The DPF is an agreement between the European
+            Union and the United States that provides for compliance with
+            European data protection standards for data processing in the USA.
+            Each according to The company certified by the DPF is committed to
             complying with these data protection standards. More Information on
             this can be obtained from the provider at the following link:{" "}
             <a
@@ -471,17 +472,18 @@ contact=true&id=a2zt000000001L5AAI&status=Active "
             display text and fonts correctly.
           </p>
           <p>
-            For this purpose, the browser you are using must connect to Google's
-            servers. record. As a result, Google becomes aware that this website
-            can be accessed via your IP address. has been invoked. The use of
-            Google Fonts is based on Art. 6 (1) (f) GDPR. The Website operator
-            has a legitimate interest in the uniform display of the typeface on
-            its website. Website. If a corresponding consent has been requested,
-            the processing is carried out exclusively on the basis of Art. 6 (1)
-            (a) GDPR and § 25 (1) TTDSG, insofar as the consent requires the
-            storage of of cookies or access to information in the user's
-            terminal device (e.g. device fingerprinting) in the within the
-            meaning of the TTDSG. Consent can be revoked at any time.
+            For this purpose, the browser you are using must connect to
+            Google&apos;s servers. record. As a result, Google becomes aware
+            that this website can be accessed via your IP address. has been
+            invoked. The use of Google Fonts is based on Art. 6 (1) (f) GDPR.
+            The Website operator has a legitimate interest in the uniform
+            display of the typeface on its website. Website. If a corresponding
+            consent has been requested, the processing is carried out
+            exclusively on the basis of Art. 6 (1) (a) GDPR and § 25 (1) TTDSG,
+            insofar as the consent requires the storage of of cookies or access
+            to information in the user&apos;s terminal device (e.g. device
+            fingerprinting) in the within the meaning of the TTDSG. Consent can
+            be revoked at any time.
           </p>
           <p>
             If your browser does not support Google Fonts, a default font from
@@ -490,18 +492,18 @@ contact=true&id=a2zt000000001L5AAI&status=Active "
             <a href="https://developers.google.com/fonts/faq">
               https://developers.google.com/fonts/faq
             </a>{" "}
-            and in Google's privacy policy:
+            and in Google&apos;s privacy policy:
             <a href="https://policies.google.com/privacy?hl=de">
               https://policies.google.com/privacy?hl=de
             </a>
             .{" "}
           </p>
           <p>
-            The company is certified according to the "EU-US Data Privacy
-            Framework" (DPF). The DPF is an agreement between the European Union
-            and the United States that provides for compliance with European
-            data protection standards for data processing in the USA. Each
-            according to The company certified by the DPF is committed to
+            The company is certified according to the &quot;EU-US Data Privacy
+            Framework&quot; (DPF). The DPF is an agreement between the European
+            Union and the United States that provides for compliance with
+            European data protection standards for data processing in the USA.
+            Each according to The company certified by the DPF is committed to
             complying with these data protection standards. More Information on
             this can be obtained from the provider at the following link:
             <a

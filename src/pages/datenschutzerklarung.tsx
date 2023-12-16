@@ -11,7 +11,7 @@ export default function PrivacyGerman() {
 
   useEffect(() => {
     if (router.locale === "en") router.push("/privacy");
-  }, [router.locale]);
+  }, [router]);
 
   return (
     <>
@@ -148,8 +148,8 @@ export default function PrivacyGerman() {
           </p>
           <p>
             <b>Vercel Inc.</b>
-            440 N Barranca Ave #4133 Covina, CA 91723
           </p>
+          <p>440 N Barranca Ave #4133 Covina, CA 91723</p>
           <h2>3. Allgemeine Hinweise und Pflichtinformationen</h2>
           <h3>Datenschutz</h3>
           <p>
@@ -179,8 +179,9 @@ export default function PrivacyGerman() {
           </p>
           <p>
             <b>Jeroen Derks & Chris Steinmayer</b>
-            Dolziger Straße 4 10247 Berlin E-Mail: cs@lueckenfueller.me
           </p>
+          <p>Dolziger Straße 4 10247 Berlin</p>
+          <p> E-Mail: cs@lueckenfueller.me</p>
           <p>
             Verantwortliche Stelle ist die natürliche oder juristische Person,
             die allein oder gemeinsam mit anderen über die Zwecke und Mittel der
