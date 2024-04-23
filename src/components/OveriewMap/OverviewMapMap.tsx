@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import { Popup } from "react-map-gl";
 import { useTranslation } from "next-i18next";
 
-import { Need } from "@/types";
+import { LatLng, Need } from "@/types";
 
 import { MapComp } from "../MapComp";
 import { RegularMarker } from "../MapMarkers/RegularMarker";
@@ -10,8 +10,11 @@ import { Box, Typography } from "@mui/material";
 import { Link } from "../Link";
 import useTranslatedOptions from "@/hooks/getTranslatedOptions";
 
+export const defaultLoc = { lat: 52.52, lng: 13.4 };
+
 export const OverviewMapMap = ({ needs }: { needs?: Need[] }) => {
   const [selectedNeed, setSelectedNeed] = useState<Need | false>(false);
+  const [coord, setCoordinates] = useState<LatLng>();
   const { translatedOptions } = useTranslatedOptions();
   const { t } = useTranslation();
 
@@ -34,6 +37,20 @@ export const OverviewMapMap = ({ needs }: { needs?: Need[] }) => {
     [needs]
   );
 
+  React.useEffect(() => {
+    const getIpAddress = async () => {
+      const res = await fetch("/api/get-ip", { method: "GET" });
+
+      if (res.ok) {
+        const data = await res.json();
+
+        if (data.lat && data.lng) setCoordinates({ ...data });
+        else setCoordinates(defaultLoc);
+      } else setCoordinates(defaultLoc);
+    };
+    getIpAddress();
+  }, []);
+
   const matchTitle = (title?: string) => {
     const translatedNeed = translatedOptions?.find(
       ({ value }) => value === title
@@ -42,8 +59,16 @@ export const OverviewMapMap = ({ needs }: { needs?: Need[] }) => {
     return translatedNeed?.label || title;
   };
 
+  if (!coord) return null;
+
   return (
-    <MapComp>
+    <MapComp
+      initialViewState={{
+        latitude: coord.lat,
+        longitude: coord.lng,
+        zoom: 10,
+      }}
+    >
       {markers}
       {selectedNeed && needs?.includes(selectedNeed) && (
         <Popup

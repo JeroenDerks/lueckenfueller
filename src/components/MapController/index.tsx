@@ -10,15 +10,15 @@ import { MapSelectorContainer, Overlay } from "./styled";
 import { DraggableAreaMarker } from "../MapMarkers/DraggableAreaMarker";
 import { Box } from "@mui/material";
 
-const defaultLoc = { radius: 5, lat: 52.52, lng: 13.4 };
-
-export const MapController = () => {
+export const MapController = ({ loc }: { loc: LatLng & Radius }) => {
   const [step, setStep] = useState(1);
   const [step1Value, setStep1Value] = useState<Step1Value>();
-  const [step2Value, setStep2Value] = useState<LatLng & Radius>(defaultLoc);
+  const [step2Value, setStep2Value] = useState<LatLng & Radius>(loc);
   const [step3Value, setStep3Value] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+
+  console.log({ step2Value });
 
   const onNextStep = () => {
     setStep((s) => s + 1);
