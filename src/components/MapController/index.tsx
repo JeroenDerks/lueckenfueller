@@ -18,8 +18,6 @@ export const MapController = ({ loc }: { loc: LatLng & Radius }) => {
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
-  console.log({ step2Value });
-
   const onNextStep = () => {
     setStep((s) => s + 1);
   };
