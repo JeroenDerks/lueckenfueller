@@ -39,13 +39,18 @@ export const OverviewMapMap = ({ needs }: { needs?: Need[] }) => {
 
   React.useEffect(() => {
     const getIpAddress = async () => {
-      const res = await fetch("/api/get-ip", { method: "GET" });
+      const res = await fetch(
+        "https://api.geoapify.com/v1/ipinfo?&apiKey=e97e7eae25ba45b4a0e98eeb1cf7d720",
+        { method: "GET" }
+      );
 
       if (res.ok) {
         const data = await res.json();
 
-        if (data.lat && data.lng) setCoordinates({ ...data });
-        else setCoordinates(defaultLoc);
+        if (data.location.latitude) {
+          const { latitude, longitude } = data.location;
+          setCoordinates({ lat: latitude, lng: longitude });
+        } else setCoordinates(defaultLoc);
       } else setCoordinates(defaultLoc);
     };
     getIpAddress();
