@@ -8,11 +8,12 @@ import Box from "@mui/material/Box";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import React, { useState } from "react";
-import { LatLng, Radius } from "@/types";
+import { LatLng, Radius, NeedCoordinates } from "@/types";
 import { defaultLoc } from "@/components/OveriewMap/OverviewMapMap";
 
 export default function AddNeedPage() {
   const [coord, setCoordinates] = useState<LatLng & Radius>();
+  const [markerCoords, setMarkerCoords] = useState<NeedCoordinates>();
 
   React.useEffect(() => {
     const getIpAddress = async () => {
@@ -37,17 +38,19 @@ export default function AddNeedPage() {
       <Box minHeight="100svh" sx={{ background: theme.palette.primary.main }}>
         <NavBar />
         <PageLayout backgroundColor={theme.palette.primary.main}>
-          <Box mt={[0, 0, 4]}>
+          <Box mt={[8, 8, 10]} position="relative">
             {coord && (
-              <MapComp
-                initialViewState={{
-                  latitude: coord.lat,
-                  longitude: coord.lng,
-                  zoom: 10,
-                }}
-              >
-                <MapController loc={coord} />
-              </MapComp>
+              <>
+                <MapController loc={coord} {...{ markerCoords }} />
+                <MapComp
+                  handleMapMove={(v) => setMarkerCoords(v)}
+                  initialViewState={{
+                    latitude: coord.lat,
+                    longitude: coord.lng,
+                    zoom: 10,
+                  }}
+                />
+              </>
             )}
           </Box>
         </PageLayout>

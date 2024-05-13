@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 
-import { LatLng, Radius } from "@/types";
+import { LatLng, NeedCoordinates, Radius } from "@/types";
 
 import { MapStep1, Step1Value } from "./MapStep1";
 import { MapStep2 } from "./MapStep2";
@@ -9,11 +9,17 @@ import { MapStep3 } from "./MapStep3";
 import { MapSelectorContainer, Overlay } from "./styled";
 import { DraggableAreaMarker } from "../MapMarkers/DraggableAreaMarker";
 import { Box } from "@mui/material";
+import { LocationIndicator } from "./LocationIndicator";
 
-export const MapController = ({ loc }: { loc: LatLng & Radius }) => {
+export const MapController = ({
+  loc,
+  markerCoords,
+}: {
+  loc: LatLng & Radius;
+  markerCoords?: NeedCoordinates;
+}) => {
   const [step, setStep] = useState(1);
   const [step1Value, setStep1Value] = useState<Step1Value>();
-  const [step2Value, setStep2Value] = useState<LatLng & Radius>(loc);
   const [step3Value, setStep3Value] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
@@ -27,14 +33,18 @@ export const MapController = ({ loc }: { loc: LatLng & Radius }) => {
   };
 
   const handleSubmit = async () => {
+    if (!markerCoords) return;
     setIsLoading(true);
+
+    const { lat, lng, radius } = markerCoords;
+    const location = { lat, lng, radius };
 
     const response = await fetch("/api/add-need", {
       method: "POST",
       body: JSON.stringify({
         category: step1Value?.category,
         title: step1Value?.title,
-        location: step2Value,
+        location,
         email: step3Value,
       }),
     });
@@ -51,13 +61,8 @@ export const MapController = ({ loc }: { loc: LatLng & Radius }) => {
   return (
     <>
       {step === 1 && <Overlay />}
-      {step !== 1 && (
-        <DraggableAreaMarker
-          lat={step2Value.lat}
-          lng={step2Value.lng}
-          radius={step2Value.radius}
-          updateMarkerLocation={(v) => setStep2Value(v)}
-        />
+      {step !== 1 && markerCoords && (
+        <LocationIndicator zoom={markerCoords.zoom} />
       )}
 
       <Box width={1} display="flex" justifyContent="center">
@@ -69,12 +74,7 @@ export const MapController = ({ loc }: { loc: LatLng & Radius }) => {
             />
           )}
 
-          {step === 2 && (
-            <MapStep2
-              {...{ step2Value, onNextStep, onPrevStep }}
-              handleStep2Change={(v) => setStep2Value(v)}
-            />
-          )}
+          {step === 2 && <MapStep2 {...{ onNextStep, onPrevStep }} />}
 
           {step === 3 && (
             <MapStep3
