@@ -19,3 +19,9 @@ export const Wrapper = styled("div")`
   z-index: 2;
   pointer-events: none;
 `;
+
+export const MarkerSvg = styled("svg")`
+  fill: #c43472;
+  position: absolute;
+  margin-top: -10px;
+`;
