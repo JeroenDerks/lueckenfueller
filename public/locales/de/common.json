@@ -15,6 +15,9 @@
     "imprintLink": "Impressum"
   },
   "MapController": {
+    "locationIndicator": {
+      "areaTooLarge": "Fläche zu groß"
+    },
     "mapStep1": {
       "title": "Was fehlt in Deinem Kiez?",
       "selectLabel": "Auswahl",
@@ -24,7 +27,7 @@
     },
     "mapStep2": {
       "title": "Wo vermisst du es?",
-      "description": "Bewege den Marker und stelle den Radius des Kreises mit dem Schieberegler ein",
+      "description": "Beweg und zoom die Karte, um deinen Kiez zu finden.",
       "buttonTextNext": "Weiter",
       "buttonTextBack": "Zurück"
     },

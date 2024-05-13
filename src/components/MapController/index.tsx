@@ -12,10 +12,8 @@ import { Box } from "@mui/material";
 import { LocationIndicator } from "./LocationIndicator";
 
 export const MapController = ({
-  loc,
   markerCoords,
 }: {
-  loc: LatLng & Radius;
   markerCoords?: NeedCoordinates;
 }) => {
   const [step, setStep] = useState(1);
@@ -61,9 +59,7 @@ export const MapController = ({
   return (
     <>
       {step === 1 && <Overlay />}
-      {step !== 1 && markerCoords && (
-        <LocationIndicator zoom={markerCoords.zoom} />
-      )}
+      {step !== 1 && <LocationIndicator zoom={markerCoords?.zoom || 10.5} />}
 
       <Box width={1} display="flex" justifyContent="center">
         <MapSelectorContainer>

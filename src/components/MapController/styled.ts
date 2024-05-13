@@ -30,7 +30,7 @@ export const MapSelectorContainer = styled("div")(({ theme }) => ({
   zIndex: 3,
 
   [theme.breakpoints.up("sm")]: {
-    maxWidth: 400,
+    maxWidth: 460,
     top: -80,
   },
 }));

@@ -6,7 +6,7 @@ export const Container = styled("div")<Zoom>(({ theme, zoom }) => ({
   height: 250,
   borderRadius: 125,
   background: zoom > 10 ? theme.palette.primary.main : "#c43472",
-  opacity: zoom > 10 ? 0.3 : 0.2,
+  opacity: zoom > 10 ? 0.3 : 0.3,
 }));
 
 export const Wrapper = styled("div")`
@@ -22,6 +22,5 @@ export const Wrapper = styled("div")`
 
 export const MarkerSvg = styled("svg")`
   fill: #c43472;
-  position: absolute;
   margin-top: -10px;
 `;

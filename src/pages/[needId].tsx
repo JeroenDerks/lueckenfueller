@@ -63,7 +63,7 @@ export default function NeedDetailPage() {
               initialViewState={{
                 latitude: need.location?.lat!,
                 longitude: need.location?.lng!,
-                zoom: 15,
+                zoom: 14,
               }}
             >
               {locations?.map(({ id, lat, lng, radius, needLocationId }) => (

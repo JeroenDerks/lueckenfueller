@@ -41,6 +41,7 @@ export const MapComp = ({
       }
     }
   };
+
   return (
     <Container>
       <Map
