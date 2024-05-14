@@ -49,7 +49,7 @@ export const MapComp = ({
         style={{ width: "100%", height: "100%" }}
         mapStyle="mapbox://styles/mapbox/light-v11"
         mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_API_TOKEN}
-        ref={(ref) => ref && setMap(ref.getMap())}
+        ref={(ref) => setMap(ref?.getMap())}
         onMoveEnd={onMoveEnd}
       >
         {children && children}
