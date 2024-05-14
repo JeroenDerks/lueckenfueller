@@ -37,6 +37,18 @@ export const MapStep1 = ({
 
   const missingTitle = category === "Other" && (!title || title?.length < 3);
 
+  const getHelperText = () => {
+    if (title && title?.length < 3) return t("MapController.mapStep1.required");
+    if (isMultipleEntries(title))
+      return t("MapController.mapStep1.maxOneEntryText");
+  };
+
+  const isMultipleEntries = (t: string) =>
+    t.includes(" und ") ||
+    t.includes(" and ") ||
+    t.includes(",") ||
+    t.includes("&");
+
   return (
     <FormControl fullWidth>
       <Typography variant="h5" mb={[2, 2, 3]} mt={[1, 1, 1]}>
@@ -50,13 +62,11 @@ export const MapStep1 = ({
           <TextField
             error={Boolean(title && title?.length < 3)}
             fullWidth
-            helperText={
-              title && title?.length < 3 && t("MapController.mapStep1.required")
-            }
+            helperText={getHelperText()}
             label={t("MapController.mapStep1.inputPlaceholder")}
             onChange={(e) => setTitle(e.target.value)}
             value={title}
-          ></TextField>
+          />
         </Box>
       )}
       <Box display="flex" justifyContent="flex-end" width={1} mt={[2, 2, 3]}>
