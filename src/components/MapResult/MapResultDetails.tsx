@@ -12,7 +12,7 @@ export default function MapResultDetails({ need }: { need?: Need }) {
   const details = [
     { title: "Latitude", value: need?.location?.lat.toFixed(5) },
     { title: "Longitude", value: need?.location?.lng.toFixed(5) },
-    { title: "Radius", value: need?.location?.radius + " km" },
+    { title: "Radius", value: need?.location?.radius.toFixed(2) + " km" },
     {
       title: "Date added",
       value: format(new Date(need?.createdAt), "dd MMM yyyy"),
