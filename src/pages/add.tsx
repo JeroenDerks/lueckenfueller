@@ -8,11 +8,11 @@ import Box from "@mui/material/Box";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import React, { useState } from "react";
-import { LatLng, Radius } from "@/types";
+import { NeedCoordinates } from "@/types";
 import { defaultLoc } from "@/components/OveriewMap/OverviewMapMap";
 
 export default function AddNeedPage() {
-  const [coord, setCoordinates] = useState<LatLng & Radius>();
+  const [markerCoords, setMarkerCoords] = useState<NeedCoordinates>();
 
   React.useEffect(() => {
     const getIpAddress = async () => {
@@ -24,10 +24,10 @@ export default function AddNeedPage() {
       if (res.ok) {
         const data = await res.json();
         if (data.location.latitude) {
-          const { latitude, longitude } = data.location;
-          setCoordinates({ lat: latitude, lng: longitude, radius: 5 });
-        } else setCoordinates({ ...defaultLoc, radius: 5 });
-      } else setCoordinates({ ...defaultLoc, radius: 5 });
+          const { latitude: lat, longitude: lng } = data.location;
+          setMarkerCoords({ lat, lng, radius: 5, zoom: 10.5 });
+        } else setMarkerCoords({ ...defaultLoc, radius: 5, zoom: 10.5 });
+      } else setMarkerCoords({ ...defaultLoc, radius: 5, zoom: 10.5 });
     };
     getIpAddress();
   }, []);
@@ -37,17 +37,19 @@ export default function AddNeedPage() {
       <Box minHeight="100svh" sx={{ background: theme.palette.primary.main }}>
         <NavBar />
         <PageLayout backgroundColor={theme.palette.primary.main}>
-          <Box mt={[0, 0, 4]}>
-            {coord && (
-              <MapComp
-                initialViewState={{
-                  latitude: coord.lat,
-                  longitude: coord.lng,
-                  zoom: 10,
-                }}
-              >
-                <MapController loc={coord} />
-              </MapComp>
+          <Box mt={[8, 10, 10]} position="relative">
+            {markerCoords && (
+              <>
+                <MapController {...{ markerCoords }} />
+                <MapComp
+                  handleMapMove={(v) => setMarkerCoords(v)}
+                  initialViewState={{
+                    latitude: markerCoords.lat,
+                    longitude: markerCoords.lng,
+                    zoom: 10.5,
+                  }}
+                />
+              </>
             )}
           </Box>
         </PageLayout>

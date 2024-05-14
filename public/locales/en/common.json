@@ -15,6 +15,9 @@
     "imprintLink": "Imprint"
   },
   "MapController": {
+    "locationIndicator": {
+      "areaTooLarge": "Area too large"
+    },
     "mapStep1": {
       "title": "What is missing in your Kiez?",
       "selectLabel": "Options",
@@ -24,7 +27,7 @@
     },
     "mapStep2": {
       "title": "Where are you missing it?",
-      "description": "Move the marker and adjust the radius of the circle with the slider",
+      "description": "Move and zoom the map to find your kiez.",
       "buttonTextNext": "Next",
       "buttonTextBack": "Back"
     },

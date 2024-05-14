@@ -34,6 +34,8 @@ export type Need = {
 };
 
 export type Radius = { radius: number };
+export type Zoom = { zoom: number };
+export type NeedCoordinates = LatLng & Zoom & Radius;
 
 export type User = {
   id: string;
