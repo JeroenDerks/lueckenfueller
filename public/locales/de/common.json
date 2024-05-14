@@ -23,7 +23,8 @@
       "selectLabel": "Auswahl",
       "inputPlaceholder": "Was fehlt?",
       "required": "Erforderlich",
-      "buttonText": "Weiter"
+      "buttonText": "Weiter",
+      "maxOneEntryText": "Bitte jeweils einen Lücke anmelden"
     },
     "mapStep2": {
       "title": "Wo vermisst du es?",

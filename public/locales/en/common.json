@@ -23,7 +23,8 @@
       "selectLabel": "Options",
       "inputPlaceholder": "What do you need?",
       "required": "Required",
-      "buttonText": "Next"
+      "buttonText": "Next",
+      "maxOneEntryText": "Please submit one need at a time"
     },
     "mapStep2": {
       "title": "Where are you missing it?",
