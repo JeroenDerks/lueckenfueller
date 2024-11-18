@@ -10,6 +10,7 @@ import { MapComp } from "@/components/MapComp";
 import { RegularMarker } from "@/components/MapMarkers/RegularMarker";
 import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
+import { Loader } from "@/components/Loader";
 
 export default function NeedDetailPage() {
   const [need, setNeed] = useState<Need>();
@@ -19,7 +20,6 @@ export default function NeedDetailPage() {
 
   useEffect(() => {
     if (!init) {
-      setInit(true);
       getLocations();
       if (router.query.needId && typeof router.query.needId === "string") {
         getNeed(router.query.needId);
@@ -39,6 +39,7 @@ export default function NeedDetailPage() {
         setNeed(data);
       }
     }
+    setInit(true);
   };
 
   const getLocations = async () => {
@@ -56,7 +57,7 @@ export default function NeedDetailPage() {
     <>
       <NavBar />
       <PageLayout backgroundColor={theme.palette.primary.main}>
-        {init && need && (
+        {init && need ? (
           <>
             <MapResult {...{ need }} />
             <MapComp
@@ -79,6 +80,8 @@ export default function NeedDetailPage() {
               ))}
             </MapComp>
           </>
+        ) : (
+          <Loader />
         )}
       </PageLayout>
       <Footer />
